@@ -509,10 +509,8 @@ body {
     }
 }
 
-/* Mobile Responsive Styles */
 @media (max-width: 768px) {
 
-    /* Adjust Hero Section */
     .hero {
         width: 95%;
         height: 680px;
@@ -524,7 +522,6 @@ body {
         position: relative;
     }
 
-    /* Adjust Logo */
     .logo {
         position: absolute;
         top: 0px;
@@ -538,7 +535,6 @@ body {
         object-fit: contain;
     }
 
-    /* Adjust Hero Text */
     .hero-text {
         position: relative;
         text-align: center;
@@ -561,7 +557,6 @@ body {
         left: 110px;
     }
 
-    /* Adjust Hero Image (Overlap on "YARL") */
     .hero-image {
         position: absolute;
         top: 30%;
@@ -572,7 +567,6 @@ body {
         z-index: 2;
     }
 
-    /* Center Description Below the Image */
     .hero-description {
         font-size: 14px;
         max-width: 100%;
@@ -583,7 +577,6 @@ body {
         text-align: center;
     }
 
-    /* Center Social Icons Below the Description */
     .social-icons {
         display: flex;
         gap: 15px;
@@ -598,7 +591,6 @@ body {
         font-size: 1.4rem;
     }
 
-    /* Center Button Below Social Icons */
     .button-container {
         display: flex;
         justify-content: center;
@@ -613,7 +605,6 @@ body {
         margin-top: 10px;
     }
 
-    /* Hide Text Labels in Navbar */
     .bottom-nav {
         width: 95%;
         bottom: 10px;
@@ -623,12 +614,12 @@ body {
         display: none;
     }
 
-    /* Adjust Navbar Icons */
+
     .nav-item i {
         font-size: 22px;
     }
 
-    /* Adjust Top Icons */
+
     .top-icons {
         top: 10px;
         right: 10px;
@@ -648,4 +639,122 @@ body {
         width: 15px;
         height: 15px;
     }
+}
+
+/* Featured Products Section */
+.featured-products {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #000000;
+    /* Black Background */
+    border-radius: 20px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Title */
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Product Container */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    /* Increased gap from 20px to 30px */
+    justify-content: center;
+}
+
+/* Product Card */
+.product-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(252, 163, 17, 0.5);
+}
+
+/* Product Image */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Product Info */
+.product-info {
+    margin-top: 15px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #E5E5E5;
+}
+
+/* Shop Now Button */
+.product-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #FCA311;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.product-btn:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(252, 163, 17, 0.7);
+}
+
+/* Show More Button */
+.show-more-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.show-more-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #fff;
+    color: #000;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.show-more-btn:hover {
+    background: #FCA311;
+    color: #000;
+    box-shadow: 0 0 15px rgba(252, 163, 17, 0.7);
+    transform: scale(1.1);
 }
