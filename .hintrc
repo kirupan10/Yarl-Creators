@@ -25,6 +25,7 @@
           "video[playsinline]"
         ]
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }
