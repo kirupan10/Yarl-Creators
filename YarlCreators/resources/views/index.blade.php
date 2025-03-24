@@ -12,8 +12,8 @@
         content="Yarl Creators, Yarl, Creators, Video Production, Photography, Branding, Creative Storytelling, High-Quality Visuals, Jaffna, Sri Lanka">
     <meta name="author" content="Yarl Creators">
     <title>Yarl Creators</title>
-    <link rel="stylesheet" href="./Assets/css/index.css">
-    <link rel="stylesheet" href="./Assets/css/videoBanner.css">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/videoBanner.css') }}">
     <link rel="stylesheet" href="./Assets/css/about.css">
     <link rel="stylesheet" href="./Assets/css/Gallery.css">
     <link rel="stylesheet" href="./Assets/css/blogs.css">
@@ -121,10 +121,10 @@
             <source src="./Assets/images/304pIkbEsTRm8.mp4_10s.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-    
+
         <!-- Tint Overlay -->
         <div class="video-overlay"></div>
-    
+
         <!-- Content on Top of Tint -->
         <div class="video-content">
             <h1 class="banner-title">CREATING STORIES THAT MATTER</h1>
@@ -135,7 +135,7 @@
 
     <section class="about-section">
         <h2 class="about-title">Who We Are</h2>
-    
+
         <div class="about-container">
             <!-- First Row: Image Left, Text Right -->
             <div class="about-row">
@@ -148,7 +148,7 @@
                         photography, and branding ensures stunning content that captivates audiences.</p>
                 </div>
             </div>
-    
+
             <!-- Second Row: Image Right, Text Left -->
             <div class="about-row">
                 <div class="about-text">
@@ -197,7 +197,7 @@
 
     <section class="blog-section">
         <h2 class="blog-title">Recent Blog Posts</h2>
-    
+
         <div class="blog-container">
             <!-- Blog Post 1 -->
             <a href="blog-details.html?id=1" class="blog-card">
@@ -208,7 +208,7 @@
                     <span class="blog-date">March 2025</span>
                 </div>
             </a>
-    
+
             <!-- Blog Post 2 -->
             <a href="blog-details.html?id=2" class="blog-card">
                 <img src="./Assets/images/evn.jpg" alt="Event Setup">
@@ -219,7 +219,7 @@
                     <span class="blog-date">January 2025</span>
                 </div>
             </a>
-    
+
             <!-- Blog Post 3 -->
             <a href="blog-details.html?id=3" class="blog-card">
                 <img src="./Assets/images/bab.jpg" alt="Baby Photoshoot">
@@ -230,7 +230,7 @@
                 </div>
             </a>
         </div>
-    
+
         <!-- See More Button -->
         <div class="see-more-container">
             <a href="blog.html" class="see-more-btn">See More</a>
@@ -240,7 +240,7 @@
     <section class="contact-section">
         <h2 class="contact-title">Get In Touch</h2>
         <p class="contact-subtitle">Let’s connect and create something amazing together.</p>
-    
+
         <div class="contact-content">
             <!-- Contact Info -->
             <div class="contact-info">
@@ -260,7 +260,7 @@
                     <p>+94 76 606 0499</p>
                 </div>
             </div>
-    
+
             <!-- Contact Form -->
             <form class="contact-form">
                 <div class="form-group">
@@ -282,7 +282,7 @@
 
     <section class="faq-section">
         <h2 class="faq-title">Frequently Asked Questions</h2>
-    
+
         <div class="faq-container">
             <!-- FAQ Item 1 -->
             <div class="faq-item">
@@ -292,7 +292,7 @@
                         tailored to your needs.</p>
                 </div>
             </div>
-    
+
             <!-- FAQ Item 2 -->
             <div class="faq-item">
                 <button class="faq-question">Where is Yarl Creators located?</button>
@@ -300,7 +300,7 @@
                     <p>We are based in Jaffna, Sri Lanka, and provide services across the country and internationally.</p>
                 </div>
             </div>
-    
+
             <!-- FAQ Item 3 -->
             <div class="faq-item">
                 <button class="faq-question">Do you handle corporate projects?</button>
@@ -309,7 +309,7 @@
                         more.</p>
                 </div>
             </div>
-    
+
             <!-- FAQ Item 4 -->
             <div class="faq-item">
                 <button class="faq-question">How can I request a quote or consultation?</button>
@@ -329,7 +329,7 @@
                 <p>A full-service digital media production company based in Jaffna. We craft stories with creativity,
                     innovation, and passion.</p>
             </div>
-    
+
             <!-- Quick Links -->
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -341,7 +341,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-    
+
             <!-- Contact Info -->
             <div class="footer-col">
                 <h4>Contact</h4>
@@ -351,7 +351,7 @@
                     <li><i class="fas fa-envelope"></i> info@yarlcreators.com</li>
                 </ul>
             </div>
-    
+
             <!-- Social Icons -->
             <div class="footer-col social">
                 <h4>Follow Us</h4>
@@ -365,7 +365,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="footer-bottom">
             <p>&copy; 2025 Yarl Creators. All rights reserved.</p>
         </div>
