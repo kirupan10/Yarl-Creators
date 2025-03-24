@@ -31,7 +31,7 @@
         <div class="top-icons">
             <a href="#" class="icon cart"><i class="fas fa-shopping-cart"></i><span class="badge">1</span></a>
             <a href="#" class="icon notification"><i class="fas fa-bell"></i><span class="badge">3</span></a>
-            <a href="./auth.html" class="icon login"><i class="fas fa-user"></i></a>
+            <a href="{{ route('Auth') }}" class="icon login"><i class="fas fa-user"></i></a>
         </div>
 
         <div class="logo">

@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('test', function () {
     return view('test');
 });
+
+Route::get('/Auth', function () {
+    return view('Auth'); // This loads resources/views/about.blade.php
+})->name('Auth');
