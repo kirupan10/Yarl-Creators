@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
     <link rel="stylesheet" href="{{ asset('css/faq.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href=" {{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css') }} ">
     <script defer src=" {{ asset('Js/script.js') }}"></script>
-    <script defer src="{{ asset('/Js/faq.js') }}"></script>
+    <script defer src="{{ asset('Js/faq.js') }}"></script>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="logo">
-            <img src="./Assets/images/logo.png" alt="Yarl Creators Logo">
+            <img src="{{ asset('images/logo.png') }}" alt="Yarl Creators Logo">
         </div>
         <div class="hero-text">
             <h1 class="big-text">YARL</h1>
@@ -60,7 +60,7 @@
         <div class="button-container">
             <button class="book-btn">Book Now <i class="fas fa-arrow-right"></i></button>
         </div>
-        <img src="./Assets/images/Camera.png" alt="Camera" class="hero-image">
+        <img src="{{ asset('images/Camera.png') }}" alt="Camera" class="hero-image">
     </section>
 
     <!-- Featured Products Section -->
@@ -70,7 +70,7 @@
         <div class="product-container">
             <!-- Product 1 -->
             <div class="product-card">
-                <img src="./Assets/images/Acc.jpg" alt="Camera Accessory">
+                <img src="{{ asset('images/Acc.jpg') }}" alt="Camera Accessory">
                 <div class="product-info">
                     <h3>Camera Accessories</h3>
                     <p>Essential accessories to enhance photography.</p>
@@ -80,7 +80,7 @@
 
             <!-- Product 2 -->
             <div class="product-card">
-                <img src="./Assets/images/pai.jpg" alt="Painting Frame">
+                <img src=" {{ asset('images/pai.jpg') }}" alt="Painting Frame">
                 <div class="product-info">
                     <h3>Painting Frames</h3>
                     <p>Beautiful custom painting frames perfect for your artworks.</p>
@@ -90,7 +90,7 @@
 
             <!-- Product 3 -->
             <div class="product-card">
-                <img src="./Assets/images/Skt.jpg" alt="Sketches">
+                <img src="{{ asset('images/Skt.jpg') }}" alt="Sketches">
                 <div class="product-info">
                     <h3>Sketches</h3>
                     <p>Hand-drawn sketches that bring life to your artistic vision.</p>
@@ -100,7 +100,7 @@
 
             <!-- Product 4 -->
             <div class="product-card">
-                <img src="./Assets/images/mug.jpg" alt="Mug Printing">
+                <img src="{{ asset('images/mug.jpg') }}" alt="Mug Printing">
                 <div class="product-info">
                     <h3>Mug Printing</h3>
                     <p>Custom printed mugs, perfect for gifts and branding.</p>
@@ -118,7 +118,7 @@
     <section class="video-banner">
         <!-- Background Video -->
         <video autoplay muted loop playsinline class="video-bg">
-            <source src="./Assets/images/304pIkbEsTRm8.mp4_10s.mp4" type="video/mp4">
+            <source src="{{ asset('images/304pIkbEsTRm8.mp4_10s.mp4 ') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
@@ -140,7 +140,7 @@
             <!-- First Row: Image Left, Text Right -->
             <div class="about-row">
                 <div class="about-image">
-                    <img src="./Assets/images/manwithcam.jpg" alt="Creative Work">
+                    <img src="{{ asset('images/manwithcam.jpg') }}" alt="Creative Work">
                 </div>
                 <div class="about-text">
                     <h3>Our Passion for Creativity</h3>
@@ -157,7 +157,7 @@
                         precision, passion, and a touch of artistry.</p>
                 </div>
                 <div class="about-image">
-                    <img src="./Assets/images/cam.jpg" alt="Innovation">
+                    <img src="{{ asset('images/cam.jpg') }}" alt="Innovation">
                 </div>
             </div>
         </div>
@@ -172,22 +172,22 @@
         <div class="carousel-frame">
             <div class="carousel-track" id="carousel-track">
                 <!-- Cloned Last 3 for Infinite Scroll -->
-                <div class="carousel-item"><img src="./Assets/images/Gallery/28.jpg" alt="28" /></div>
-                <div class="carousel-item"><img src="./Assets/images/Gallery/29.jpg" alt="29" /></div>
-                <div class="carousel-item"><img src="./Assets/images/Gallery/30.jpg" alt="30" /></div>
+                <div class="carousel-item"><img src=" {{ asset('images/Gallery/28.jpg') }}" alt="28" /></div>
+                <div class="carousel-item"><img src="{{ asset('images/Gallery/29.jpg') }}" alt="29" /></div>
+                <div class="carousel-item"><img src=" {{ asset('images/Gallery/30.jpg') }}" alt="30" /></div>
 
                 <!-- Actual 30 Images -->
                 <!-- Repeat up to 30 images -->
-                <div class="carousel-item"><img src="./Assets/images/Gallery/22.jpg" alt="1" /></div>
-                <div class="carousel-item"><img src="./Assets/images/Gallery/10.jpg" alt="2" /></div>
-                <div class="carousel-item"><img src="./Assets/images/Gallery/16.jpg" alt="3" /></div>
+                <div class="carousel-item"><img src=" {{ asset('images/Gallery/22.jpg') }}" alt="1" /></div>
+                <div class="carousel-item"><img src=" {{ asset('images/Gallery/10.jpg') }}" alt="2" /></div>
+                <div class="carousel-item"><img src=" {{ asset('images/Gallery/16.jpg') }}" alt="3" /></div>
                 <!-- ... -->
-                <div class="carousel-item"><img src="./Assets/images/Gallery/30.jpg" alt="30" /></div>
+                <div class="carousel-item"><img src=" {{ asset('images/Gallery/30.jpg') }}" alt="30" /></div>
 
                 <!-- Cloned First 3 for Infinite Scroll -->
-                <div class="carousel-item"><img src="./Assets/images/Gallery/6.jpg" alt="1-clone" /></div>
-                <div class="carousel-item"><img src="./Assets/images/Gallery/7.jpg" alt="2-clone" /></div>
-                <div class="carousel-item"><img src="./Assets/images/Gallery/8.jpg" alt="3-clone" /></div>
+                <div class="carousel-item"><img src=" {{ asset('images/Gallery/6.jpg') }}" alt="1-clone" /></div>
+                <div class="carousel-item"><img src=" {{ asset('images/Gallery/6.jpg') }}" alt="2-clone" /></div>
+                <div class="carousel-item"><img src=" {{ asset('images/Gallery/6.jpg') }}" alt="3-clone" /></div>
             </div>
         </div>
 
@@ -201,7 +201,7 @@
         <div class="blog-container">
             <!-- Blog Post 1 -->
             <a href="blog-details.html?id=1" class="blog-card">
-                <img src="./Assets/images/wed.jpg" alt="Wedding Highlight">
+                <img src=" {{ asset('images/wed.jpg') }}" alt="Wedding Highlight">
                 <div class="blog-content">
                     <h3 class="blog-post-title">Wedding Highlight | Vimitha & Gokulan</h3>
                     <p class="blog-description">Every moment is a memory – watch how we brought their special day to life in style.</p>
@@ -211,7 +211,7 @@
 
             <!-- Blog Post 2 -->
             <a href="blog-details.html?id=2" class="blog-card">
-                <img src="./Assets/images/evn.jpg" alt="Event Setup">
+                <img src="{{ asset('images/evn.jpg') }}" alt="Event Setup">
                 <div class="blog-content">
                     <h3 class="blog-post-title">Full Event Branding & Media Solutions</h3>
                     <p class="blog-description">From concept to execution – lights, visuals, and a powerful brand message delivered
@@ -222,7 +222,7 @@
 
             <!-- Blog Post 3 -->
             <a href="blog-details.html?id=3" class="blog-card">
-                <img src="./Assets/images/bab.jpg" alt="Baby Photoshoot">
+                <img src="{{ asset('images/bab.jpg') }}" alt="Baby Photoshoot">
                 <div class="blog-content">
                     <h3 class="blog-post-title">Tiny Toes, Big Smiles</h3>
                     <p class="blog-description">A heartwarming baby shoot filled with innocence, color, and beautiful giggles.</p>
