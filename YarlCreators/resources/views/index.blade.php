@@ -233,7 +233,7 @@
 
         <!-- See More Button -->
         <div class="see-more-container">
-            <a href="blog.html" class="see-more-btn">See More</a>
+            <a href="{{ route('blog') }}" class="see-more-btn">See More</a>
         </div>
     </section>
 
