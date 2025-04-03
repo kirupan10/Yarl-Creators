@@ -39,7 +39,6 @@
         </div>
         <div class="hero-text">
             <h1 class="big-text">YARL</h1>
-            <br><br>
             <span class="small-text">CREATORS</span>
         </div>
         <p class="hero-description">
