@@ -33,7 +33,7 @@ Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 
-Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 Route::get('registration', [AuthController::class, 'registration'])->name('register');
 

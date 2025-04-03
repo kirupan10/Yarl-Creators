@@ -89,7 +89,7 @@
                             photography, and branding ensures stunning content that captivates audiences.</p>
                     </div>
                     <div class="about-button">
-                        <a href="{{ route('about') }}" class="btn">Learn More About Us</a>
+                        <a href="/" class="btn">Learn More About Us</a>
                     </div>
                 </div>
 
