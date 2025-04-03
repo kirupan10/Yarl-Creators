@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,36 +26,17 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('login', [AuthController::class, 'index'])->name('login');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post');
 
+Route::get('registration', [AuthController::class, 'registration'])->name('register');
 
+Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
 
-Route::get('/login', function () {
-    return view('auth');
-})->name('login');
+Route::get('dashboard', [AuthController::class, 'dashboard']);
 
-Route::get('/register', function () {
-    return view('auth');
-})->name('register');
-
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/register', [RegisterController::class, 'register']);
-Route::post('/password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('/password/reset', function () {
-    return view('auth');
-})->name('password.request');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
-
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::post('/logout', function () {
     Auth::logout();

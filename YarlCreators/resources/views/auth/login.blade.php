@@ -30,7 +30,7 @@
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox" name="remember"> Remember me</label>
-                    <a href="{{ route('password.request') }}">Forgot Password?</a>
+                    <a href="">Forgot Password?</a>
                 </div>
                 <button type="submit" class="btn">Sign In</button>
                 <p class="switch-form">Don't have an account? <a href="{{ route('register') }}">Sign Up</a></p>
@@ -64,7 +64,7 @@
 
         <div class="form-box hidden">
             <h2>Forgot Password</h2>
-            <form method="POST" action="{{ route('password.email') }}">
+            <form method="POST" action="">
                 @csrf
                 <div class="input-box">
                     <i class="fas fa-envelope"></i>
