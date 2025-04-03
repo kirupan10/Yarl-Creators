@@ -38,31 +38,6 @@
         </div>
 
         <div class="form-box hidden">
-            <h2>Sign Up</h2>
-            <form method="POST" action="{{ route('register') }}">
-                @csrf
-                <div class="input-box">
-                    <i class="fas fa-user"></i>
-                    <input type="text" name="name" placeholder="Full Name" required>
-                </div>
-                <div class="input-box">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="input-box">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password" required>
-                </div>
-                <div class="input-box">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
-                </div>
-                <button type="submit" class="btn">Sign Up</button>
-                <p class="switch-form">Already have an account? <a href="{{ route('login') }}">Sign In</a></p>
-            </form>
-        </div>
-
-        <div class="form-box hidden">
             <h2>Forgot Password</h2>
             <form method="POST" action="">
                 @csrf
