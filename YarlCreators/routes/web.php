@@ -24,3 +24,7 @@ Route::get('test', function () {
 Route::get('/Auth', function () {
     return view('Auth'); // This loads resources/views/about.blade.php
 })->name('Auth');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
