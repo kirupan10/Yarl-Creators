@@ -12,13 +12,15 @@
     <title>Yarl Creators</title>
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 
 <body>
     <div class="auth-container">
         <div class="form-box">
-            <h2>Sign In</h2>
-            <form method="POST" action="{{ route('login') }}">
+            <h2>Login</h2>
+            <form method="POST" action="{{ route('login.post') }}">
                 @csrf
                 <div class="input-box">
                     <i class="fas fa-envelope"></i>
@@ -32,7 +34,8 @@
                     <label><input type="checkbox" name="remember"> Remember me</label>
                     <a href="">Forgot Password?</a>
                 </div>
-                <button type="submit" class="btn">Sign In</button>
+                <button type="submit" class="btn">Login</button>
+
                 <p class="switch-form">Don't have an account? <a href="{{ route('register') }}">Sign Up</a></p>
             </form>
         </div>
