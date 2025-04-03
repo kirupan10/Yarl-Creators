@@ -16,6 +16,48 @@
 
 </head>
 
+<section class="hero">
+        <div class="top-icons">
+            <!-- Top Icons -->
+            <a href="/" class="icon home"><i class="fas fa-home"></i></a>
+
+
+            @if (Auth::check())
+                <!-- User is logged in, show user profile or logout icon -->
+                <a href="{{ route('profile') }}" class="icon login"><i class="fas fa-user"></i></a>
+                <a href="{{ route('logout') }}" class="icon logout"><i class="fas fa-sign-out-alt"></i></a>
+            @else
+                <!-- User is not logged in, show login icon -->
+                <a href="{{ route('login') }}" class="icon login"><i class="fas fa-sign-in-alt"></i></a>
+            @endif
+
+        </div>
+
+        <div class="logo">
+            <img src="{{ asset('images/logo.png') }}" alt="Yarl Creators Logo">
+        </div>
+        <div class="hero-text">
+            <h1 class="big-text">YARL</h1>
+            <span class="small-text">CREATORS</span>
+        </div>
+        <p class="hero-description">
+            Yarl Creators is a digital media production company.<br>
+            We specialize in video production and digital marketing.<br>
+            Powered by a network of creative and innovative storytellers.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com/p/Yarl-Creators-100083580871638/" target="_blank"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/yarl_creators/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@yarl_creators" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/channel/UC05DrDx4pGPX7_zVvxkdqJg" target="_blank"><i
+                    class="fab fa-youtube"></i></a>
+        </div>
+
+    </section>
+
 <body>
     <div class="auth-container">
         <div class="form-box">
