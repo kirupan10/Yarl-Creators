@@ -6,6 +6,8 @@
 
         <section class="hero">
             <div class="top-icons">
+                <!-- Top Icons -->
+                <a href="/" class="icon home"><i class="fas fa-home"></i></a>
                 <a href="#" class="icon cart"><i class="fas fa-shopping-cart"></i><span class="badge">1</span></a>
                 <a href="#" class="icon notification"><i class="fas fa-bell"></i><span class="badge">3</span></a>
 
