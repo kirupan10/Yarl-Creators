@@ -60,7 +60,7 @@
         <div class="button-container">
             <button class="book-btn">Book Now <i class="fas fa-arrow-right"></i></button>
         </div>
-        <img src="{{ asset('images/Camera.png') }}" alt="Camera" class="hero-image">
+
     </section>
 
     <!-- Featured Products Section -->
