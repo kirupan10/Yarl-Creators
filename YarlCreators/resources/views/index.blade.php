@@ -98,7 +98,7 @@
 
             <!-- Show More Button -->
             <div class="show-more-container">
-                <a href="all-products.html" class="show-more-btn">Show More</a>
+                <a href="{{ route('products') }}" class="show-more-btn">Show More</a>
             </div>
         </section>
 

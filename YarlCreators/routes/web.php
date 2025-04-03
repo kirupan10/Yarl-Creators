@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
 
 
 
@@ -58,3 +59,17 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 Route::get('/profile/delete', [ProfileController::class, 'destroy'])->name('profile.delete');
+
+Route::get('/products',[ProductController::class,'index'])->name('products');
+
+Route::get('/products/create',[ProductController::class,'create'])->name('products.create');
+Route::post('/products/store',[ProductController::class,'store'])->name('products.store');
+Route::get('/products/{id}/edit',[ProductController::class,'edit'])->name('products.edit');
+Route::post('/products/{id}/update',[ProductController::class,'update'])->name('products.update');
+Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
+Route::get('/products/{id}',[ProductController::class,'show'])->name('products.show');
+Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
+Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
+Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
+
+//Route::get('/products', [ProductController::class, 'index'])->name('products');
