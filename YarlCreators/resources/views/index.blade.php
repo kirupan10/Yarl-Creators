@@ -262,21 +262,24 @@
             </div>
 
             <!-- Contact Form -->
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Full Name" required />
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email Address" required />
-                </div>
-                <div class="form-group">
-                    <input type="text" name="subject" placeholder="Subject" required />
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="contact-btn">Send Message</button>
-            </form>
+            <form class="contact-form" action="{{ route('contact.store') }}" method="POST">
+    @csrf
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Full Name" required />
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Email Address" required />
+    </div>
+    <div class="form-group">
+        <input type="text" name="subject" placeholder="Subject" required />
+    </div>
+    <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="contact-btn">Send Message</button>
+    
+</form>
+
         </div>
     </section>
 
