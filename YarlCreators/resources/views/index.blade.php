@@ -88,6 +88,9 @@
                         <p>At Yarl Creators, we transform ideas into visual masterpieces. Our expertise in video production,
                             photography, and branding ensures stunning content that captivates audiences.</p>
                     </div>
+                    <div class="about-button">
+                        <a href="{{ route('about') }}" class="btn">Learn More About Us</a>
+                    </div>
                 </div>
 
                 <!-- Second Row: Image Right, Text Left -->
@@ -281,7 +284,7 @@
             </div>
         </section>
 
-        
+
 
     </body>
 @endsection

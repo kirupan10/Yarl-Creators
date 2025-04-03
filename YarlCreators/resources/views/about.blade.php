@@ -1,5 +1,8 @@
-@extends('layouts')
+@section('title', 'About Us - Yarl Creators')
 
+
+@extends('layout')
+@section('content')
 <body>
 
     <!-- About Hero Banner -->
