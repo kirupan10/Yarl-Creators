@@ -23,6 +23,10 @@
     <link rel="stylesheet" href=" {{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css') }} ">
     <script defer src=" {{ asset('Js/script.js') }}"></script>
     <script defer src="{{ asset('Js/faq.js') }}"></script>
+    <!-- Include SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    
 </head>
 
 <body>
@@ -277,7 +281,6 @@
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
     </div>
     <button type="submit" class="contact-btn">Send Message</button>
-    
 </form>
 
         </div>
