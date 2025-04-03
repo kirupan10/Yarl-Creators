@@ -46,3 +46,15 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store'); //hiruthikan
 
+Route::get('/products', function () {
+    return view('products');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/profile/delete', [ProfileController::class, 'destroy'])->name('profile.delete');
