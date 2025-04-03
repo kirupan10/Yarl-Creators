@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yarl Creators</title>
-    <link rel="stylesheet" href="./Assets/css/blog.css" />
-    <link rel="stylesheet" href="./Assets/css/nav.css" />
-    <link rel="stylesheet" href="./Assets/css/ScrollToTop.css" />
-    <link rel="stylesheet" href="./Assets/css/footer.css" />
-    <link rel="icon" type="image/png" href="./Assets/images/logo.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-
+@extends('layouts')
 <body>
 
     <!-- Blog Hero Section -->
@@ -108,7 +94,7 @@
                 <p>A full-service digital media production company based in Jaffna. We craft stories with creativity,
                     innovation, and passion.</p>
             </div>
-    
+
             <!-- Quick Links -->
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -120,7 +106,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-    
+
             <!-- Contact Info -->
             <div class="footer-col">
                 <h4>Contact</h4>
@@ -130,7 +116,7 @@
                     <li><i class="fas fa-envelope"></i> info@yarlcreators.com</li>
                 </ul>
             </div>
-    
+
             <!-- Social Icons -->
             <div class="footer-col social">
                 <h4>Follow Us</h4>
@@ -144,7 +130,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="footer-bottom">
             <p>&copy; 2025 Yarl Creators. All rights reserved.</p>
         </div>
