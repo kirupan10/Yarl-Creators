@@ -222,4 +222,25 @@ class AuthController extends Controller
 
     }
 
+    public function login(Request $request) {
+
+        return view('auth.login');
+
+    }
+    public function register(Request $request) {
+
+        return view('auth.registration');
+
+    }
+    public function forgotPassword(Request $request) {
+
+        return view('auth.forgot-password');
+
+    }
+    public function resetPassword(Request $request) {
+
+        return view('auth.reset-password');
+
+    }
+
 }

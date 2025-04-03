@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +43,5 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect('/');
 })->name('logout');
+
+Route::get('login', [AuthController::class, 'login'])->name('login');
