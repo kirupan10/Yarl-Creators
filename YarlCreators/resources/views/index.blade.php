@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./Assets/images/logo.png">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description"
         content="Yarl Creators is a video production, photography, and branding company that brings ideas to life through creative storytelling and high-quality visuals.">
@@ -31,7 +31,7 @@
         <div class="top-icons">
             <a href="#" class="icon cart"><i class="fas fa-shopping-cart"></i><span class="badge">1</span></a>
             <a href="#" class="icon notification"><i class="fas fa-bell"></i><span class="badge">3</span></a>
-            <a href="{{ route('Auth') }}" class="icon login"><i class="fas fa-user"></i></a>
+            <a href="#" class="icon login"><i class="fas fa-user"></i></a>
         </div>
 
         <div class="logo">
