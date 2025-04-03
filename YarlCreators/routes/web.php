@@ -8,6 +8,9 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
+
+
 
 
 /*
@@ -38,4 +41,8 @@ Route::post('post-registration', [AuthController::class, 'postRegistration'])->n
 Route::get('dashboard', [AuthController::class, 'dashboard']);
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store'); //hiruthikan
 

@@ -240,7 +240,8 @@
             </div>
 
             <!-- Contact Form -->
-            <form class="contact-form">
+            <form class="contact-form" method="POST" action="{{ route('contact.store') }}">
+                @csrf
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Full Name" required />
                 </div>
@@ -255,6 +256,9 @@
                 </div>
                 <button type="submit" class="contact-btn">Send Message</button>
             </form>
+            @if(session('success'))
+    <p class="alert alert-success">{{ session('success') }}</p>
+@endif
         </div>
     </section>
 
@@ -388,3 +392,5 @@
 
 
 @endsection
+
+
