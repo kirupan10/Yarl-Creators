@@ -266,6 +266,7 @@
             </div>
 
             <!-- Contact Form -->
+             <div id="alertBox" style="display: none; padding: 10px; border-radius: 5px; margin-bottom: 15px;"></div>
             <form class="contact-form" action="{{ route('contact.store') }}" method="POST">
     @csrf
     <div class="form-group">
@@ -282,6 +283,65 @@
     </div>
     <button type="submit" class="contact-btn">Send Message</button>
 </form>
+<div id="alertBox" style="display: none; padding: 10px; border-radius: 5px; margin-bottom: 15px;"></div>
+@if(session('success'))
+    <div class="alert alert-success" style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger" style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+        {{ session('error') }}
+    </div>
+@endif
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent page reload
+
+    let formData = new FormData(this);
+
+    fetch("{{ route('contact.store') }}", {
+        method: "POST",
+        headers: {
+            "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
+        },
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        let alertBox = document.getElementById('alertBox');
+
+        if (data.success) {
+            alertBox.style.display = "block";
+            alertBox.style.backgroundColor = "#d4edda"; // Green background
+            alertBox.style.color = "#155724"; // Dark green text
+            alertBox.style.border = "1px solid #c3e6cb";
+            alertBox.innerHTML = "✅ Message sent successfully!";
+            document.getElementById('contactForm').reset(); // Reset form after success
+
+            // Hide alert after 5 seconds
+            setTimeout(() => {
+                alertBox.style.display = "none";
+            }, 5000);
+        } else {
+            alertBox.style.display = "block";
+            alertBox.style.backgroundColor = "#f8d7da"; // Red background
+            alertBox.style.color = "#721c24"; // Dark red text
+            alertBox.style.border = "1px solid #f5c6cb";
+            alertBox.innerHTML = "❌ Something went wrong. Please try again.";
+        }
+    })
+    .catch(error => {
+        let alertBox = document.getElementById('alertBox');
+        alertBox.style.display = "block";
+        alertBox.style.backgroundColor = "#f8d7da";
+        alertBox.style.color = "#721c24";
+        alertBox.style.border = "1px solid #f5c6cb";
+        alertBox.innerHTML = "❌ Unable to send message.";
+    });
+});
+</script>
 
         </div>
     </section>

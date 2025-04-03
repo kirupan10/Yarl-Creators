@@ -18,6 +18,12 @@ class ContactController extends Controller
 
         Contact::create($request->all());
 
-        return back()->with('success', 'Message sent successfully!');
+        return response()->json([
+            'success' => true,
+            'message' => 'Message sent successfully!'
+        ], 200, [], JSON_PRETTY_PRINT);
     }
 }
+
+
+
