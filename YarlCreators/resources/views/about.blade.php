@@ -1,5 +1,10 @@
 @section('title', 'About Us - Yarl Creators')
 
+<link rel="stylesheet" href=" {{ asset('css/aboutus.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/css/footer.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/css/ScrollToTop.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
 @extends('layout')
 @section('content')
