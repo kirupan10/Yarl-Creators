@@ -11,6 +11,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PaintingFramesController;
+use App\Http\Controllers\SketchesController;
 
 
 
@@ -78,5 +79,7 @@ Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('
 //Route::get('/products', [ProductController::class, 'index'])->name('products');
 
 
-Route::get('/CameraAccessories', [ProductController::class, 'CameraAccessories'])->name('CameraAccessories');
-Route::get('/PaintingFrames', [PaintingFramesController::class, 'index'])->name('PaintingFrames');
+Route::get('/CameraAccessories', [ProductController::class, 'CameraAccessories'])->name('CameraAccessories'); //CameraAccessories return view
+Route::get('/PaintingFrames', [PaintingFramesController::class, 'index'])->name('PaintingFrames'); //painting frames
+
+Route::get('/Sketches', [SketchesController::class, 'index'])->name('Sketches');

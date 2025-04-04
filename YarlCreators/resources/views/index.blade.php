@@ -35,7 +35,7 @@
                     <div class="product-info">
                         <h3>Sketches</h3>
                         <p>Hand-drawn sketches that bring life to your artistic vision.</p>
-                        <button class="product-btn">Shop Now</button>
+                        <button class="product-btn" onclick="window.location='{{ route('Sketches') }}'" style="text-decoration: none;">Shop Now</button>
                     </div>
                 </div>
 
