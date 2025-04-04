@@ -19,6 +19,8 @@ use App\Http\Controllers\GalleryController;
 
 use App\Http\Controllers\AboutController;
 
+use App\Http\Controllers\AppointmentController;
+
 
 
 
@@ -117,3 +119,6 @@ Route::get('/blogview', [BlogController::class, 'show'])->name('blogview');
 
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+
+Route::get('/appointment',[AppointmentController::class, 'index'])->name('appointment');
