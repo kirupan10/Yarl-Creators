@@ -1,0 +1,694 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    /* Black Background */
+    color: #E5E5E5;
+    /* Light Gray Text */
+}
+
+/* Apply Poppins Font Globally */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section with Gradient & Glassmorphism */
+.hero {
+    position: relative;
+    width: 80%;
+    height: 600px;
+    margin: 20px auto;
+    margin-top: 35px;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FCA311 0%, #14213D 50%, #000000 100%);
+    /* Smooth Gradient */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    /* Subtle Shadow */
+}
+
+/* Glassmorphism Effect */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(20px);
+    /* Glass effect */
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    /* Transparent white overlay */
+    border-radius: 20px;
+    z-index: 0;
+}
+
+/* Make Hero Content Appear on Top */
+.hero * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Top Icons Container */
+.top-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+/* Individual Icons */
+.top-icons .icon {
+    text-decoration: none;
+    color: #FFFFFF;
+    /* White Icons */
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    /* Glassmorphism effect */
+    border-radius: 50%;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+/* Hover Effect */
+.top-icons .icon:hover {
+    background-color: #FCA311;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(252, 163, 17, 0.6);
+}
+
+/* Notification Badge */
+.top-icons .icon .badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #FCA311;
+    /* Orange */
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(252, 163, 17, 0.6);
+}
+
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    width: 140px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+/* Logo Image */
+.logo img {
+    width: 100%;
+    height: auto;
+    max-width: 120px;
+    /* Adjust for best fit */
+    object-fit: contain;
+}
+
+
+/* Hero Text */
+.hero-text {
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.big-text {
+    font-size: 280px;
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    margin-top: 70px;
+    letter-spacing: 50px;
+    color: #FFFFFF;
+    /* White */
+}
+
+.small-text {
+    font-size: 24px;
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    right: 15%;
+    font-weight: normal;
+    color: #FCA311;
+    /* Orange */
+}
+
+/* Description */
+.hero-description {
+    font-size: 16px;
+    color: #E5E5E5;
+    /* Light Gray */
+    max-width: 50%;
+    position: relative;
+    margin-top: 40px;
+    text-align: left;
+    left: 50px;
+    font-weight: 500;
+}
+
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    /* Align left */
+    gap: 15px;
+    /* Space between icons */
+    margin-top: 20px;
+    margin-left: 80px;
+    /* Align with description */
+}
+
+
+
+/* Social Icon Styling */
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    /* Icon size */
+    height: 3rem;
+    /* Icon size */
+    background: transparent;
+    border: 2px solid #FCA311;
+    /* Orange Border */
+    font-size: 1.5rem;
+    border-radius: 50%;
+    color: #FCA311;
+    /* Icon Color */
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 8px rgba(252, 163, 17, 0.5);
+    /* Glow Effect */
+    text-decoration: none;
+}
+
+/* Hover Effects */
+.social-icons a:hover {
+    color: #000000;
+    /* Black Icon */
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 0 15px #FCA311;
+    /* Stronger Glow */
+    background-color: #FCA311;
+    /* Orange Background */
+}
+
+/* Adjust Icon Font */
+.social-icons i {
+    font-size: 1.4rem;
+    /* Adjust icon size */
+}
+
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Book Now Button */
+.book-btn {
+    background-color: #FCA311;
+    /* Orange */
+    color: #FFFFFF;
+    /* White */
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    margin: 20px 0;
+    animation: float 2s infinite ease-in-out;
+    right: 10%;
+    margin-top: -40px;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.book-btn:hover {
+    background-color: #FFFFFF;
+    /* White */
+    color: #000000;
+    /* Black */
+}
+
+/* Hero Image */
+.hero-image {
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -40%);
+    width: 500px;
+    z-index: 2;
+}
+
+/* Hero Image - Smooth Slide from Right */
+.hero-image {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    /* Start off-screen */
+    transform: translate(-50%, -40%);
+    opacity: 0;
+    /* Initially hidden */
+    animation: slideRightToLeft 1.2s ease-in-out forwards;
+}
+
+/* Slide Right to Left Effect */
+@keyframes slideRightToLeft {
+    0% {
+        left: 120%;
+        opacity: 0;
+    }
+
+    100% {
+        left: 51%;
+        opacity: 1;
+    }
+}
+
+.book-btn {
+    opacity: 0;
+    /* Start hidden */
+    animation: bounceIn 1.8s ease-in-out forwards;
+}
+
+/* Bounce In Effect */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hero Text - Smooth Fade In */
+.hero-text {
+    opacity: 0;
+    /* Initially hidden */
+    animation: fadeText 1.3s ease-in-out forwards;
+}
+
+/* Fade In Effect for Hero Text */
+@keyframes fadeText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Description & Social Icons - Slide from Left to Right */
+.hero-description,
+.social-icons {
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateX(-100px);
+    /* Start from left */
+    animation: slideLeftToRight 1.5s ease-in-out forwards;
+}
+
+/* Slide Left to Right Effect */
+@keyframes slideLeftToRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Top Icons - Smooth Slide from Top */
+.top-icons {
+    position: absolute;
+    top: -50px;
+    /* Start above the screen */
+    right: 20px;
+    opacity: 0;
+    animation: slideTopToBottom 1.2s ease-in-out forwards;
+}
+
+/* Slide Top to Bottom Effect */
+@keyframes slideTopToBottom {
+    0% {
+        top: -50px;
+        opacity: 0;
+    }
+
+    100% {
+        top: 20px;
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        width: 95%;
+        height: 680px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .logo {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100px;
+    }
+
+    .logo img {
+        width: 100%;
+        max-width: 90px;
+        object-fit: contain;
+    }
+
+    .hero-text {
+        position: relative;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .big-text {
+        font-size: 100px;
+        letter-spacing: 10px;
+        line-height: 1;
+        z-index: 1;
+    }
+
+    .small-text {
+        font-size: 13px;
+        display: block;
+        position: relative;
+        margin-top: -10px;
+        color: #FCA311;
+        left: 110px;
+    }
+
+    .hero-image {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        width: 150px !important;
+        max-width: 80%;
+        z-index: 2;
+    }
+
+    .hero-description {
+        font-size: 14px;
+        max-width: 100%;
+        margin-top: 90px;
+        position: relative;
+        z-index: 1;
+        left: 0;
+        text-align: center;
+    }
+
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 45px;
+        z-index: 3;
+        right: 35px;
+    }
+
+    .social-icons a {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.4rem;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+        left: 35px;
+    }
+
+    .book-btn {
+        font-size: 14px;
+        padding: 12px 24px;
+        margin-top: 10px;
+    }
+
+    .bottom-nav {
+        width: 95%;
+        bottom: 10px;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+
+    .nav-item i {
+        font-size: 22px;
+    }
+
+
+    .top-icons {
+        top: 10px;
+        right: 10px;
+        z-index: 5;
+    }
+
+    .top-icons .icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .top-icons .icon .badge {
+        top: 3px;
+        right: 3px;
+        font-size: 10px;
+        width: 15px;
+        height: 15px;
+    }
+}
+
+/* Featured Products Section */
+.featured-products {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #000000;
+    /* Black Background */
+    border-radius: 20px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Title */
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #FCA311;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Product Container */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    /* Increased gap from 20px to 30px */
+    justify-content: center;
+}
+
+/* Product Card */
+.product-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(252, 163, 17, 0.5);
+}
+
+/* Product Image */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Product Info */
+.product-info {
+    margin-top: 15px;
+}
+
+.product-info h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #E5E5E5;
+}
+
+/* Shop Now Button */
+.product-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #FCA311;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.product-btn:hover {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 15px rgba(252, 163, 17, 0.7);
+}
+
+/* Show More Button */
+.show-more-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.show-more-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #fff;
+    color: #000;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.show-more-btn:hover {
+    background: #FCA311;
+    color: #000;
+    box-shadow: 0 0 15px rgba(252, 163, 17, 0.7);
+    transform: scale(1.1);
+}
+
+
+/* Scroll To Top Button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    background-color: #FCA311;
+    color: #000;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(252, 163, 17, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.1);
+}
+
+/* Show button when scrolled */
+#scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+}
