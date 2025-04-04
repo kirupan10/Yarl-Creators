@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
+
 <body>
     <!-- Hero -->
     <section class="blog-hero">
@@ -46,9 +47,9 @@
                 pre-wedding shoots to the final celebration, we paid attention to every detail.
             </p>
             <div class="blog-gallery">
-                <img src="./Assets/images/bride.jpg" alt="Bride's Preparation" />
-                <img src="./Assets/images/high.jpg" alt="Ceremony Highlights" />
-                <img src="./Assets/images/rece.jpg" alt="Reception Moments" />
+                <img src=" {{asset('blog/images/bride.jpg')}}" alt="Bride's Preparation" />
+                <img src=" {{asset('blog/images/high.jpg')}}" alt="Ceremony Highlights" />
+                <img src=" {{asset('blog/images/rece.jpg')}}" alt="Reception Moments" />
             </div>
             <p>
                 The use of drones allowed us to capture breathtaking aerial shots of the venue, showcasing the grandeur of the
@@ -74,7 +75,7 @@
                 <ul>
                     <li>
                         <a href="blog-details.html?id=3">
-                            <img src="./Assets/images/bab.jpg" alt="Tiny Toes" />
+                            <img src=" {{asset('images/bab.jpg')}}" alt="Tiny Toes" />
                             <div>
                                 <p class="post-title">Tiny Toes, Big Smiles</p>
                                 <span class="post-date">Feb 2025</span>
@@ -83,7 +84,7 @@
                     </li>
                     <li>
                         <a href="blog-details.html?id=2">
-                            <img src="./Assets/images/evn.jpg" alt="Event Branding" />
+                            <img src=" {{asset('images/evn.jpg')}}" alt="Event Branding" />
                             <div>
                                 <p class="post-title">Event Branding Magic</p>
                                 <span class="post-date">Jan 2025</span>
@@ -92,7 +93,7 @@
                     </li>
                     <li>
                         <a href="blog-details.html?id=1">
-                            <img src="./Assets/images/wed.jpg" alt="Wedding Highlight" />
+                            <img src=" {{asset('images/wed.jpg')}}" alt="Wedding Highlight" />
                             <div>
                                 <p class="post-title">Wedding Highlight Reel</p>
                                 <span class="post-date">Mar 2025</span>

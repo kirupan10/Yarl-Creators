@@ -153,7 +153,7 @@
 
             <div class="blog-container">
                 <!-- Blog Post 1 -->
-                <a href="blog-details.html?id=1" class="blog-card">
+                <a href="{{route('blogview')}}" class="blog-card">
                     <img src=" {{ asset('images/wed.jpg') }}" alt="Wedding Highlight">
                     <div class="blog-content">
                         <h3 class="blog-post-title">Wedding Highlight | Vimitha & Gokulan</h3>
@@ -164,7 +164,7 @@
                 </a>
 
                 <!-- Blog Post 2 -->
-                <a href="blog-details.html?id=2" class="blog-card">
+                <a href="{{route('blogview')}}" class="blog-card">
                     <img src="{{ asset('images/evn.jpg') }}" alt="Event Setup">
                     <div class="blog-content">
                         <h3 class="blog-post-title">Full Event Branding & Media Solutions</h3>
@@ -176,7 +176,7 @@
                 </a>
 
                 <!-- Blog Post 3 -->
-                <a href="blog-details.html?id=3" class="blog-card">
+                <a href="{{route('blogview')}}" class="blog-card">
                     <img src="{{ asset('images/bab.jpg') }}" alt="Baby Photoshoot">
                     <div class="blog-content">
                         <h3 class="blog-post-title">Tiny Toes, Big Smiles</h3>
