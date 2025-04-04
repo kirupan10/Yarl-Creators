@@ -60,40 +60,40 @@
         <div class="product-container">
             <!-- Product 1 -->
             <div class="product-card">
-                <img src="{{ asset('images/Acc.jpg') }}" alt="Camera Accessory">
+                <img src="{{ asset('images/flowers1.jpg') }}" alt="Camera Accessory">
                 <div class="product-info">
-                    <h3>Camera Accessories</h3>
-                    <p>Essential accessories to enhance photography.</p>
+                    <h3>Sleek Lacquer Frame <br> 8”x12”</h3>
+                    <p>Suitable for small to medium-sized paintings.</p>
                     <button class="product-btn">Shop Now</button>
                 </div>
             </div>
 
             <!-- Product 2 -->
             <div class="product-card">
-                <img src=" {{ asset('images/pai.jpg') }}" alt="Painting Frame">
+                <img src=" {{ asset('images/portrait1.png') }}" alt="Painting Frame">
                 <div class="product-info">
-                    <h3>Painting Frames</h3>
-                    <p>Beautiful custom painting frames perfect for your artworks.</p>
+                    <h3>light walnut gallery frame <br> 18”x24"</h3>
+                    <p>Ideal for medium-sized paintings.</p>
                     <button class="product-btn">Shop Now</button>
                 </div>
             </div>
 
             <!-- Product 3 -->
             <div class="product-card">
-                <img src="{{ asset('images/Skt.jpg') }}" alt="Sketches">
+                <img src="{{ asset('images/OIP.jpeg') }}" alt="Sketches">
                 <div class="product-info">
-                    <h3>Sketches</h3>
-                    <p>Hand-drawn sketches that bring life to your artistic vision.</p>
+                    <h3>Movie Poster Frame <br> 32”x44"</h3>
+                    <p>Perfect for larger paintings. </p>
                     <button class="product-btn">Shop Now</button>
                 </div>
             </div>
 
             <!-- Product 4 -->
             <div class="product-card">
-                <img src="{{ asset('images/mug.jpg') }}" alt="Mug Printing">
+                <img src="{{ asset('images/pano.jpg') }}" alt="Mug Printing">
                 <div class="product-info">
-                    <h3>Mug Printing</h3>
-                    <p>Custom printed mugs, perfect for gifts and branding.</p>
+                    <h3>Panoramic Frame <br> 16" x 40" </h3>
+                    <p>wide landscape photography, artwork, or specialty prints.</p>
                     <button class="product-btn">Shop Now</button>
                 </div>
             </div>
@@ -105,25 +105,6 @@
         <h2 class="section-title">Sketches</h2>
 
         <div class="product-container">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="{{ asset('images/Acc.jpg') }}" alt="Camera Accessory">
-                <div class="product-info">
-                    <h3>Camera Accessories</h3>
-                    <p>Essential accessories to enhance photography.</p>
-                    <button class="product-btn">Shop Now</button>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <img src=" {{ asset('images/pai.jpg') }}" alt="Painting Frame">
-                <div class="product-info">
-                    <h3>Painting Frames</h3>
-                    <p>Beautiful custom painting frames perfect for your artworks.</p>
-                    <button class="product-btn">Shop Now</button>
-                </div>
-            </div>
 
             <!-- Product 3 -->
             <div class="product-card">
@@ -131,16 +112,6 @@
                 <div class="product-info">
                     <h3>Sketches</h3>
                     <p>Hand-drawn sketches that bring life to your artistic vision.</p>
-                    <button class="product-btn">Shop Now</button>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <img src="{{ asset('images/mug.jpg') }}" alt="Mug Printing">
-                <div class="product-info">
-                    <h3>Mug Printing</h3>
-                    <p>Custom printed mugs, perfect for gifts and branding.</p>
                     <button class="product-btn">Shop Now</button>
                 </div>
             </div>
