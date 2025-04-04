@@ -14,6 +14,10 @@ use App\Http\Controllers\PaintingFramesController;
 use App\Http\Controllers\SketchesController;
 use App\Http\Controllers\MugPrintingController;
 
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\GalleryController;
+
+
 
 
 
@@ -92,10 +96,12 @@ Route::get('/gallery', function () {
     return view('gallery');
 });
 
-Route::get('/gallery', [galleryController::class, 'index'])->name('gallery');
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
 Route::get('/service', function () {
     return view('service');
 });
+
+Route::get('/service', [ServiceController::class, 'index'])->name('service');
 
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
