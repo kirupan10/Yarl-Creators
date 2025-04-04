@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+
+    @extends('layout')
+    
     <div class="container">
         <h1>Appointment Page</h1>
         <form action="{{ route('appointment') }}" method="POST">
