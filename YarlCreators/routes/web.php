@@ -12,6 +12,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PaintingFramesController;
 use App\Http\Controllers\SketchesController;
+use App\Http\Controllers\MugPrintingController;
 
 
 
