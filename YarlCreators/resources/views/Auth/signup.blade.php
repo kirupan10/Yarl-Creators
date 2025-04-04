@@ -18,7 +18,7 @@
     <div class="auth-container">
         <div class="form-box">
             <h2>Sign Up</h2>
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register.post') }}">
                 @csrf
                 <div class="input-box">
                     <i class="fas fa-user"></i>

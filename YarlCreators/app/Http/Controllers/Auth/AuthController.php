@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 class AuthController extends Controller
 {
 
@@ -21,6 +24,23 @@ class AuthController extends Controller
      * @return response()
 
      */
+
+     public function create(array $data)
+
+     {
+
+       return User::create([
+
+         'name' => $data['name'],
+
+         'email' => $data['email'],
+
+         'password' => Hash::make($data['password'])
+
+       ]);
+
+     }
+
 
      public function postRegistration(Request $request)
 
@@ -41,6 +61,16 @@ class AuthController extends Controller
          $data = $request->all();
 
          $check = $this->create($data);
+
+         $credentials = $request->only('email', 'password');
+
+     if (Auth::attempt($credentials)) {
+
+         return redirect()->intended('dashboard')
+
+                     ->withSuccess('You have Successfully loggedin');
+
+     }
 
 
 
@@ -88,21 +118,8 @@ class AuthController extends Controller
 
       */
 
-     public function create(array $data)
 
-     {
 
-       return User::create([
-
-         'name' => $data['name'],
-
-         'email' => $data['email'],
-
-         'password' => Hash::make($data['password'])
-
-       ]);
-
-     }
 
 
 
@@ -135,7 +152,7 @@ class AuthController extends Controller
      }
      public function register(Request $request) {
 
-         return view('auth.registration');
+         return view('auth.signup');
 
      }
      public function forgotPassword(Request $request) {

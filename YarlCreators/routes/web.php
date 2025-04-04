@@ -38,13 +38,13 @@ Route::get('/', function () {
 
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
+
 Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'postRegistration'])->name('register.post');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
-Route::get('registration', [AuthController::class, 'registration'])->name('register');
 
-Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
 
 Route::get('dashboard', [AuthController::class, 'dashboard']);
 
