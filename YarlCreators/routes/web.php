@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PaintingFramesController;
 
 
 
@@ -78,3 +79,4 @@ Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('
 
 
 Route::get('/CameraAccessories', [ProductController::class, 'CameraAccessories'])->name('CameraAccessories');
+Route::get('/PaintingFrames', [PaintingFramesController::class, 'index'])->name('PaintingFrames');

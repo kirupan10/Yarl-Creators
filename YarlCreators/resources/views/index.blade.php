@@ -25,7 +25,7 @@
                     <div class="product-info">
                         <h3>Painting Frames</h3>
                         <p>Beautiful custom painting frames perfect for your artworks.</p>
-                        <button class="product-btn">Shop Now</button>
+                        <button class="product-btn" onclick="window.location='{{ route('PaintingFrames') }}'" style="text-decoration: none;">Shop Now</button>
                     </div>
                 </div>
 
