@@ -107,3 +107,11 @@ Route::get('/service', [ServiceController::class, 'index'])->name('service');
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+
+Route::get('/blog', function () {
+    return view('blog'); // this loads resources/views/blog.blade.php
+});
+
+
+Route::get('/blogpage', [BlogController::class, 'index'])->name('blog');
