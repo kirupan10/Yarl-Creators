@@ -218,7 +218,7 @@
                 </div>
 
                 <!-- Contact Form -->
-                <form class="contact-form" method="POST" action="{{ route('contact.store') }}">
+                <form class="contact-form" action="{{ route('contact.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Full Name" required />
