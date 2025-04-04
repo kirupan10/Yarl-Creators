@@ -83,3 +83,6 @@ Route::get('/CameraAccessories', [ProductController::class, 'CameraAccessories']
 Route::get('/PaintingFrames', [PaintingFramesController::class, 'index'])->name('PaintingFrames'); //painting frames
 
 Route::get('/Sketches', [SketchesController::class, 'index'])->name('Sketches');
+
+
+Route::get('/MugPrinting', [MugPrintingController::class, 'index'])->name('MugPrinting');
