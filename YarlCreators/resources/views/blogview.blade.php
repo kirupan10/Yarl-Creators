@@ -5,12 +5,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yarl Creators</title>
-    <link rel="stylesheet" href="./Assets/css/blog.css" />
-    <link rel="stylesheet" href="./Assets/css/blog-details.css" />
-    <link rel="icon" type="image/png" href="./Assets/images/logo.png" />
-    <link rel="stylesheet" href="./Assets/css/nav.css" />
-    <link rel="stylesheet" href="./Assets/css/ScrollToTop.css" />
-    <link rel="stylesheet" href="./Assets/css/footer.css" />
+    <link rel="stylesheet" href="{{ asset('blog/css/blog.css') }}" />
+    <link rel="stylesheet" href="{{ asset('blog/css/blog-details.css') }}"/>
+    <link rel="icon" type="image/png" href=" {{ asset('blog/images/logo.png') }}" />
+    <link rel="stylesheet" href="{{ asset('blog/css/nav.css') }}" />
+    <link rel="stylesheet" href=" {{ asset('blog/css/ScrollToTop.css') }}" />
+    <link rel="stylesheet" href=" {{ asset('blog/css/footer.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
@@ -68,7 +68,7 @@
                 <input type="text" placeholder="Search blogs..." />
                 <i class="fas fa-search"></i>
             </div>
-        
+
             <div class="sidebar-section recent-posts">
                 <h3>Recent Posts</h3>
                 <ul>
@@ -101,8 +101,8 @@
                     </li>
                 </ul>
             </div>
-        
-        
+
+
             <div class="sidebar-section">
                 <h3>Categories</h3>
                 <ul>
@@ -123,7 +123,7 @@
                 <p>A full-service digital media production company based in Jaffna. We craft stories with creativity,
                     innovation, and passion.</p>
             </div>
-    
+
             <!-- Quick Links -->
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -135,7 +135,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-    
+
             <!-- Contact Info -->
             <div class="footer-col">
                 <h4>Contact</h4>
@@ -145,7 +145,7 @@
                     <li><i class="fas fa-envelope"></i> info@yarlcreators.com</li>
                 </ul>
             </div>
-    
+
             <!-- Social Icons -->
             <div class="footer-col social">
                 <h4>Follow Us</h4>
@@ -159,12 +159,12 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="footer-bottom">
             <p>&copy; 2025 Yarl Creators. All rights reserved.</p>
         </div>
     </footer>
-    
+
     <!-- Scroll to Top Button -->
     <button id="scrollToTopBtn" title="Go to top">
         <i class="fas fa-arrow-up"></i>
@@ -177,7 +177,7 @@
             <i class="fas fa-blog"></i>
             <span>Blog</span>
         </a>
-    
+
         <a href="shop.html" class="nav-item" data-page="shop">
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>

@@ -17,6 +17,8 @@ use App\Http\Controllers\MugPrintingController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\GalleryController;
 
+use App\Http\Controllers\AboutController;
+
 
 
 
@@ -56,10 +58,6 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 
 Route::get('/products', function () {
     return view('products');
-});
-
-Route::get('/about', function () {
-    return view('about');
 });
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
@@ -115,3 +113,7 @@ Route::get('/blog', function () {
 
 
 Route::get('/blogpage', [BlogController::class, 'index'])->name('blog');
+Route::get('/blogview', [BlogController::class, 'show'])->name('blogview');
+
+
+Route::get('/about', [AboutController::class, 'index'])->name('about');
