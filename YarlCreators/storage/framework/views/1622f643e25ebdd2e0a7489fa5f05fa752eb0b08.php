@@ -70,7 +70,11 @@
         </div>
 
         <div class="button-container">
+<<<<<<< Updated upstream
             <button onclick="window.location.href='<?php echo e(route('appointment')); ?>'" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></button>
+=======
+            <button class="book-btn">Book Now <i class="fas fa-arrow-right"></i></button>
+>>>>>>> Stashed changes
         </div>
 
     </section>
