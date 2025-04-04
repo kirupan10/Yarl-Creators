@@ -218,6 +218,7 @@
                 </div>
 
                 <!-- Contact Form -->
+                <div id="alertBox" style="display: none; padding: 10px; border-radius: 5px; margin-bottom: 15px;"></div>
                 <form class="contact-form" action="{{ route('contact.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
