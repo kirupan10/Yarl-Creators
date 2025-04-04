@@ -141,7 +141,7 @@
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>
         </a>
-        <a href="index.html" class="nav-item active" data-page="home">
+        <a href="/" class="nav-item active" data-page="home">
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
