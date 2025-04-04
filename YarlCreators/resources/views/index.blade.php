@@ -45,7 +45,7 @@
                     <div class="product-info">
                         <h3>Mug Printing</h3>
                         <p>Custom printed mugs, perfect for gifts and branding.</p>
-                        <button class="product-btn">Shop Now</button>
+                        <button class="product-btn" onclick="window.location='{{ route('MugPrinting') }}'" style="text-decoration: none;">Shop Now</button>
                     </div>
                 </div>
             </div>
