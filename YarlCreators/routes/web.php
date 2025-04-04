@@ -87,3 +87,15 @@ Route::get('/Sketches', [SketchesController::class, 'index'])->name('Sketches');
 
 
 Route::get('/MugPrinting', [MugPrintingController::class, 'index'])->name('MugPrinting');
+
+Route::get('/gallery', function () {
+    return view('gallery');
+});
+
+Route::get('/gallery', [galleryController::class, 'index'])->name('gallery');
+
+Route::get('/service', function () {
+    return view('service');
+});
+
+Route::get('/contact', [ContactController::class, 'show'])->name('contact');

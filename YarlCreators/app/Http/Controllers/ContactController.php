@@ -15,8 +15,16 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
+
+     public function show(){
+        return view('contact');
+
+     }
+
+     
     public function store(Request $request)
     {
+
         // Validate incoming request
         $request->validate([
             'name'    => 'required|string|max:255',
