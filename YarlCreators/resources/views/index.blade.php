@@ -15,7 +15,7 @@
                     <div class="product-info">
                         <h3>Camera Accessories</h3>
                         <p>Essential accessories to enhance photography.</p>
-                        <button class="product-btn">Shop Now</button>
+                        <button class="product-btn" onclick="window.location='{{ route('CameraAccessories') }}'" style="text-decoration: none;">Shop Now</button>
                     </div>
                 </div>
 
