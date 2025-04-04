@@ -108,7 +108,7 @@
 
             <!-- Product 3 -->
             <div class="product-card">
-                <img src="{{ asset('images/Skt.jpg') }}" alt="Sketches">
+                <img src="{{ asset('images/SketchesFrame.png') }}" alt="Sketches">
                 <div class="product-info">
                     <h3>Sketches</h3>
                     <p>Hand-drawn sketches that bring life to your artistic vision.</p>
