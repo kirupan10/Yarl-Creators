@@ -7,7 +7,7 @@
 
     <!-- Featured Products Section -->
     <section class="featured-products">
-        <h2 class="section-title">Featured Products</h2>
+        <h2 class="section-title">Sketches</h2>
 
         <div class="product-container">
             <!-- Product 1 -->
