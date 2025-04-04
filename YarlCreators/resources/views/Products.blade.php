@@ -158,7 +158,7 @@
                 <div class="product-info">
                     <h3>Tumbler <br> 300–710 ml</h3>
                     <p>Tall, thin cups without handles, often used to serve water or cold beverages.</p>
-                    <button class="product-btn">Shop Now</button>
+                    <button class="product-btn">Shop Now</button> 
                 </div>
             </div>
 

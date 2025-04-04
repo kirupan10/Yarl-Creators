@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/ScrollToTop.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}" />
     <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}" />
-    <link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 </head>
 
 <body>
@@ -25,7 +26,7 @@
         <!-- Blog Posts Section -->
         <section class="blog-posts">
             <article class="blog-card">
-                <img src="./Assets/images/wed.jpg" alt="Blog Image" />
+                <img src="{{ asset('images/wed.jpg') }}" alt="Blog Image" />
                 <div class="blog-info">
                     <h2>Wedding Highlight | Vimitha & Gokulan</h2>
                     <p class="blog-meta">By Yarl Creators · March 2025 · <span>#Wedding</span></p>
@@ -36,7 +37,7 @@
             </article>
 
             <article class="blog-card">
-                <img src="./Assets/images/evn.jpg" alt="Blog Image" />
+                <img src=" {{ asset('images/evn.jpg') }}" alt="Blog Image" />
                 <div class="blog-info">
                     <h2>Event Branding & Media Solutions</h2>
                     <p class="blog-meta">By Yarl Creators · January 2025 · <span>#Event</span></p>
@@ -59,7 +60,7 @@
                 <ul>
                     <li>
                         <a href="blog-details.html?id=3">
-                            <img src="./Assets/images/bab.jpg" alt="Tiny Toes" />
+                            <img src="{{ asset('images/bab.jpg') }}" alt="Tiny Toes" />
                             <div>
                                 <p class="post-title">Tiny Toes, Big Smiles</p>
                                 <span class="post-date">Feb 2025</span>
@@ -77,7 +78,7 @@
                     </li>
                     <li>
                         <a href="blog-details.html?id=1">
-                            <img src="./Assets/images/wed.jpg" alt="Wedding Highlight" />
+                            <img src="{{ asset('images/wed.jpg') }}" alt="Wedding Highlight" />
                             <div>
                                 <p class="post-title">Wedding Highlight Reel</p>
                                 <span class="post-date">Mar 2025</span>
