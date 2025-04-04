@@ -1,4 +1,4 @@
-@extends('layouts')
+@extends('layout')
 
 @section('content')
 <div class="container">
@@ -9,14 +9,17 @@
                     Profile
                 </div>
 
-                <div class="card-body">
+                <div class="card-body text-center">
                     <h3>{{ Auth::user()->name }}</h3>
                     <p>Email: {{ Auth::user()->email }}</p>
                     <p>Joined: {{ Auth::user()->created_at->format('d M Y') }}</p>
 
-                    <a href="{{ route('profile.edit') }}" class="btn btn-primary">
-                        Edit Profile
-                    </a>
+                    <div class="text-center">
+                        <a href="{{ route('profile.edit') }}" class="btn btn-primary">
+                            Edit Profile
+                        </a>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

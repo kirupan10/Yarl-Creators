@@ -72,4 +72,9 @@ Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('
 Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
 Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
 
+
+
 //Route::get('/products', [ProductController::class, 'index'])->name('products');
+
+
+Route::get('/CameraAccessories', [ProductController::class, 'CameraAccessories'])->name('CameraAccessories');

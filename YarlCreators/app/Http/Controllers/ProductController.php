@@ -10,4 +10,8 @@ class ProductController extends Controller
     {
         return view('products'); // Redirects to the product index view
     }
+
+    public function show(){
+        return view('CameraAccessories');
+    }
 }

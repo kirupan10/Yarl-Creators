@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function showProfile()
+    public function index()
     {
         // Logic to retrieve and display the user's profile
         return view('profile');
