@@ -133,11 +133,11 @@
 
 
     <nav class="bottom-nav">
-        <a href="gallery.html" class="nav-item" data-page="gallery">
+        <a href="{{route('gallery')}}" class="nav-item" data-page="gallery">
             <i class="fas fa-images"></i>
             <span>Gallery</span>
         </a>
-        <a href="shop.html" class="nav-item" data-page="shop">
+        <a href="{{route('products')}}" class="nav-item" data-page="shop">
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>
         </a>
@@ -145,11 +145,11 @@
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="services.html" class="nav-item" data-page="services">
+        <a href="{{route('service')}}" class="nav-item" data-page="services">
             <i class="fas fa-concierge-bell"></i>
             <span>Services</span>
         </a>
-        <a href="contact.html" class="nav-item" data-page="contact">
+        <a href="{{route('contact')}}" class="nav-item" data-page="contact">
             <i class="fas fa-envelope"></i>
             <span>Contact</span>
         </a>
