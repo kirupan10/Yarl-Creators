@@ -1,0 +1,164 @@
+ body {
+     font-family: 'Poppins', sans-serif;
+     margin: 0;
+     padding: 0;
+     background: #000;
+     color: #E5E5E5;
+ }
+
+ .hero-banner {
+     width: 90%;
+     margin: 8rem auto 2rem;
+     height: 400px;
+     background: linear-gradient(135deg, #FCA311, #14213D);
+     border-radius: 20px;
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .hero-banner .overlay {
+     padding: 40px;
+     z-index: 2;
+ }
+
+ .hero-banner h1 {
+     font-size: 64px;
+     color: #fff;
+     text-transform: uppercase;
+     letter-spacing: 5px;
+     margin-bottom: 10px;
+ }
+
+ .hero-banner p {
+     font-size: 18px;
+     color: #E5E5E5;
+     font-weight: 400;
+     max-width: 700px;
+     margin: 0 auto;
+ }
+
+ .checkout-container {
+     width: 90%;
+     max-width: 1200px;
+     margin: auto;
+     display: flex;
+     flex-direction: column;
+     gap: 40px;
+ }
+
+ .card {
+     background: rgba(255, 255, 255, 0.05);
+     padding: 30px;
+     border-radius: 20px;
+     box-shadow: 0 0 15px rgba(252, 163, 17, 0.08);
+ }
+
+ .card h2 {
+     color: #FCA311;
+     margin-bottom: 20px;
+     font-size: 24px;
+ }
+
+ .summary-content {
+     display: flex;
+     gap: 30px;
+     flex-wrap: wrap;
+ }
+
+ .summary-content img {
+     width: 300px;
+     height: 200px;
+     object-fit: cover;
+     border-radius: 15px;
+ }
+
+ .summary-details p {
+     margin: 8px 0;
+     font-size: 16px;
+ }
+
+ .payment-section label {
+     display: block;
+     margin-bottom: 12px;
+     font-size: 16px;
+ }
+
+ .payment-fields {
+     margin-top: 15px;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+ }
+
+ .payment-fields input {
+     padding: 12px;
+     border-radius: 10px;
+     border: none;
+     background: #1a1a1a;
+     color: #fff;
+ }
+
+ .coupon-input {
+     display: flex;
+     gap: 10px;
+ }
+
+ .coupon-input input {
+     flex: 1;
+     padding: 12px;
+     border-radius: 10px;
+     border: none;
+     background: #1a1a1a;
+     color: #fff;
+ }
+
+ .coupon-input button,
+ .submit-btn {
+     background: #FCA311;
+     color: #000;
+     border: none;
+     padding: 12px 25px;
+     border-radius: 25px;
+     font-weight: bold;
+     cursor: pointer;
+     transition: background 0.3s;
+ }
+
+ .coupon-input button:hover,
+ .submit-btn:hover {
+     background: #fff;
+ }
+
+ .secure-msg {
+     text-align: center;
+     font-size: 14px;
+     color: #aaa;
+     margin-top: 10px;
+ }
+
+ .checkout-footer {
+     text-align: center;
+     margin: 60px 0 20px;
+     color: #555;
+ }
+
+ @media (max-width: 768px) {
+     .summary-content {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .summary-content img {
+         width: 100%;
+         height: auto;
+     }
+ }
+
+ .hidden {
+     display: none;
+ }
