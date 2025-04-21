@@ -1,0 +1,114 @@
+/* About Section */
+.about-section {
+    width: 100%;
+    padding: 100px 20px;
+    background-color: #000;
+    text-align: center;
+}
+
+/* Section Title */
+.about-title {
+    font-size: 42px;
+    font-weight: bold;
+    color: #FCA311;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+}
+
+/* About Container */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* About Row */
+.about-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Reverse Layout */
+.about-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* About Image */
+.about-image {
+    width: 40%;
+    /* Reduced from 50% */
+    max-width: 400px;
+    /* Reduced from 550px */
+    height: 300px;
+    /* Reduced from 400px */
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* About Text */
+.about-text {
+    width: 55%;
+    /* Increased slightly for better balance */
+    text-align: left;
+    color: #fff;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    /* Reduced slightly */
+    font-weight: bold;
+    color: #FCA311;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 16px;
+    /* Reduced for a more compact look */
+    color: #E5E5E5;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .about-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-row.reverse {
+        flex-direction: column;
+    }
+
+    .about-image {
+        width: 80%;
+        /* Adjusted for smaller screens */
+        height: 280px;
+    }
+
+    .about-text {
+        width: 90%;
+    }
+
+    .about-title {
+        font-size: 36px;
+    }
+
+    .about-text h3 {
+        font-size: 24px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+    }
+}
