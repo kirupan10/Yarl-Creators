@@ -126,7 +126,3 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/appointment',[AppointmentController::class, 'index'])->name('appointment');
 
 Route::get('/admin',[AdminController::class, 'index'])->name('admin');
-
-Route::get('/admin', function () {
-    return view('admin.index');
-})->name('admin');
