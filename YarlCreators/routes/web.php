@@ -22,6 +22,9 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AppointmentController;
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+
 
 
 
@@ -50,9 +53,6 @@ Route::post('/register', [AuthController::class, 'postRegistration'])->name('reg
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
-
-
-Route::get('dashboard', [AuthController::class, 'dashboard']);
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -126,3 +126,5 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/appointment',[AppointmentController::class, 'index'])->name('appointment');
 
 Route::get('/admin',[AdminController::class, 'index'])->name('admin');
+
+Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
