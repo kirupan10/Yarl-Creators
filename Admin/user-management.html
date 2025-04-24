@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management | Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Assets/css/user-mana.css" />
+    <link rel="stylesheet" href="../Assets/css/nav.css" />
+    <link rel="stylesheet" href="../Assets/css/footer.css" />
+    <link rel="stylesheet" href="../Assets/css/ScrollToTop.css" />
+    <link rel="icon" type="image/png" href="../Assets/images/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <section class="booking-banner">
+        <div class="overlay">
+            <h1>👥 User Management</h1>
+            <p>Manage users, assign roles, and control access levels.</p>
+        </div>
+    </section>
+
+    <div class="user-controls">
+        <button onclick="openForm()">➕ Add New User</button>
+        <input type="text" id="searchUser" placeholder="Search by name or role" />
+    </div>
+
+    <section class="user-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userList"></tbody>
+        </table>
+    </section>
+
+    <!-- Add/Edit Form Modal -->
+    <div class="modal" id="userModal">
+        <div class="modal-content">
+            <h2 id="formTitle">Add User</h2>
+            <input type="text" id="userName" placeholder="Full Name" />
+            <input type="email" id="userEmail" placeholder="Email" />
+            <select id="userRole">
+                <option value="admin">Admin</option>
+                <option value="editor">Editor</option>
+                <option value="viewer">Viewer</option>
+            </select>
+            <div class="modal-actions">
+                <button onclick="saveUser()">💾 Save</button>
+                <button onclick="closeForm()">❌ Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Assets/Js/user-managment.js"></script>
+</body>
+
+</html>

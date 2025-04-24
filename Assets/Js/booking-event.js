@@ -1,24 +1,36 @@
 const bookedDates = ["2025-04-10", "2025-04-15"];
 const holdDates = ["2025-04-18", "2025-04-20"];
 
+// Combine all blocked dates
+const disabledDates = [...bookedDates, ...holdDates];
+
 flatpickr("#calendar", {
     inline: true,
     dateFormat: "Y-m-d",
-    disable: bookedDates,
+    disable: disabledDates.map(date => date), // Format each as string
     onDayCreate: function (dObj, dStr, fp, dayElem) {
         const dateStr = dayElem.dateObj.toISOString().split("T")[0];
         if (bookedDates.includes(dateStr)) {
-            dayElem.style.backgroundColor = "#E53935";
+            dayElem.style.backgroundColor = "#E53935"; // Booked - red
             dayElem.style.color = "#fff";
         } else if (holdDates.includes(dateStr)) {
-            dayElem.style.backgroundColor = "#FFC107";
+            dayElem.style.backgroundColor = "#FFC107"; // Hold - yellow
             dayElem.style.color = "#000";
         }
     },
-    onChange: function (selectedDates, dateStr) {
-        document.getElementById("eventDate").value = dateStr;
+    onChange: function (selectedDates, dateStr, instance) {
+        // Re-check if somehow selected a disabled date
+        if (disabledDates.includes(dateStr)) {
+            alert("⚠️ This date is not available for booking.");
+            instance.clear(); // Clear selection
+            document.getElementById("eventDate").value = "";
+        } else {
+            document.getElementById("eventDate").value = dateStr;
+        }
     }
 });
+
+
 
 function showPackages() {
     const service = document.getElementById("service").value;
@@ -68,19 +80,36 @@ function selectPackage(id) {
 document.getElementById("bookingForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
+    const service = document.getElementById("service").value;
+    const date = document.getElementById("eventDate").value;
+    const name = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
     const selectedPackage = document.querySelector("input[name='package']:checked");
+
+    if (!service) {
+        alert("⚠️ Please select a service.");
+        return;
+    }
+
+    if (!date) {
+        alert("⚠️ Please select an event date.");
+        return;
+    }
+
     if (!selectedPackage) {
-        alert("⚠️ Please select a package to continue.");
+        alert("⚠️ Please select a package.");
         return;
     }
 
     const data = {
-        service: document.getElementById("service").value,
-        date: document.getElementById("eventDate").value,
-        name: document.getElementById("fullName").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        message: document.getElementById("message").value,
+        service,
+        date,
+        name,
+        email,
+        phone,
+        message,
         package: selectedPackage.value,
     };
 
