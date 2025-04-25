@@ -63,19 +63,19 @@
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('profile')}}">
+						<a class="sidebar-link" href="{{route('Products')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Products</span>
             </a>
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('profile')}}">
+						<a class="sidebar-link" href="{{route('Blogs_Page')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Blogs</span>
             </a>
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('profile')}}">
+						<a class="sidebar-link" href="{{route('Feedbacks_view')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Feedbacks</span>
             </a>
 					</li>
@@ -83,6 +83,7 @@
                     <li class="sidebar-item">
 						<a class="sidebar-link" href="{{route('profile')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Logout</span>
+
             </a>
 					</li>
 
