@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index(){
-        return view('dashboard');
+
+    if (!auth()->check()) {
+        return redirect()->route('login');
     }
+
+    // Or safely access the user
+    $user = auth()->user();
+
+    return view('dashboard', compact('user'));
+}
 }

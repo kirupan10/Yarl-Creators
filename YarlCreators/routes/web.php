@@ -128,3 +128,8 @@ Route::get('/appointment',[AppointmentController::class, 'index'])->name('appoin
 Route::get('/admin',[AdminController::class, 'index'])->name('admin');
 
 Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
+
