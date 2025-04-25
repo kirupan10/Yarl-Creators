@@ -57,7 +57,7 @@
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('profile')}}">
+						<a class="sidebar-link" href="{{route('users')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Users</span>
             </a>
 					</li>
