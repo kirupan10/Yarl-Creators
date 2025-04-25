@@ -29,6 +29,8 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\FeedbackController;
 
+use App\Http\Controllers\DummyController;
+
 
 
 
@@ -114,6 +116,8 @@ Route::get('/service', [ServiceController::class, 'index'])->name('service');
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/dummy', [DummyController::class, 'index'])->name('dummy');
 
 
 Route::get('/blog', function () {
