@@ -15,6 +15,6 @@ class DashboardController extends Controller
     // Or safely access the user
     $user = auth()->user();
 
-    return view('dashboard', compact('user'));
+    return view('admin.dashboard', compact('user'));
 }
 }

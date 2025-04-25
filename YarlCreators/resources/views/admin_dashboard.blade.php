@@ -24,8 +24,6 @@
 </head>
 
 <body>
-    <h1>Welcome, {{ auth()->user()->name }}!</h1>
-
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
@@ -147,7 +145,7 @@
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
+         <!-- <i class="hamburger align-self-center"></i> This is a comment -->
         </a>
 
 				<div class="navbar-collapse collapse">
