@@ -81,7 +81,7 @@
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('profile')}}">
+						<a class="sidebar-link" href="{{route('logout')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Logout</span>
 
             </a>

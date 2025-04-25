@@ -4,18 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class FeedbackController extends Controller
 {
-    public function index()
-    {
-        return view('blogpage');
-    }
-
-    public function show()
-    {
-        return view('blogview');
-    }
-
     public function view(){
 
         if (!auth()->check()) {
@@ -25,7 +15,6 @@ class BlogController extends Controller
         // Or safely access the user
         $user = auth()->user();
 
-        return view('Blogs_page', compact('user'));
-    }
-
+        return view('Feedbacks_view', compact('user'));
+}
 }

@@ -25,6 +25,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 
+use App\Http\Controllers\OrdersController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\FeedbackController;
+
+
 
 
 
@@ -127,9 +132,28 @@ Route::get('/appointment',[AppointmentController::class, 'index'])->name('appoin
 
 Route::get('/admin',[AdminController::class, 'index'])->name('admin');
 
-Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/order', [OrdersController::class, 'index'])->name('order');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/users', [UsersController::class, 'index'])->name('users');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/Products', [ProductController::class, 'view'])->name('Products');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/Blogs_Page', [BlogController::class, 'view'])->name('Blogs_Page');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/Feedbacks_view', [FeedbackController::class, 'view'])->name('Feedbacks_view');
+});
