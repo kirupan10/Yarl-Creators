@@ -17,7 +17,7 @@
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-	<title>AdminKit Demo - Bootstrap 5 Admin Template</title>
+	<title>Yarl Creators - Dashboard</title>
 
 	<link href="{{ asset('admin/css/app.css') }}" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="index.html">
-          <span class="align-middle">AdminKit</span>
+          <span class="align-middle">Yarl Creators </span>
         </a>
 
 				<ul class="sidebar-nav">
@@ -51,7 +51,7 @@
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('profile')}}">
+						<a class="sidebar-link" href="{{route('order')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Orders</span>
             </a>
 					</li>
