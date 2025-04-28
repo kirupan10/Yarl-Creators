@@ -22,6 +22,11 @@ class UserDashboardController extends Controller
 
     }
 
+    public function user_gallery_view() // user gallery view function
+    {
+        return view('user.gallery'); // Redirects to the gallery view
+    }
+
 
 
     public function contact_store(Request $request) // user contact form details store function

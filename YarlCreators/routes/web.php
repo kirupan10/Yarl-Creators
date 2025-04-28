@@ -62,7 +62,7 @@ Route::get('/MugPrinting', [MugPrintingController::class, 'index'])->name('MugPr
 Route::get('/about', [UserDashboardController::class, 'index'])->name('about');
 Route::get('/appointment',[UserDashboardController::class, 'index'])->name('appointment');
 Route::get('/service',[UserDashboardController::class, 'index'])->name('service');
-Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/gallery', [UserDashboardController::class, 'user_gallery_view'])->name('gallery');
 Route::get('/product', [ProductController::class, 'user_product_view'])->name('product');
 
 Route::get('/blogview', [ProductController::class, 'user_blog_view'])->name('blogview');
