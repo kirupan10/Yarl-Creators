@@ -3,19 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile | Yarl Creators</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="../assets/images/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --primary: #FCA311;
             --background: #000000;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --card-bg: rgba(255, 255, 255, 0.08);
-            --text-color: #E5E5E5;
-            --border: rgba(252, 163, 17, 0.4);
+            --glass: rgba(255, 255, 255, 0.05);
+            --white: #ffffff;
+            --light-text: #E5E5E5;
         }
 
         * {
@@ -27,170 +27,302 @@
 
         body {
             background: var(--background);
-            color: var(--text-color);
-            min-height: 100vh;
+            color: var(--light-text);
         }
 
-        .profile-header {
-            background: linear-gradient(135deg, var(--primary), #14213D);
-            text-align: center;
-            padding: 60px 20px 30px;
-            border-radius: 0 0 25px 25px;
+        /* Top Icons */
+        .top-icons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .top-icons .icon {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
             position: relative;
         }
 
-        .profile-header img {
+        .top-icons .icon:hover {
+            background: var(--primary);
+            color: var(--background);
+        }
+
+        .top-icons .icon img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .top-icons .badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: var(--primary);
+            color: var(--background);
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        /* Logo */
+        .logo {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 100;
+        }
+
+        .logo img {
+            width: 120px;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, var(--primary), #14213D, var(--background));
+            border-radius: 20px;
+            margin: 80px 20px 20px;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero {
+            border-radius: 20px;
+            margin: 80px 20px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            object-fit: cover;
             border: 3px solid var(--primary);
+            object-fit: cover;
             background: var(--background);
-            margin-top: 10px;
         }
 
-        .profile-header h1 {
+        .hero h1 {
             margin-top: 15px;
             font-size: 26px;
         }
 
-        .profile-header p {
-            font-size: 15px;
+        .hero p {
+            font-size: 14px;
             margin-top: 5px;
             opacity: 0.8;
         }
 
         .change-photo {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 14px;
             color: var(--primary);
+            margin-top: 10px;
+            display: inline-block;
             cursor: pointer;
             text-decoration: underline;
+            font-size: 14px;
         }
 
-        .hidden-input {
-            display: none;
-        }
-
-        .profile-container {
+        /* Profile Content */
+        .profile-content {
             width: 90%;
-            max-width: 900px;
+            max-width: 1100px;
             margin: 30px auto;
-            background: var(--glass-bg);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .profile-container h2 {
+        .section {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
             color: var(--primary);
             margin-bottom: 20px;
-            font-size: 24px;
+            font-size: 22px;
         }
 
-        .profile-form label {
+        label {
             display: block;
+            margin: 10px 0 5px;
             font-weight: bold;
-            margin: 12px 0 5px;
         }
 
-        .profile-form input {
+        input {
             width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            background: var(--card-bg);
-            color: var(--text-color);
-            font-size: 16px;
-            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            background: var(--background);
+            color: var(--white);
+            margin-bottom: 15px;
             outline: none;
         }
 
         .save-btn {
-            display: block;
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             background: var(--primary);
-            color: #000;
+            color: var(--background);
             font-weight: bold;
             border: none;
             border-radius: 10px;
-            font-size: 16px;
+            margin-top: 10px;
             transition: 0.3s;
             cursor: pointer;
-            margin-top: 10px;
         }
 
         .save-btn:hover {
-            background: #ffffff;
-            color: #000;
-            box-shadow: 0 0 15px var(--primary);
+            background: var(--white);
+            color: var(--background);
+        }
+
+        /* Order History */
+        .order-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .order-item span {
+            font-weight: bold;
+        }
+
+        /* Bottom Nav */
+        .bottom-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            display: flex;
+            gap: 30px;
+            padding: 10px 30px;
+        }
+
+        .bottom-nav a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .bottom-nav a:hover {
+            color: var(--primary);
         }
 
         @media (max-width: 768px) {
-            .profile-container {
-                padding: 20px;
+            .top-icons .icon {
+                width: 35px;
+                height: 35px;
             }
 
-            .profile-header img {
+            .logo img {
+                width: 90px;
+            }
+
+            .hero img {
                 width: 90px;
                 height: 90px;
             }
+
+            .section h2 {
+                font-size: 18px;
+            }
         }
     </style>
-
 </head>
 
 <body>
 
-    <!-- Profile Header Section -->
-    <section class="profile-header">
-        <img id="profilePhoto" src="../assets/images/Profile/m1.jpg" alt="Profile Picture">
-        <h1 id="profileName">John Doe</h1>
-        <p id="profileEmail">john@example.com</p>
-        <label for="uploadPhoto" class="change-photo">Change Photo</label>
-        <input type="file" id="uploadPhoto" class="hidden-input" accept="image/*" onchange="changePhoto(event)">
+    <!-- Hero -->
+    <section class="hero-banner">
+        <div class="overlay">
+            <h1>About Yarl Creators</h1>
+            <p>Digital Media Production Company Based in Jaffna</p>
+        </div>
     </section>
 
-    <!-- Profile Settings Section -->
-    <section class="profile-container">
-        <h2>🛠 Edit Profile</h2>
+    <!-- Profile Sections -->
+    <div class="profile-content">
 
-        <form class="profile-form" id="profileForm">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" value="John Doe" required>
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" value="john@example.com" required>
-
-            <label for="phone">Phone Number</label>
+        <!-- Edit Profile -->
+        <div class="section">
+            <div class="hero">
+            <img id="profilePic" src="../assets/images/Profile/m1.jpg" alt="Profile Picture">
+            <h1 id="profileName">John Doe</h1>
+            <p id="profileEmail">john@example.com</p>
+            <label for="uploadPhoto" class="change-photo">Change Photo</label>
+            <input type="file" id="uploadPhoto" style="display:none" onchange="changePhoto(event)">
+            </div>
+            <h2>👤 Edit Profile</h2>
+            <label>Full Name</label>
+            <input type="text" id="fullName" value="John Doe">
+            <label>Email Address</label>
+            <input type="email" id="email" value="john@example.com">
+            <label>Phone Number</label>
             <input type="text" id="phone" value="+94 76 606 0499">
-
-            <label for="address">Address</label>
+            <label>Address</label>
             <input type="text" id="address" value="Jaffna, Sri Lanka">
+            <button class="save-btn" onclick="saveProfile()">💾 Save Profile</button>
+        </div>
 
-            <button type="submit" class="save-btn">💾 Save Changes</button>
-        </form>
-    </section>
+        <!-- Change Password -->
+        <div class="section">
+            <h2>🔒 Change Password</h2>
+            <label>Current Password</label>
+            <input type="password" id="currentPassword">
+            <label>New Password</label>
+            <input type="password" id="newPassword">
+            <label>Confirm New Password</label>
+            <input type="password" id="confirmPassword">
+            <button class="save-btn" onclick="updatePassword()">🔄 Update Password</button>
+        </div>
+
+    </div>
+
+    <!-- Bottom Navbar -->
+    
 
     <script>
         function changePhoto(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function (e) {
-                    document.getElementById('profilePhoto').src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('profilePic').src = e.target.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
         }
 
-        document.getElementById('profileForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Profile updated successfully!');
-        });
+        function saveProfile() {
+            alert('✅ Profile Updated Successfully!');
+        }
+
+        function updatePassword() {
+            alert('🔒 Password Changed Successfully!');
+        }
     </script>
 
 </body>
