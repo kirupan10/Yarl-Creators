@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile | Yarl Creators</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="../assets/images/logo.png" type="image/png">
+
+    <style>
+        :root {
+            --primary: #FCA311;
+            --background: #000000;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --card-bg: rgba(255, 255, 255, 0.08);
+            --text-color: #E5E5E5;
+            --border: rgba(252, 163, 17, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, var(--primary), #14213D);
+            text-align: center;
+            padding: 60px 20px 30px;
+            border-radius: 0 0 25px 25px;
+            position: relative;
+        }
+
+        .profile-header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            background: var(--background);
+            margin-top: 10px;
+        }
+
+        .profile-header h1 {
+            margin-top: 15px;
+            font-size: 26px;
+        }
+
+        .profile-header p {
+            font-size: 15px;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        .change-photo {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--primary);
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .hidden-input {
+            display: none;
+        }
+
+        .profile-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+            background: var(--glass-bg);
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-container h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .profile-form label {
+            display: block;
+            font-weight: bold;
+            margin: 12px 0 5px;
+        }
+
+        .profile-form input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--card-bg);
+            color: var(--text-color);
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        .save-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: 0.3s;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .save-btn:hover {
+            background: #ffffff;
+            color: #000;
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 20px;
+            }
+
+            .profile-header img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Profile Header Section -->
+    <section class="profile-header">
+        <img id="profilePhoto" src="../assets/images/Profile/m1.jpg" alt="Profile Picture">
+        <h1 id="profileName">John Doe</h1>
+        <p id="profileEmail">john@example.com</p>
+        <label for="uploadPhoto" class="change-photo">Change Photo</label>
+        <input type="file" id="uploadPhoto" class="hidden-input" accept="image/*" onchange="changePhoto(event)">
+    </section>
+
+    <!-- Profile Settings Section -->
+    <section class="profile-container">
+        <h2>🛠 Edit Profile</h2>
+
+        <form class="profile-form" id="profileForm">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" value="John Doe" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" value="john@example.com" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" value="+94 76 606 0499">
+
+            <label for="address">Address</label>
+            <input type="text" id="address" value="Jaffna, Sri Lanka">
+
+            <button type="submit" class="save-btn">💾 Save Changes</button>
+        </form>
+    </section>
+
+    <script>
+        function changePhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('profilePhoto').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Profile updated successfully!');
+        });
+    </script>
+
+</body>
+
+</html>
