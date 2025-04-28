@@ -6,16 +6,16 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function user_product_view()
     {
-        return view('products'); // Redirects to the product index view
+        return view('user.products'); // Redirects to the product index view
     }
 
     public function show(){
         return view('CameraAccessories');
     }
 
-    public function view(){
+    public function admin_products_view(){
 
         if (!auth()->check()) {
             return redirect()->route('login');
@@ -24,6 +24,6 @@ class ProductController extends Controller
         // Or safely access the user
         $user = auth()->user();
 
-        return view('products', compact('user'));
+        return view('admin.products', compact('user'));
     }
 }

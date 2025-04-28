@@ -43,13 +43,13 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('profile')}}">
+						<a class="sidebar-link" href="{{route('admin_profile')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
             </a>
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('order')}}">
+						<a class="sidebar-link" href="{{route('orders')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Orders</span>
             </a>
 					</li>
@@ -61,19 +61,19 @@
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('Products')}}">
+						<a class="sidebar-link" href="{{route('admin_products')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Products</span>
             </a>
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('Blogs_Page')}}">
+						<a class="sidebar-link" href="{{route('admin_blogs')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Blogs</span>
             </a>
 					</li>
 
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('Feedbacks_view')}}">
+						<a class="sidebar-link" href="{{route('feedback')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Feedbacks</span>
             </a>
 					</li>

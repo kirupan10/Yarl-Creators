@@ -137,7 +137,7 @@
             <i class="fas fa-images"></i>
             <span>Gallery</span>
         </a>
-        <a href="{{route('products')}}" class="nav-item" data-page="shop">
+        <a href="{{route('product')}}" class="nav-item" data-page="shop">
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>
         </a>

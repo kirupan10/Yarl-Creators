@@ -1,40 +1,20 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductController
+;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\PaintingFramesController;
-use App\Http\Controllers\SketchesController;
-use App\Http\Controllers\MugPrintingController;
 
-use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\GalleryController;
 
-use App\Http\Controllers\AboutController;
-
-use App\Http\Controllers\AppointmentController;
-
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 
-use App\Http\Controllers\OrdersController;
-use App\Http\Controllers\UsersController;
-use App\Http\Controllers\FeedbackController;
 
-use App\Http\Controllers\DummyController;
-
-
-
-
-
+use App\Http\Controllers\UserDashboardController;
 
 
 /*
@@ -52,102 +32,55 @@ Route::get('/', function () {
     return view('index');
 });
 
+// User Routes
+
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
-
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'postRegistration'])->name('register.post');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
-
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store'); //hiruthikan
 
-Route::get('/products', function () {
-    return view('products');
-});
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 Route::get('/profile/delete', [ProfileController::class, 'destroy'])->name('profile.delete');
 
-Route::get('/products',[ProductController::class,'index'])->name('products');
-
-Route::get('/products/create',[ProductController::class,'create'])->name('products.create');
-Route::post('/products/store',[ProductController::class,'store'])->name('products.store');
-Route::get('/products/{id}/edit',[ProductController::class,'edit'])->name('products.edit');
-Route::post('/products/{id}/update',[ProductController::class,'update'])->name('products.update');
-Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
-Route::get('/products/{id}',[ProductController::class,'show'])->name('products.show');
-Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
-Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
-Route::get('/products/{id}/delete',[ProductController::class,'destroy'])->name('products.delete');
-
-
-
-//Route::get('/products', [ProductController::class, 'index'])->name('products');
-
+Route::get('/admin_products',[ProductController::class,'admin_products_view'])->name('admin_products');
+Route::get('/user_products',[ProductController::class,'user_products_view'])->name('user_products');
 
 Route::get('/CameraAccessories', [ProductController::class, 'CameraAccessories'])->name('CameraAccessories'); //CameraAccessories return view
 Route::get('/PaintingFrames', [PaintingFramesController::class, 'index'])->name('PaintingFrames'); //painting frames
-
 Route::get('/Sketches', [SketchesController::class, 'index'])->name('Sketches');
-
-
 Route::get('/MugPrinting', [MugPrintingController::class, 'index'])->name('MugPrinting');
-
-Route::get('/gallery', function () {
-    return view('gallery');
-});
-
+Route::get('/about', [UserDashboardController::class, 'index'])->name('about');
+Route::get('/appointment',[UserDashboardController::class, 'index'])->name('appointment');
+Route::get('/service',[UserDashboardController::class, 'index'])->name('service');
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+Route::get('/product', [ProductController::class, 'user_product_view'])->name('product');
 
-Route::get('/service', function () {
-    return view('service');
-});
+Route::get('/blogview', [ProductController::class, 'user_blog_view'])->name('blogview');
 
-Route::get('/service', [ServiceController::class, 'index'])->name('service');
+Route::get('/contact', [UserDashboardController::class, 'user_contact_view'])->name('contact');
 
-Route::get('/contact', [ContactController::class, 'show'])->name('contact');
-
-Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
-
-Route::get('/dummy', [DummyController::class, 'index'])->name('dummy');
-
-
-Route::get('/blog', function () {
-    return view('blog'); // this loads resources/views/blog.blade.php
-});
-
-
-Route::get('/blogpage', [BlogController::class, 'index'])->name('blog');
-Route::get('/blogview', [BlogController::class, 'show'])->name('blogview');
-
-
-Route::get('/about', [AboutController::class, 'index'])->name('about');
-
-
-Route::get('/appointment',[AppointmentController::class, 'index'])->name('appointment');
-
-Route::get('/admin',[AdminController::class, 'index'])->name('admin');
-
-
+//Admin Routes
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard'); //admin dashboard route
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/order', [OrdersController::class, 'index'])->name('order');
+    Route::get('/orders', [DashboardController::class, 'orders_view'])->name('orders'); //admin orders.view route
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/users', [UsersController::class, 'index'])->name('users');
+    Route::get('/users', [DashboardController::class, 'users.view'])->name('users'); //admin users.view route
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -155,9 +88,23 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/Blogs_Page', [BlogController::class, 'view'])->name('Blogs_Page');
+    Route::get('/admin_blogs', [BlogController::class, 'view'])->name('admin_blogs');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/Feedbacks_view', [FeedbackController::class, 'view'])->name('Feedbacks_view');
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/feedback', [DashboardController::class, 'feedback_view'])->name('feedback');
 });
+
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/admin_blogs', [DashboardController::class, 'admin_blogs_view'])->name('admin_blogs');
+});
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/admin_profile', [ProfileController::class, 'admin_profile_view'])->name('admin_profile');
+});
+
+
+Route::get('/admin_login', [AuthController::class, 'admin_login'])->name('admin_login');
+
+Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');

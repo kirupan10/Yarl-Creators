@@ -9,7 +9,7 @@ class ProfileController extends Controller
     public function index()
     {
         // Logic to retrieve and display the user's profile
-        return view('profile');
+        return view('user.profile');
     }
     public function editProfile(Request $request)
     {
@@ -39,5 +39,11 @@ class ProfileController extends Controller
     {
         // Logic to display profile settings
         return view('profile.settings');
+    }
+
+    public function admin_profile_view()
+    {
+        // Logic to display admin profile
+        return view('admin.profile');
     }
 }

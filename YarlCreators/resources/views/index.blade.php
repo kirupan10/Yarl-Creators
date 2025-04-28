@@ -1,4 +1,4 @@
-@extends('user_layout')
+@extends('layout')
 
 @section('content')
 
@@ -52,7 +52,7 @@
 
             <!-- Show More Button -->
             <div class="show-more-container">
-                <a href="{{ route('products') }}" class="show-more-btn">Show More</a>
+                <a href="{{ route('product') }}" class="show-more-btn">Show More</a>
             </div>
         </section>
 
