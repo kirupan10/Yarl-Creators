@@ -23,6 +23,8 @@ use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 
+use App\Http\Controllers\ReportController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -139,4 +141,8 @@ Route::middleware(['auth'])->group(function () { //feedback route
 
 Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/settings', [DashboardController::class, 'setting_view'])->name('setting');
+});
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/report-management', [ReportController::class, 'report_management_view'])->name('report-management');
 });
