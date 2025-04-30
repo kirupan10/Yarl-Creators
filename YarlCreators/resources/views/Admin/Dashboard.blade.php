@@ -225,7 +225,7 @@
 
     <!-- Sidebar -->
 
-<nav class="sidebar">
+    <nav class="sidebar">
         <h2>Yarl Creators</h2>
         <a href="dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="booking-management"><i class="fas fa-calendar-check"></i> Bookings</a>
@@ -333,7 +333,10 @@
         window.onscroll = () => {
             scrollBtn.style.display = window.scrollY > 400 ? 'block' : 'none';
         };
-        scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+        scrollBtn.onclick = () => window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
 
         // Services Chart
         new Chart(document.getElementById('servicesChart'), {
@@ -348,8 +351,21 @@
                 }]
             },
             options: {
-                plugins: { legend: { display: false } },
-                scales: { x: { grid: { display: false } }, y: { beginAtZero: true } }
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
             }
         });
 
@@ -368,10 +384,24 @@
                 }]
             },
             options: {
-                plugins: { legend: { labels: { color: '#2B2D42' } } },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#2B2D42'
+                        }
+                    }
+                },
                 scales: {
-                    x: { ticks: { color: '#2B2D42' } },
-                    y: { ticks: { color: '#2B2D42' } }
+                    x: {
+                        ticks: {
+                            color: '#2B2D42'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#2B2D42'
+                        }
+                    }
                 }
             }
         });
