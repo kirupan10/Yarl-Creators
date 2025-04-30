@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {
-    public function inventory_management(){
+    public function inventory_management_view(){
         if (!auth()->check()) {
             return redirect()->route('login');
         }

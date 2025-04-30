@@ -20,6 +20,9 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\InventoryController;
 
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,14 +117,26 @@ Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
 
 
 Route::middleware(['auth'])->group(function () { //feedback route
-    Route::get('/booking-management', [BookingController::class, 'booking_management'])->name('booking-management');
+    Route::get('/booking-management', [BookingController::class, 'booking_management_view'])->name('booking-management');
 });
 
 Route::middleware(['auth'])->group(function () { //feedback route
-    Route::get('/inventory-management', [InventoryController::class, 'inventory_management'])->name('inventory-management');
+    Route::get('/inventory-management', [InventoryController::class, 'inventory_management_view'])->name('inventory-management');
 });
 
 Route::middleware(['auth'])->group(function () { //feedback route
-    Route::get('/blog-management', [BlogController::class, 'blog_management'])->name('blog-management');
+    Route::get('/blog-management', [BlogController::class, 'blog_management_view'])->name('blog-management');
 });
 
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/order-management', [OrderController::class, 'order_management_view'])->name('order-management');
+});
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/user-management', [userController::class, 'user_management_view'])->name('user-management');
+});
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/settings', [DashboardController::class, 'setting_view'])->name('setting');
+});

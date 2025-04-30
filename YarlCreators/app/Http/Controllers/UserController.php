@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BookingController extends Controller
+class UserController extends Controller
 {
-    public function booking_management_view(){
+    public function user_management_view(){
         if (!auth()->check()) {
             return redirect()->route('login');
         }
@@ -14,6 +14,6 @@ class BookingController extends Controller
         // Or safely access the user
         $user = auth()->user();
 
-        return view('admin.booking_management', compact('user'));
+        return view('admin.user_management', compact('user'));
     }
 }

@@ -232,9 +232,10 @@
         <a href="inventory-management"><i class="fas fa-boxes"></i> Inventory</a>
         <a href="blog-management"><i class="fas fa-blog"></i> Blog</a>
         <a href="order-management"><i class="fas fa-shopping-cart"></i> Orders</a>
-        <a href="report-analytics"><i class="fas fa-chart-line"></i> Reports</a>
+        <a href="report-management"><i class="fas fa-chart-line"></i> Reports</a>
         <a href="user-management"><i class="fas fa-users"></i> Users</a>
         <a href="settings"><i class="fas fa-cog"></i> Settings</a>
+        <a href="{{ route('logout') }}"><i class="fas fa-cog"></i> Logout</a>
     </nav>
     <!-- Main -->
     <main>

@@ -66,4 +66,20 @@ public function admin_blogs_view(){ // admin blog view function
 
     return view('admin.blog', compact('user'));
 }
+
+public function setting_view(){ // admin blog view function
+    // Check if the user is authenticated
+    // If not, redirect to the login page
+
+    if (!auth()->check()) {
+        return redirect()->route('login');
+    }
+
+    // Or safely access the user
+    $user = auth()->user();
+
+    return view('admin.settings', compact('user'));
+}
+
+
 }
