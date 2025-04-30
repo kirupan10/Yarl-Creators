@@ -17,6 +17,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\BookingController;
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,3 +116,12 @@ Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
 Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/booking-management', [BookingController::class, 'booking_management'])->name('booking-management');
 });
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/inventory-management', [InventoryController::class, 'inventory_management'])->name('inventory-management');
+});
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/blog-management', [BlogController::class, 'blog_management'])->name('blog-management');
+});
+
