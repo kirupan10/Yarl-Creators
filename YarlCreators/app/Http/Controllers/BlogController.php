@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function blog_management(){
+    public function blog_management_view(){
         if (!auth()->check()) {
             return redirect()->route('login');
         }

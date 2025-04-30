@@ -203,9 +203,9 @@
     <!-- Sidebar -->
     <nav class="sidebar">
         <h2>Yarl Creators</h2>
-        <a href="dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="dashboard" ><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="booking-management"><i class="fas fa-calendar-check"></i> Bookings</a>
-        <a href="inventory-management"><i class="fas fa-boxes"></i> Inventory</a>
+        <a href="inventory-management" class="active"><i class="fas fa-boxes"></i> Inventory</a>
         <a href="blog-management"><i class="fas fa-blog"></i> Blog</a>
         <a href="order-management"><i class="fas fa-shopping-cart"></i> Orders</a>
         <a href="report-management"><i class="fas fa-chart-line"></i> Reports</a>
