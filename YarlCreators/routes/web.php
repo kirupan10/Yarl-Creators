@@ -15,6 +15,7 @@ use App\Http\Controllers\DashboardController;
 
 
 use App\Http\Controllers\UserDashboardController;
+use App\Http\Controllers\BookingController;
 
 
 /*
@@ -108,3 +109,8 @@ Route::middleware(['auth'])->group(function () { //feedback route
 Route::get('/admin_login', [AuthController::class, 'admin_login'])->name('admin_login');
 
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login.post');
+
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/booking-management', [BookingController::class, 'booking_management'])->name('booking-management');
+});
