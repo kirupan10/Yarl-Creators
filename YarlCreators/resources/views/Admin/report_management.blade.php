@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reports & Analytics | Yarl Creators</title>
+    <title>User Management | Yarl Creators</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="icon" type="image/png" href="../Assets/images/logo.png" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="../Assets/images/logo.png" />
 
     <style>
         :root {
@@ -18,7 +17,8 @@
             --text-color: #2B2D42;
             --sidebar-bg: #2B2D42;
             --sidebar-text: #EDF2F4;
-            --sidebar-hover: #EF233C;
+            --blue: #3498db;
+            --red: #e74c3c;
         }
 
         * {
@@ -35,15 +35,14 @@
             min-height: 100vh;
         }
 
-        /* Sidebar */
         .sidebar {
             width: 240px;
             background: var(--sidebar-bg);
             height: 100vh;
             padding: 30px 20px;
             position: fixed;
-            left: 0;
             top: 0;
+            left: 0;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -74,112 +73,184 @@
             color: #ffffff;
         }
 
-        /* Main Content */
         main {
             margin-left: 240px;
             padding: 30px;
             width: calc(100% - 240px);
         }
 
-        header {
+        .booking-banner {
             background: linear-gradient(135deg, var(--primary), var(--sidebar-bg));
-            padding: 40px 20px;
+            padding: 50px 20px;
             border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
             color: white;
-            margin-bottom: 30px;
-            text-align: center;
         }
 
-        header h1 {
+        .booking-banner h1 {
             font-size: 36px;
-        }
-
-        header p {
-            margin-top: 10px;
-            color: #ddd;
-        }
-
-        .summary-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h2 {
-            font-size: 28px;
-            color: var(--primary);
             margin-bottom: 10px;
         }
 
-        .card p {
-            font-size: 16px;
-        }
-
-        .filters {
+        .user-controls {
             display: flex;
-            justify-content: flex-end;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
             flex-wrap: wrap;
+            gap: 20px;
         }
 
-        .filters select,
-        .filters button {
-            padding: 10px 14px;
+        .user-controls button {
+            background: var(--primary);
             border: none;
+            padding: 12px 20px;
             border-radius: 8px;
-            font-size: 14px;
+            color: white;
+            font-weight: bold;
             cursor: pointer;
         }
 
-        .filters select {
+        .search-box {
+            display: flex;
+            align-items: center;
             background: var(--card-bg);
-            color: var(--text-color);
-            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .filters button {
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 16px;
+            color: var(--text-color);
+            padding: 8px;
+        }
+
+        .search-box i {
+            font-size: 18px;
+            margin-right: 8px;
+            color: var(--primary);
+        }
+
+        .user-table {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        th,
+        td {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
             background: var(--primary);
             color: white;
         }
 
-        .charts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
+        tr:hover {
+            background: #f5f5f5;
         }
 
-        .chart-card {
-            background: var(--card-bg);
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+
+        .action-btn {
+            padding: 8px 14px;
+            font-size: 14px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0 5px;
+            transition: 0.3s;
+        }
+
+        .edit-btn {
+            background: var(--blue);
+            color: white;
+        }
+
+        .edit-btn:hover {
+            background: #2980b9;
+        }
+
+        .delete-btn {
+            background: var(--red);
+            color: white;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            z-index: 999;
         }
 
-        .chart-card h3 {
-            margin-bottom: 10px;
-            font-size: 20px;
-            color: var(--primary);
+        .modal-content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 100%;
             text-align: center;
         }
 
-        canvas {
-            width: 100% !important;
-            height: 300px !important;
+        .modal-content input,
+        .modal-content select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            border-radius: 8px;
+            background: var(--background);
+            color: var(--text-color);
+        }
+
+        .modal-actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .modal-actions button:first-child {
+            background: var(--primary);
+            color: white;
+        }
+
+        .modal-actions button:last-child {
+            background: var(--red);
+            color: white;
         }
 
         @media (max-width: 768px) {
@@ -197,127 +268,123 @@
 
 <body>
 
-    <!-- Sidebar -->
     <nav class="sidebar">
         <h2>Yarl Creators</h2>
-        <a href="dashboard" ><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="booking-management"><i class="fas fa-calendar-check"></i> Bookings</a>
         <a href="inventory-management"><i class="fas fa-boxes"></i> Inventory</a>
         <a href="blog-management"><i class="fas fa-blog"></i> Blog</a>
         <a href="order-management"><i class="fas fa-shopping-cart"></i> Orders</a>
         <a href="report-management" class="active"><i class="fas fa-chart-line"></i> Reports</a>
-        <a href="user-management"><i class="fas fa-users"></i> Users</a>
+        <a href="user-management" ><i class="fas fa-users"></i> Users</a>
         <a href="settings"><i class="fas fa-cog"></i> Settings</a>
         <a href="{{ route('logout') }}"><i class="fas fa-cog"></i> Logout</a>
     </nav>
 
-    <!-- Main Content -->
     <main>
 
-        <header>
-            <h1>📈 Reports & Analytics</h1>
-            <p>Track performance, sales, users, and activities</p>
-        </header>
-
-        <section class="summary-cards">
-            <div class="card">
-                <h2>LKR 2.5M</h2>
-                <p>Total Revenue</p>
-            </div>
-            <div class="card">
-                <h2>320</h2>
-                <p>Total Bookings</p>
-            </div>
-            <div class="card">
-                <h2>220</h2>
-                <p>Total Orders</p>
-            </div>
-            <div class="card">
-                <h2>75</h2>
-                <p>New Users</p>
-            </div>
+        <section class="booking-banner">
+            <h1>👥 Reports & Feedback Management</h1>
+            <p>Manage reports and control access levels.</p>
         </section>
 
-        <div class="filters">
-            <select id="monthFilter">
-                <option>April</option>
-                <option>March</option>
-                <option>February</option>
-                <option>January</option>
-            </select>
-            <select id="yearFilter">
-                <option>2025</option>
-                <option>2024</option>
-                <option>2023</option>
-            </select>
-            <button onclick="alert('Exporting Report...')">📄 Export Report</button>
+        <div class="user-controls">
+            <div></div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchUser" placeholder="Search by name or role" onkeyup="renderUsers()" />
+            </div>
         </div>
 
-        <section class="charts-grid">
-            <div class="chart-card">
-                <h3>Revenue Trend</h3>
-                <canvas id="revenueChart"></canvas>
-            </div>
-
-            <div class="chart-card">
-                <h3>Service Bookings</h3>
-                <canvas id="serviceChart"></canvas>
-            </div>
-
-            <div class="chart-card">
-                <h3>Order Status</h3>
-                <canvas id="orderStatusChart"></canvas>
-            </div>
+        <section class="user-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Profile</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="userList"></tbody>
+            </table>
         </section>
+
+        <div class="modal" id="userModal">
+            <div class="modal-content">
+                <h2 id="formTitle">Add User</h2>
+                <input type="text" id="userName" placeholder="Full Name" />
+                <input type="email" id="userEmail" placeholder="Email" />
+                <select id="userRole">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                </select>
+                <div class="modal-actions">
+                    <button class="action-btn edit-btn" onclick="saveUser()">💾 Save</button>
+                    <button class="action-btn delete-btn" onclick="closeForm()">❌ Cancel</button>
+                </div>
+
+            </div>
+        </div>
 
     </main>
 
     <script>
-        // Revenue Trend
-        new Chart(document.getElementById('revenueChart'), {
-            type: 'line',
-            data: {
-                labels: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
-                datasets: [{
-                    label: 'Revenue (LKR)',
-                    data: [150000, 180000, 200000, 220000, 250000, 275000],
-                    borderColor: '#EF233C',
-                    backgroundColor: 'rgba(239,35,60,0.2)',
-                    fill: true,
-                    tension: 0.4
-                }]
-            },
-            options: { responsive: true }
-        });
+        const users = [
+            { name: "John Doe", email: "john@example.com", role: "admin", profile: "../Assets/images/Profile/m1.jpg" },
+            { name: "Jane Smith", email: "jane@example.com", role: "user", profile: "../Assets/images/Profile/m2.jpg" }
+        ];
 
-        // Service Bookings
-        new Chart(document.getElementById('serviceChart'), {
-            type: 'bar',
-            data: {
-                labels: ['Photography', 'Videography', 'Drone', 'Editing'],
-                datasets: [{
-                    label: 'Bookings',
-                    data: [80, 55, 30, 40],
-                    backgroundColor: ['#EF233C', '#8D99AE', '#2B2D42', '#D90429'],
-                    borderRadius: 8
-                }]
-            },
-            options: { responsive: true, plugins: { legend: { display: false } } }
-        });
+        function renderUsers() {
+            const searchQuery = document.getElementById('searchUser').value.toLowerCase();
+            const list = document.getElementById('userList');
+            list.innerHTML = '';
 
-        // Order Status
-        new Chart(document.getElementById('orderStatusChart'), {
-            type: 'pie',
-            data: {
-                labels: ['Pending', 'Processing', 'Completed', 'Cancelled'],
-                datasets: [{
-                    label: 'Orders',
-                    data: [20, 40, 120, 40],
-                    backgroundColor: ['#FFC107', '#3498db', '#2ecc71', '#e74c3c']
-                }]
-            },
-            options: { responsive: true }
-        });
+            users
+                .filter(user => user.name.toLowerCase().includes(searchQuery) || user.role.toLowerCase().includes(searchQuery))
+                .forEach((user, index) => {
+                    list.innerHTML += `
+            <tr>
+              <td><img class="profile-img" src="${user.profile}" alt="${user.name}"></td>
+              <td>${user.name}</td>
+              <td>${user.email}</td>
+              <td>${user.role.charAt(0).toUpperCase() + user.role.slice(1)}</td>
+              <td>
+                <button class="action-btn delete-btn" onclick="deleteUser(${index})">🗑 Delete</button>
+              </td>
+            </tr>
+          `;
+                });
+        }
+
+        function openForm() {
+            document.getElementById('userModal').style.display = 'flex';
+        }
+
+        function closeForm() {
+            document.getElementById('userModal').style.display = 'none';
+        }
+
+        function saveUser() {
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const role = document.getElementById('userRole').value;
+            users.push({ name, email, role, profile: "../Assets/images/placeholder-profile.png" });
+            closeForm();
+            renderUsers();
+        }
+
+
+
+        function deleteUser(index) {
+            if (confirm('Are you sure to delete?')) {
+                users.splice(index, 1);
+                renderUsers();
+            }
+        }
+
+        window.onload = renderUsers;
     </script>
 
 </body>
