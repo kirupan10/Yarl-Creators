@@ -224,7 +224,8 @@
 <body>
 
     <!-- Sidebar -->
-    <nav class="sidebar">
+
+<nav class="sidebar">
         <h2>Yarl Creators</h2>
         <a href="dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="booking-management"><i class="fas fa-calendar-check"></i> Bookings</a>
@@ -235,7 +236,6 @@
         <a href="user-management"><i class="fas fa-users"></i> Users</a>
         <a href="settings"><i class="fas fa-cog"></i> Settings</a>
     </nav>
-
     <!-- Main -->
     <main>
         <header>
