@@ -36,7 +36,7 @@
 
             @if (Auth::check())
                 <!-- User is logged in, show user profile or logout icon -->
-                <a href="#" class="icon profile" title="Profile">
+                <a href="profile" class="icon profile" title="Profile">
                     <img src="{{ asset('admin_assets/img/Profile/m1.jpg') }}" alt="Profile" class="profile-img-top">
                 </a>
                 <a href="{{ route('logout') }}" class="icon logout"><i class="fas fa-sign-out-alt"></i></a>

@@ -48,6 +48,7 @@ Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/register', [AuthController::class, 'postRegistration'])->name('register.post');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blogpage', [BlogController::class, 'index'])->name('blog');
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -73,7 +74,8 @@ Route::get('/service',[UserDashboardController::class, 'index'])->name('service'
 Route::get('/gallery', [UserDashboardController::class, 'user_gallery_view'])->name('gallery');
 Route::get('/product', [ProductController::class, 'user_product_view'])->name('product');
 
-Route::get('/blogview', [ProductController::class, 'user_blog_view'])->name('blogview');
+Route::get('/blogview', [BlogController::class, 'user_blog_view'])->name('blogview');
+Route::get('/blogpage', [BlogController::class, 'user_page_view'])->name('blogpage');
 
 Route::get('/contact', [UserDashboardController::class, 'user_contact_view'])->name('contact');
 
@@ -164,3 +166,5 @@ Route::middleware(['auth'])->group(function () { //feedback route
 Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/booking-history', [BookingController::class, 'user_booking_history'])->name('booking-history');
 });
+
+

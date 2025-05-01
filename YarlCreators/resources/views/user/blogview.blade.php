@@ -179,7 +179,7 @@
             <span>Blog</span>
         </a>
 
-        <a href="{{route('products')}}" class="nav-item" data-page="shop">
+        <a href="" class="nav-item" data-page="shop">
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>
         </a>
