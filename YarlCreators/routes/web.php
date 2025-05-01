@@ -167,4 +167,8 @@ Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/booking-history', [BookingController::class, 'user_booking_history'])->name('booking-history');
 });
 
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/create-blog', [BlogController::class, 'create_blog'])->name('create-blog');
+});
+
 

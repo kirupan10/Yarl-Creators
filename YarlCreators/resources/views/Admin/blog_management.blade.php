@@ -37,12 +37,28 @@
 
 
         <div class="actions-top">
-            <button onclick="window.location.href='create-blog.html'">➕ New Blog</button>
+            <button onclick="window.location.href='create-blog'">➕ New Blog</button>
         </div>
 
-        <section class="blog-grid" id="blogList">
-            <!-- Dynamic blogs will load here -->
-        </section>
+        @foreach($blogs as $blog)
+        <div class="card mb-4">
+            <img src="{{ asset('storage/' . $blog->image) }}" class="card-img-top" alt="{{ $blog->main_title }}" style="max-height: 300px; object-fit: cover;">
+
+            <div class="card-body">
+                <h2 class="card-title">{{ $blog->main_title }}</h2>
+                <p><strong>Date:</strong> {{ $blog->date->format('F d, Y') }}</p>
+                <p><strong>Category:</strong> {{ $blog->category }}</p>
+                <p>{{ $blog->excerpt }}</p>
+
+                @if($blog->sub_heading)
+                    <h4>{{ $blog->sub_heading }}</h4>
+                    <p>{{ $blog->sub_details }}</p>
+                @endif
+
+                <a href="#" class="btn btn-primary">Read Full Blog</a>
+            </div>
+        </div>
+    @endforeach
 
         <!-- Modal -->
         <div id="blogModal" class="modal">
