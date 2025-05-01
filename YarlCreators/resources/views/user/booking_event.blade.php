@@ -154,9 +154,9 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="../assets/Js/script.js"></script>
+    <script src="{{asset('Js/script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="../assets/Js/booking-event.js"></script>
+    <script src=" {{asset('Js/booking-event.js')}}"></script>
 
 
 </body>
