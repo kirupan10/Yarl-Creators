@@ -45,11 +45,11 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Profile</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Role</th>
-                        <th>Actions</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Date & Time</th>
                     </tr>
                 </thead>
                 <tbody id="userList"></tbody>
