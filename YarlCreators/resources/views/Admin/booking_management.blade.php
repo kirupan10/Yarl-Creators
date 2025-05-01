@@ -47,20 +47,25 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="bookingTable"></tbody>
                 @foreach ($bookings as $booking)
             <tr>
-                <td>{{ $booking->profile }}</td>
+                <td><img class="profile-img" src="{{asset('admin_assets/img/Acc.jpg')}}" alt=""></td>
                 <td>{{ $booking->name }}</td>
                 <td>{{ $booking->service }}</td>
                 <td>{{ $booking->package }}</td>
                 <td>{{ $booking->date }}</td>
-                <td>{{ $booking->status }}</td>
                 <td>
-                    <!-- Actions (e.g., edit/delete buttons) -->
-                    <a href="#">Edit</a> |
-                    <a href="#">Delete</a>
+                    <select onchange="changeStatus({{ $loop->index }}, this.value)">
+                        <option value="Pending" {{ $booking->status === 'Pending' ? 'selected' : '' }}>Pending</option>
+                        <option value="Confirmed" {{ $booking->status === 'Confirmed' ? 'selected' : '' }}>Confirmed</option>
+                        <option value="Cancelled" {{ $booking->status === 'Cancelled' ? 'selected' : '' }}>Cancelled</option>
+                        <option value="Completed" {{ $booking->status === 'Completed' ? 'selected' : '' }}>Completed</option>
+                    </select>
                 </td>
+                <td>
+                    <button class="view-btn" onclick="openModal(${index})">View</button>
+                    <button class="edit-btn" onclick="editBooking(${index})">Edit</button>
+                  </td>
             </tr>
         @endforeach
             </table>

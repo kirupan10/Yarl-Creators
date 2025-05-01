@@ -52,7 +52,6 @@
                         <th>Date & Time</th>
                     </tr>
                 </thead>
-                <tbody id="userList"></tbody>
                 @foreach($contacts as $contact)
                 <tr>
                     <td>{{ $contact->name }}</td>

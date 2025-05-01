@@ -42,7 +42,7 @@
             <div class="cards">
                 <div class="card">
                     <h3>Total Bookings</h3>
-                    <p>184</p>
+                    <p>{{ \App\Models\Booking::count() }}</p>
                 </div>
                 <div class="card">
                     <h3>Upcoming Events</h3>
@@ -53,8 +53,8 @@
                     <p>LKR 425,000</p>
                 </div>
                 <div class="card">
-                    <h3>New Users</h3>
-                    <p>37</p>
+                    <h3>Total Users</h3>
+                    <p>{{ \App\Models\User::count() }}</p>
                 </div>
             </div>
 

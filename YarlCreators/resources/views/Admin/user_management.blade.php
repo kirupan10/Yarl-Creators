@@ -52,7 +52,20 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="userList"></tbody>
+                <tbody>
+                    @foreach ($user as $user)
+                    <tr>
+                        <td><img class="profile-img" src="{{asset('admin_assets/img/Acc.jpg')}}" alt=""></td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->created_at->format('Y-m-d H:i:s') }}</td>
+                        <td>
+                            <button class="action-btn edit-btn" onclick="openForm({{ $user->id }})">✏️ Edit</button>
+                            <button class="action-btn delete-btn" onclick="deleteUser({{ $user->id }})">❌ Delete</button>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
         </section>
 
