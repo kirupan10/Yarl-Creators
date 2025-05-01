@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" href="../Assets/images/logo.png" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./admin_assets/css/temp.css" />
+    <link rel="stylesheet" href=" {{ asset('admin_assets/css/order_management.css') }}" />
 </head>
 
 <body>
