@@ -63,8 +63,7 @@
         </div>
 
     </main>
-
-    <script src="./admin_assets/js/blog_management.js"></script>
+    <script src="{{ asset('admin_assets/js/blog_management.js') }}"></script>
 
 </body>
 

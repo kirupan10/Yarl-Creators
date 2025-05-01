@@ -101,7 +101,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./admin_assets/js/dashboard.js"></script>
+    <script src="{{ asset('admin_assets/js/dashboard.js') }}"></script>
 
 </body>
 

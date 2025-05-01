@@ -91,8 +91,7 @@
             </div>
         </div>
     </main>
-
-    <script src="./admin_assets/js/booking_management.js"></script>
+    <script src="{{ asset('admin_assets/js/booking_management.js') }}"></script>
 
 </body>
 

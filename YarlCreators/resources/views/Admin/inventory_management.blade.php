@@ -68,8 +68,7 @@
             <div id="noResults" class="no-results" style="display: none;">No inventory items found.</div>
         </section>
     </main>
-
-    <script src="./admin_assets/js/inventory_management.js"></script>
+    <script src="{{ asset('admin_assets/js/inventory_management.js') }}"></script>
 
 </body>
 
