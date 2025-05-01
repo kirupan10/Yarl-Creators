@@ -7,10 +7,10 @@
     <title>Yarl Creators</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/Booking-event.css" />
-    <link rel="stylesheet" href="../assets/css/nav.css" />
-    <link rel="stylesheet" href="../assets/css/ScrollToTop.css" />
-    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="{{asset('css/Booking_event.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/nav.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/ScrollToTop.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/footer.css')}}" />
     <link rel="icon" type="image/png" href="../assets/images/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -84,7 +84,7 @@
                 <p>A full-service digital media production company based in Jaffna. We craft stories with creativity,
                     innovation, and passion.</p>
             </div>
-    
+
             <!-- Quick Links -->
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -96,7 +96,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-    
+
             <!-- Contact Info -->
             <div class="footer-col">
                 <h4>Contact</h4>
@@ -106,7 +106,7 @@
                     <li><i class="fas fa-envelope"></i> info@yarlcreators.com</li>
                 </ul>
             </div>
-    
+
             <!-- Social Icons -->
             <div class="footer-col social">
                 <h4>Follow Us</h4>
@@ -120,12 +120,12 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="footer-bottom">
             <p>&copy; 2025 Yarl Creators. All rights reserved.</p>
         </div>
     </footer>
-    
+
     <nav class="bottom-nav">
         <a href="blog.html" class="nav-item" data-page="blog">
             <i class="fas fa-blog"></i>
@@ -148,16 +148,16 @@
             <span>Contact</span>
         </a>
     </nav>
-    
+
     <!-- Scroll To Top Button -->
     <button id="scrollToTopBtn" title="Go to top">
         <i class="fas fa-arrow-up"></i>
     </button>
-    
-    <script src="../assets/Js/script.js"></script>
+
+    <script src="{{asset('Js/script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="../assets/Js/booking-event.js"></script>
-    
+    <script src=" {{asset('Js/booking-event.js')}}"></script>
+
 
 </body>
 
