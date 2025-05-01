@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact; // Import the Contact model
 
 class ReportController extends Controller
 {
@@ -14,6 +15,8 @@ class ReportController extends Controller
         // Or safely access the user
         $user = auth()->user();
 
-        return view('admin.report_management', compact('user'));
+        $contacts = Contact::orderBy('created_at', 'desc')->get();
+    return view('admin.report_management', compact('contacts'));
+
     }
 }

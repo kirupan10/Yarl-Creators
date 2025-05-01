@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact; // Import the Contact model
+
 
 class UserDashboardController extends Controller
 {
@@ -36,22 +38,22 @@ class UserDashboardController extends Controller
 
 
 
-    public function contact_store(Request $request) // user contact form details store function
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'subject' => 'required|string|max:255',
-            'message' => 'required|string',
-        ]);
+    public function contact_store(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|max:255',
+        'subject' => 'required|string|max:255',
+        'message' => 'required|string',
+    ]);
 
-        Contact::create($request->all());
+    Contact::create($request->all());
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Message sent successfully!'
-        ], 200, [], JSON_PRETTY_PRINT);
-    }
+    return response()->json(['success' => true]);
+}
+
+
+
 
     public function appointment_view() // user appointment view function
     {
@@ -86,4 +88,6 @@ class UserDashboardController extends Controller
     public function about_view(){ // user about view function
         return view('user.about');
     }
+
+
 }

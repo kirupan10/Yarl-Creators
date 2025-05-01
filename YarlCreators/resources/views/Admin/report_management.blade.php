@@ -53,6 +53,15 @@
                     </tr>
                 </thead>
                 <tbody id="userList"></tbody>
+                @foreach($contacts as $contact)
+                <tr>
+                    <td>{{ $contact->name }}</td>
+                    <td>{{ $contact->email }}</td>
+                    <td>{{ $contact->subject }}</td>
+                    <td>{{ $contact->message }}</td>
+                    <td>{{ $contact->created_at->format('Y-m-d H:i') }}</td>
+                </tr>
+            @endforeach
             </table>
         </section>
 

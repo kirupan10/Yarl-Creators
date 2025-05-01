@@ -51,8 +51,9 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::post('/contact', [UserDashboardController::class, 'store'])->name('contact.store');
-Route::post('/contact', [UserDashboardController::class, 'store'])->name('contact.store'); //hiruthikan
+Route::post('/contact', [UserDashboardController::class, 'contact_store'])->name('contact.store');
+
+
 
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
