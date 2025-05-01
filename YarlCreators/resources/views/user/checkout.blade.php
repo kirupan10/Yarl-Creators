@@ -41,7 +41,6 @@
             <input type="hidden" name="email" id="hiddenEmail">
             <input type="hidden" name="phone" id="hiddenPhone">
             <input type="hidden" name="message" id="hiddenMessage">
-            <input type="hidden" name="payment" id="hiddenMessage">
 
 
 
@@ -57,7 +56,6 @@
                 document.getElementById("hiddenEmail").value = bookingDetails.email;
                 document.getElementById("hiddenPhone").value = bookingDetails.phone;
                 document.getElementById("hiddenMessage").value = bookingDetails.message;
-                bookingDetails.payment = "Pay on Event Day"; // Default payment method
 
                 // Also show in #summaryBox
                 document.getElementById("summaryBox").innerHTML = `

@@ -58,11 +58,16 @@ class BookingController extends Controller{
 
     Booking::create([
         'profile' => $request->email, // Or another field if you have a profile concept
+        'email' => $request->email,
+        'phone' => $request->phone,
+        'message' => $request->message,
         'name' => $request->name,
         'service' => $request->service,
         'package' => $request->package ?? 'N/A',
         'date' => $request->date,
         'status' => 'Pending',
+        'payment' => 'Event Day', // Assuming this is a fixed value
+
     ]);
 
     return redirect()->route('booking-history')->with('success', 'Booking submitted successfully!');

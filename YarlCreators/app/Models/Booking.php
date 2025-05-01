@@ -8,7 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'profile', 'name', 'service', 'package', 'date', 'status',
+        'profile',
+        'name',
+        'email',
+        'phone',
+        'message',
+        'service',
+        'package',
+        'date',
+        'status',
+        'payment',
     ];
 }
