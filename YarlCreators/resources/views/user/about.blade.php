@@ -297,8 +297,8 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="../Assets/Js/aboutus.js"></script>
-    <script src="../Assets/Js/script.js"></script>
+    <script src="{{ asset('js/aboutus.js') }}"></script>
+    <script src="{{ asset('js/script.css') }}"></script>
 
 
 
