@@ -30,14 +30,15 @@
     <section class="hero">
         <div class="top-icons">
             <!-- Top Icons -->
-            <a href="/" class="icon home"><i class="fas fa-home"></i></a>
             <a href="#" class="icon cart"><i class="fas fa-shopping-cart"></i><span class="badge">1</span></a>
             <a href="#" class="icon notification"><i class="fas fa-bell"></i><span class="badge">3</span></a>
 
 
             @if (Auth::check())
                 <!-- User is logged in, show user profile or logout icon -->
-                <a href="{{ route('profile') }}" class="icon login"><i class="fas fa-user"></i></a>
+                <a href="#" class="icon profile" title="Profile">
+                    <img src="{{ asset('admin_assets/img/Profile/m1.jpg') }}" alt="Profile" class="profile-img-top">
+                </a>
                 <a href="{{ route('logout') }}" class="icon logout"><i class="fas fa-sign-out-alt"></i></a>
             @else
                 <!-- User is not logged in, show login icon -->

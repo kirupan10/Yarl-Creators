@@ -156,31 +156,31 @@
         <div class="testimonial-slider">
             <div class="testimonial-track">
                 <div class="testimonial-card">
-                    <img src="../Assets/images/Profile/f1.jpg" alt="Client" class="client-img" />
+                    <img src="{{asset('admin_assets/img/Profile/f1.jpg')}}" alt="Client" class="client-img" />
                     <p class="testimonial-text">“Working with Yarl Creators was a game-changer. Their visuals gave our brand
                         a new life, and our customers noticed the difference instantly.”</p>
                     <div class="stars">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
-                    <img src="../Assets/images/Profile/m1.jpg" alt="Client" class="client-img" />
+                    <img src="{{asset('admin_assets/img/Profile/m1.jpg')}}" alt="Client" class="client-img" />
                     <p class="testimonial-text">“We entrusted Yarl Creators with our full product launch visuals, and they
                         delivered more than we expected – fast, creative, and professional.”</p>
                     <div class="stars">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
-                    <img src="../Assets/images/Profile/m3.jpg" alt="Client" class="client-img" />
+                    <img src="{{asset('admin_assets/img/Profile/m3.jpg')}}" alt="Client" class="client-img" />
                     <p class="testimonial-text">“From concept to delivery, their team was with us every step of the way.
                         Exceptional creativity and flawless execution.”</p>
                     <div class="stars">★★★★</div>
                 </div>
                 <div class="testimonial-card">
-                    <img src="../Assets/images/Profile/m2.jpg" alt="Client" class="client-img" />
+                    <img src="{{asset('admin_assets/img/Profile/m2.jpg')}}" alt="Client" class="client-img" />
                     <p class="testimonial-text">“We needed a branding partner who understood our vision. Yarl Creators
                         delivered beyond our expectations with compelling content.”</p>
                     <div class="stars">★★★★★</div>
                 </div>
                 <div class="testimonial-card">
-                    <img src="../Assets/images/Profile/m1.jpg" alt="Client" class="client-img" />
+                    <img src="{{asset('admin_assets/img/Profile/m1.jpg')}}" alt="Client" class="client-img" />
                     <p class="testimonial-text">“Their videos and photography helped us stand out in a competitive market.
                         The response from our audience has been phenomenal.”</p>
                     <div class="stars">★★★★</div>

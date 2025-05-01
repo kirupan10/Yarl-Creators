@@ -794,3 +794,22 @@ body {
     opacity: 1;
     visibility: visible;
 }
+
+.profile-img-top {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #FCA311;
+}
+
+.icon.logout i {
+    font-size: 22px;
+    color: white;
+}
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
