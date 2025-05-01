@@ -70,7 +70,7 @@
         </div>
 
         <div class="button-container">
-            <button onclick="window.location.href='{{ route('appointment') }}'" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></button>
+            <button onclick="window.location.href='{{ route('booking') }}'" class="book-btn">Book Now <i class="fas fa-arrow-right"></i></button>
         </div>
 
     </section>

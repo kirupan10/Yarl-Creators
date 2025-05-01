@@ -16,4 +16,17 @@ class BookingController extends Controller
 
         return view('admin.booking_management', compact('user'));
     }
+
+    public function user_booking_view(){
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
+
+        // Or safely access the user
+        $user = auth()->user();
+
+        return view('user.booking', compact('user'));
+    }
+
+
 }

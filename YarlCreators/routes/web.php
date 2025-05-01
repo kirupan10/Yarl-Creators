@@ -68,7 +68,6 @@ Route::get('/PaintingFrames', [PaintingFramesController::class, 'index'])->name(
 Route::get('/Sketches', [SketchesController::class, 'index'])->name('Sketches');
 Route::get('/MugPrinting', [MugPrintingController::class, 'index'])->name('MugPrinting');
 Route::get('/about', [UserDashboardController::class, 'user_about_view'])->name('about');
-Route::get('/appointment',[UserDashboardController::class, 'index'])->name('appointment');
 Route::get('/service',[UserDashboardController::class, 'index'])->name('service');
 Route::get('/gallery', [UserDashboardController::class, 'user_gallery_view'])->name('gallery');
 Route::get('/product', [ProductController::class, 'user_product_view'])->name('product');
@@ -145,4 +144,8 @@ Route::middleware(['auth'])->group(function () { //feedback route
 
 Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/report-management', [ReportController::class, 'report_management_view'])->name('report-management');
+});
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/booking', [BookingController::class, 'user_booking_view'])->name('booking');
 });
