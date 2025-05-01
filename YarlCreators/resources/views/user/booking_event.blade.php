@@ -25,7 +25,19 @@
     <section>
         <h2 class="section-title">Booking Form</h2>
         <div class="form-wrapper">
-            <form id="bookingForm">
+            <form id="bookingForm" method="POST" action="{{ route('bookings.store') }}">
+                @csrf
+
+
+                    <input type="DATE" id="eventDate" name="date" required />
+                    <input type="text" id="fullName" name="name" required />
+                    <input type="email" id="email" name="email" required />
+                    <input type="tel" id="phone" name="phone" required />
+                    <textarea id="message" name="message" rows="3"></textarea>
+                    <!-- Add a name to package if user selects it -->
+                    <input type="hidden" id="package" name="package" />
+
+<!--
                 <div class="form-group">
                     <label for="service">Select Service</label>
                     <select id="service" required onchange="showPackages()">
@@ -70,9 +82,15 @@
                 </div>
 
                 <div class="package-group" id="packageGroup"></div>
-
+--->
                 <button type="submit" class="submit-btn">Confirm Booking</button>
             </form>
+            @if(session('success'))
+    <div class="alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
         </div>
     </section>
 
