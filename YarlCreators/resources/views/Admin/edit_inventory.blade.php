@@ -80,21 +80,7 @@
 
     </main>
 
-    <script>
-        function previewImage(event) {
-            const reader = new FileReader();
-            reader.onload = function () {
-                document.getElementById('itemImagePreview').src = reader.result;
-            }
-            reader.readAsDataURL(event.target.files[0]);
-        }
-
-        document.getElementById('editItemForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Item updated successfully!');
-            window.location.href = 'inventory-management.html'; // Redirect after save
-        });
-    </script>
+    <script src="./admin_assets/js/edit_inventory.js"></script>
 
 </body>
 
