@@ -95,15 +95,7 @@
 
     </main>
 
-    <script>
-        function changePhoto(event) {
-            const reader = new FileReader();
-            reader.onload = function () {
-                document.getElementById('profilePic').src = reader.result;
-            }
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    </script>
+    <script src="./admin_assets/js/settings.js"></script>
 
 </body>
 
