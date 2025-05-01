@@ -28,5 +28,14 @@ class BookingController extends Controller
         return view('user.booking', compact('user'));
     }
 
+    public function booking_event_view(){
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
 
+        // Or safely access the user
+        $user = auth()->user();
+
+        return view('user.booking_event', compact('user'));
+    }
 }

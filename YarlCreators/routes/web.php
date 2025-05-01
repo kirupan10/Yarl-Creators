@@ -149,3 +149,9 @@ Route::middleware(['auth'])->group(function () { //feedback route
 Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/booking', [BookingController::class, 'user_booking_view'])->name('booking');
 });
+
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/booking-event', [BookingController::class, 'booking_event_view'])->name('booking-event');
+});
+
+

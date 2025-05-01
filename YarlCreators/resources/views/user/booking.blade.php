@@ -47,7 +47,7 @@
             </div>
         </div>
         <div style="text-align:center; margin-top: 30px;">
-            <a href="booking-event.html" class="product-btn">Book Now</a>
+            <a href="booking-event" class="product-btn">Book Now</a>
         </div>
     </section>
 
