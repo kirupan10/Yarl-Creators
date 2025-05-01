@@ -59,8 +59,7 @@
         </div>
 
     </main>
-
-    <script src="./admin_assets/js/edit_booking.js"></script>
+    <script src="{{ asset('admin_assets/js/edit_booking.js') }}"></script>
 
 </body>
 

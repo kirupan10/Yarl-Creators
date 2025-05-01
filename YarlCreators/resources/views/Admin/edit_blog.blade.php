@@ -85,8 +85,7 @@
         </div>
 
     </main>
-
-    <script src="./admin_assets/js/edit_blog.js"></script>
+    <script src="{{ asset('admin_assets/js/edit_blog.js') }}"></script>
 
 </body>
 

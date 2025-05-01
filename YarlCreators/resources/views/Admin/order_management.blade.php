@@ -58,8 +58,8 @@
             <div id="noResults" class="no-results" style="display: none;">No orders found.</div>
         </section>
     </main>
+    <script src="{{ asset('admin_assets/js/order_management.js') }}"></script>
 
-    <script src="./admin_assets/js/order_management.js"></script>
 
 </body>
 

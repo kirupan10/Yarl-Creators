@@ -79,8 +79,7 @@
         </div>
 
     </main>
-
-    <script src="./admin_assets/js/edit_inventory.js"></script>
+    <script src="{{ asset('admin_assets/js/edit_inventory.js') }}"></script>
 
 </body>
 

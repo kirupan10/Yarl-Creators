@@ -94,8 +94,7 @@
         </section>
 
     </main>
-
-    <script src="./admin_assets/js/settings.js"></script>
+    <script src="{{ asset('admin_assets/js/settings.js') }}"></script>
 
 </body>
 
