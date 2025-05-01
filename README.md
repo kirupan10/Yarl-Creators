@@ -56,8 +56,7 @@ Visit http://localhost:8000 to view the app.
 
 👥 Team
 Kirupan Inpathas (kirupan10)
-
 A. Hiruththikan
-
 Mohamed Shukry
+Sithara Dilrukshi
 
