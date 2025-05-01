@@ -48,10 +48,7 @@
                     </tr>
                 </thead>
                 <tbody id="bookingTable"></tbody>
-            </table>
-        </section>
-
-        @foreach ($bookings as $booking)
+                @foreach ($bookings as $booking)
             <tr>
                 <td>{{ $booking->profile }}</td>
                 <td>{{ $booking->name }}</td>
@@ -66,6 +63,10 @@
                 </td>
             </tr>
         @endforeach
+            </table>
+        </section>
+
+
 
         <!-- Modal -->
         <div id="userModal" class="modal">

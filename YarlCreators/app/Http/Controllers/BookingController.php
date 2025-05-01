@@ -67,4 +67,16 @@ class BookingController extends Controller{
 
     return redirect()->back()->with('success', 'Booking submitted successfully!');
 }
+
+public function checkout_view()
+{
+    if (!auth()->check()) {
+        return redirect()->route('login');
+    }
+
+    // Or safely access the user
+    $user = auth()->user();
+
+    return view('user.checkout', compact('user'));
+}
 }

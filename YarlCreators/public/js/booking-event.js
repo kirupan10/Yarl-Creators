@@ -114,5 +114,5 @@ document.getElementById("bookingForm").addEventListener("submit", function (e) {
     };
 
     localStorage.setItem("bookingDetails", JSON.stringify(data));
-    window.location.href = "checkout.html";
+    window.location.href = "checkout";
 });

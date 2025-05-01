@@ -156,3 +156,8 @@ Route::middleware(['auth'])->group(function () { //feedback route
 
 Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
 
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/checkout', [BookingController::class, 'checkout_view'])->name('checkout');
+});
+
+
