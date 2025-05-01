@@ -51,6 +51,22 @@
             </table>
         </section>
 
+        @foreach ($bookings as $booking)
+            <tr>
+                <td>{{ $booking->profile }}</td>
+                <td>{{ $booking->name }}</td>
+                <td>{{ $booking->service }}</td>
+                <td>{{ $booking->package }}</td>
+                <td>{{ $booking->date }}</td>
+                <td>{{ $booking->status }}</td>
+                <td>
+                    <!-- Actions (e.g., edit/delete buttons) -->
+                    <a href="#">Edit</a> |
+                    <a href="#">Delete</a>
+                </td>
+            </tr>
+        @endforeach
+
         <!-- Modal -->
         <div id="userModal" class="modal">
             <div class="modal-content">

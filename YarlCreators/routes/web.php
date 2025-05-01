@@ -154,4 +154,5 @@ Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/booking-event', [BookingController::class, 'booking_event_view'])->name('booking-event');
 });
 
+Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
 
