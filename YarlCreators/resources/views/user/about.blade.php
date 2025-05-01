@@ -127,22 +127,22 @@
 
         <div class="team-container">
             <div class="team-member">
-                <img src="../Assets/images/Profile/m1.jpg" alt="Team Member 1" />
+                <img src="{{asset('admin_assets/img/Profile/m1.jpg')}}" alt="Team Member 1" />
                 <h3>Vimitha Jeyaraj</h3>
                 <p>Founder & Creative Director</p>
             </div>
             <div class="team-member">
-                <img src="../Assets/images/Profile/m2.jpg" alt="Team Member 2" />
+                <img src="{{asset('admin_assets/img/Profile/m2.jpg')}}" alt="Team Member 2" />
                 <h3>Gokulan Raj</h3>
                 <p>Lead Videographer</p>
             </div>
             <div class="team-member">
-                <img src="../Assets/images/Profile/f1.jpg" alt="Team Member 3" />
+                <img src="{{asset('admin_assets/img/Profile/f1.jpg')}}" alt="Team Member 3" />
                 <h3>Nivetha K.</h3>
                 <p>Photographer & Editor</p>
             </div>
             <div class="team-member">
-                <img src="../Assets/images/Profile/m3.jpg" alt="Team Member 4" />
+                <img src="{{asset('admin_assets/img/Profile/m3.jpg')}}" alt="Team Member 4" />
                 <h3>Sajith S.</h3>
                 <p>Brand Strategist</p>
             </div>
