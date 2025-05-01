@@ -1,0 +1,591 @@
+/* Global */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* About Banner - Styled Like Hero */
+.about-banner {
+    width: 90%;
+    margin: 8rem auto 0;
+    height: 400px;
+    background: linear-gradient(135deg, #FCA311, #14213D);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-banner .overlay {
+    padding: 40px;
+    z-index: 2;
+}
+
+.about-banner h1 {
+    font-size: 64px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.about-banner p {
+    font-size: 18px;
+    color: #E5E5E5;
+    font-weight: 400;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* About Content */
+.about-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    color: #FCA311;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    margin-top: 12rem;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #ccc;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+/* Values Section */
+.about-values {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.value-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 0 10px rgba(252, 163, 17, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.value-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(252, 163, 17, 0.5);
+}
+
+.value-box i {
+    font-size: 36px;
+    color: #FCA311;
+    margin-bottom: 15px;
+}
+
+.value-box h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.value-box p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Meet the Team Section */
+.team-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-size: 36px;
+    color: #FCA311;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.team-member {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(252, 163, 17, 0.5);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #FCA311;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    margin: 10px 0 5px;
+    color: #fff;
+}
+
+.team-member p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-banner {
+        width: 95%;
+        height: 450px;
+        padding: 20px;
+    }
+
+    .about-banner h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    .about-banner p {
+        font-size: 16px;
+    }
+
+    .about-section h2,
+    .team-section h2 {
+        font-size: 28px;
+    }
+
+    .about-section p {
+        font-size: 16px;
+    }
+
+    .team-member {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+
+/* Mission & Vision Section */
+.mission-vision {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.mission-vision h2 {
+    font-size: 36px;
+    color: #FCA311;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.mission-vision-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mv-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mv-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(252, 163, 17, 0.4);
+}
+
+.mv-box h3 {
+    font-size: 24px;
+    color: #FCA311;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mv-box p {
+    font-size: 16px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mission-vision {
+        padding: 60px 15px;
+    }
+
+    .mv-box {
+        padding: 30px 20px;
+    }
+
+    .mv-box h3 {
+        font-size: 20px;
+    }
+
+    .mv-box p {
+        font-size: 15px;
+    }
+}
+
+.stats-section {
+    background: #000;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.stats-heading {
+    font-size: 36px;
+    color: #FCA311;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.stats-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-block {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #FCA311;
+    display: block;
+    margin-bottom: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.stat-block p {
+    color: #E5E5E5;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .stats-heading {
+        font-size: 28px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+}
+
+.stat-number::after {
+    color: #FCA311;
+    font-weight: bold;
+    margin-left: 2px;
+    display: inline;
+}
+
+.testimonial-section {
+    background-color: #000;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.testimonial-heading {
+    font-size: 36px;
+    color: #FCA311;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.testimonial-slider {
+    overflow: hidden;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 40px 30px;
+    border-radius: 15px;
+}
+
+.client-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #FCA311;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-size: 17px;
+    line-height: 1.7;
+    font-style: italic;
+    color: #E5E5E5;
+    margin-bottom: 20px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stars {
+    color: #FCA311;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.testimonial-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FCA311;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.testimonial-dot.active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonial-heading {
+        font-size: 28px;
+    }
+
+    .testimonial-text {
+        font-size: 15px;
+    }
+
+    .testimonial-card {
+        padding: 30px 20px;
+    }
+}
+
+/* Choose Us Section */
+.choose-us-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.choose-us-heading {
+    font-size: 36px;
+    color: #FCA311;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.choose-us-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.choose-box {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    width: 250px;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.choose-box:hover {
+    transform: translateY(-5px);
+}
+
+.choose-box i {
+    font-size: 36px;
+    color: #FCA311;
+    margin-bottom: 15px;
+}
+
+.choose-box h4 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.choose-box p {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .choose-us-heading {
+        font-size: 28px;
+    }
+
+    .choose-box {
+        width: 90%;
+    }
+}
+
+.video-banner {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.video-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    max-width: 90%;
+    padding: 20px;
+}
+
+.banner-title {
+    font-size: 42px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.banner-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #f0f0f0;
+    margin-bottom: 25px;
+}
+
+.highlight-btn {
+    display: inline-block;
+    background-color: #FCA311;
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-btn:hover {
+    background-color: #fff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-banner {
+        height: 320px;
+    }
+
+    .banner-title {
+        font-size: 28px;
+    }
+
+    .banner-description {
+        font-size: 15px;
+    }
+
+    .highlight-btn {
+        font-size: 14px;
+        padding: 10px 24px;
+    }
+}
