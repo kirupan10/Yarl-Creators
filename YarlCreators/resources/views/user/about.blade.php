@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="../Assets/images/logo.png">
     <title>About Us</title>
-    <link rel="stylesheet" href="../Assets/css/aboutus.css" />
-    <link rel="stylesheet" href="../Assets/css/nav.css" />
-    <link rel="stylesheet" href="../Assets/css/footer.css" />
-    <link rel="stylesheet" href="../Assets/css/ScrollToTop.css" />
+    <link rel="stylesheet" href="{{ asset('css/aboutus.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/nav.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/ScrollToTop.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    
+
 </head>
 
 <body>
@@ -63,10 +63,10 @@
             <source src="../Assets/images/abc.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
-    
+
         <!-- Tint Overlay -->
         <div class="video-overlay"></div>
-    
+
         <!-- Content -->
         <div class="video-content">
             <h1 class="banner-title">Our Work Speaks for Itself</h1>
@@ -83,7 +83,7 @@
     <section class="mission-vision">
         <h2>Our Mission & Our Vission</h2>
         <div class="mission-vision-container">
-        
+
             <div class="mv-box">
                 <h3>Our Mission</h3>
                 <p>To empower individuals and businesses through creative digital storytelling, delivering impactful visuals
@@ -152,7 +152,7 @@
 
     <section class="testimonial-section">
         <h2 class="testimonial-heading">What Our Clients Say</h2>
-    
+
         <div class="testimonial-slider">
             <div class="testimonial-track">
                 <div class="testimonial-card">
@@ -226,7 +226,7 @@
                 <p>A full services digital media production company based in Jaffna. We craft stories with creativity,
                     innovation, and passion.</p>
             </div>
-    
+
             <!-- Quick Links -->
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -238,7 +238,7 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-    
+
             <!-- Contact Info -->
             <div class="footer-col">
                 <h4>Contact</h4>
@@ -248,7 +248,7 @@
                     <li><i class="fas fa-envelope"></i> info@yarlcreators.com</li>
                 </ul>
             </div>
-    
+
             <!-- Social Icons -->
             <div class="footer-col social">
                 <h4>Follow Us</h4>
@@ -262,7 +262,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="footer-bottom">
             <p>&copy; 2025 Yarl Creators. All rights reserved.</p>
         </div>
@@ -300,9 +300,9 @@
     <script src="../Assets/Js/aboutus.js"></script>
     <script src="../Assets/Js/script.js"></script>
 
-    
- 
-    
+
+
+
 </body>
 
 </html>

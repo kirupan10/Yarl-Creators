@@ -67,7 +67,7 @@ Route::get('/CameraAccessories', [ProductController::class, 'CameraAccessories']
 Route::get('/PaintingFrames', [PaintingFramesController::class, 'index'])->name('PaintingFrames'); //painting frames
 Route::get('/Sketches', [SketchesController::class, 'index'])->name('Sketches');
 Route::get('/MugPrinting', [MugPrintingController::class, 'index'])->name('MugPrinting');
-Route::get('/about', [UserDashboardController::class, 'index'])->name('about');
+Route::get('/about', [UserDashboardController::class, 'user_about_view'])->name('about');
 Route::get('/appointment',[UserDashboardController::class, 'index'])->name('appointment');
 Route::get('/service',[UserDashboardController::class, 'index'])->name('service');
 Route::get('/gallery', [UserDashboardController::class, 'user_gallery_view'])->name('gallery');
