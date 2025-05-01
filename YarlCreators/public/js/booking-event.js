@@ -116,3 +116,19 @@ document.getElementById("bookingForm").addEventListener("submit", function (e) {
     localStorage.setItem("bookingDetails", JSON.stringify(data));
     window.location.href = "checkout";
 });
+
+function selectPackage(id) {
+    const radio = document.getElementById(id);
+    if (radio) {
+        radio.checked = true;
+        document.getElementById('packageHidden').value = radio.value;
+    }
+}
+
+document.getElementById("service").addEventListener("change", function () {
+    document.getElementById("serviceValue").value = this.value;
+});
+
+function updateService() {
+    document.getElementById("serviceValue").value = document.getElementById("service").value;
+}

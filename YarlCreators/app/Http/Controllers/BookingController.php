@@ -65,7 +65,7 @@ class BookingController extends Controller{
         'status' => 'Pending',
     ]);
 
-    return redirect()->back()->with('success', 'Booking submitted successfully!');
+    return redirect()->route('booking-history')->with('success', 'Booking submitted successfully!');
 }
 
 public function checkout_view()
@@ -78,5 +78,18 @@ public function checkout_view()
     $user = auth()->user();
 
     return view('user.checkout', compact('user'));
+}
+
+public function user_booking_history()
+{
+    if (!auth()->check()) {
+        return redirect()->route('login');
+    }
+
+    // Or safely access the user
+    $user = auth()->user();
+
+    return view('user.booking_history', compact('user'));
+
 }
 }

@@ -160,4 +160,6 @@ Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/checkout', [BookingController::class, 'checkout_view'])->name('checkout');
 });
 
-
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/booking-history', [BookingController::class, 'user_booking_history'])->name('booking-history');
+});
