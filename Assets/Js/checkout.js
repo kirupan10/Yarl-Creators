@@ -38,8 +38,3 @@ function applyCoupon() {
     }
 }
 
-function finalSubmit() {
-    alert("✅ Booking confirmed! You'll receive a confirmation email.");
-    localStorage.clear();
-    window.location.href = "index.html";
-}
