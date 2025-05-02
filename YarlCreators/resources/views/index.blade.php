@@ -15,7 +15,7 @@
                     <div class="product-info">
                         <h3>Camera Accessories</h3>
                         <p>Essential accessories to enhance photography.</p>
-                        <button class="product-btn" onclick="window.location='{{ route('CameraAccessories') }}'" style="text-decoration: none;">Shop Now</button>
+                        <button class="product-btn" onclick="window.location='{{ route('products') }}'" style="text-decoration: none;">Shop Now</button>
                     </div>
                 </div>
 
@@ -25,7 +25,7 @@
                     <div class="product-info">
                         <h3>Painting Frames</h3>
                         <p>Beautiful custom painting frames perfect for your artworks.</p>
-                        <button class="product-btn" onclick="window.location='{{ route('PaintingFrames') }}'" style="text-decoration: none;">Shop Now</button>
+                        <button class="product-btn" onclick="window.location='{{ route('products') }}'" style="text-decoration: none;">Shop Now</button>
                     </div>
                 </div>
 
@@ -35,7 +35,7 @@
                     <div class="product-info">
                         <h3>Sketches</h3>
                         <p>Hand-drawn sketches that bring life to your artistic vision.</p>
-                        <button class="product-btn" onclick="window.location='{{ route('Sketches') }}'" style="text-decoration: none;">Shop Now</button>
+                        <button class="product-btn" onclick="window.location='{{ route('products') }}'" style="text-decoration: none;">Shop Now</button>
                     </div>
                 </div>
 
@@ -45,14 +45,14 @@
                     <div class="product-info">
                         <h3>Mug Printing</h3>
                         <p>Custom printed mugs, perfect for gifts and branding.</p>
-                        <button class="product-btn" onclick="window.location='{{ route('MugPrinting') }}'" style="text-decoration: none;">Shop Now</button>
+                        <button class="product-btn" onclick="window.location='{{ route('products') }}'" style="text-decoration: none;">Shop Now</button>
                     </div>
                 </div>
             </div>
 
             <!-- Show More Button -->
             <div class="show-more-container">
-                <a href="{{ route('product') }}" class="show-more-btn">Show More</a>
+                <a href="{{ route('products') }}" class="show-more-btn">Show More</a>
             </div>
         </section>
 

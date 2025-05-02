@@ -72,7 +72,6 @@ Route::get('/MugPrinting', [MugPrintingController::class, 'index'])->name('MugPr
 Route::get('/about', [UserDashboardController::class, 'user_about_view'])->name('about');
 Route::get('/service',[UserDashboardController::class, 'index'])->name('service');
 Route::get('/gallery', [UserDashboardController::class, 'user_gallery_view'])->name('gallery');
-Route::get('/product', [ProductController::class, 'user_product_view'])->name('product');
 
 Route::get('/blogview', [BlogController::class, 'user_blog_view'])->name('blogview');
 Route::get('/blogpage', [BlogController::class, 'user_page_view'])->name('blogpage');
@@ -94,7 +93,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/Products', [ProductController::class, 'view'])->name('Products');
+    Route::get('/products', [ProductController::class, 'user_product_view'])->name('products');
 });
 
 Route::middleware(['auth'])->group(function () {

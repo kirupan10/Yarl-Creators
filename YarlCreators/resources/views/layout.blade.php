@@ -133,11 +133,11 @@
 
 
     <nav class="bottom-nav">
-        <a href="{{route('blog')}}" class="nav-item" data-page="blog">
+        <a href="{{route('blogpage')}}" class="nav-item" data-page="blog">
             <i class="fas fa-blog"></i>
             <span>Blog</span>
         </a>
-        <a href="{{route('gallery')}}" class="nav-item" data-page="shop">
+        <a href="{{route('products')}}" class="nav-item" data-page="shop">
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>
         </a>
