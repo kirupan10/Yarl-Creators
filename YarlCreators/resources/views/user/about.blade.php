@@ -231,11 +231,11 @@
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="./Home.html">Home</a></li>
-                    <li><a href="./aboutus.html">About Us</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
+                    <li><a href="{{route('gallery')}}">Gallery</a></li>
+                    <li><a href="{{route('service')}}">Services</a></li>
+                    <li><a href="{{route('contact')}}">Contact</a></li>
                 </ul>
             </div>
 
@@ -271,23 +271,23 @@
 
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
-        <a href="blog.html" class="nav-item" data-page="blog">
+        <a href="{{asset('blogpage')}}" class="nav-item" data-page="blog">
             <i class="fas fa-blog"></i>
             <span>Blog</span>
         </a>
-        <a href="shop.html" class="nav-item" data-page="shop">
+        <a href="{{asset('product')}}" class="nav-item" data-page="shop">
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>
         </a>
-        <a href="Home.html" class="nav-item" data-page="home">
+        <a href="/" class="nav-item" data-page="home">
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="#!" class="nav-item active" data-page="about">
+        <a href="{{asset('about')}}" class="nav-item active" data-page="about">
             <i class="fas fa-users"></i>
             <span>About</span>
         </a>
-        <a href="contact.html" class="nav-item" data-page="contact">
+        <a href="{{asset('contact')}}" class="nav-item" data-page="contact">
             <i class="fas fa-envelope"></i>
             <span>Contact</span>
         </a>
