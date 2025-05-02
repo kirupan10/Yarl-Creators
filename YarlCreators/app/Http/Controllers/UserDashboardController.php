@@ -90,4 +90,9 @@ class UserDashboardController extends Controller
     }
 
 
+    public function user_cart_view(){ // user cart view function
+        return view('user.cart');
+    }
+
+
 }

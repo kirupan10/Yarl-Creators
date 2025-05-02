@@ -174,4 +174,7 @@ Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/create-blog', [BlogController::class, 'create_blog'])->name('create-blog');
 });
 
+Route::middleware(['auth'])->group(function () { //feedback route
+    Route::get('/cart', [UserDashboardController::class, 'user_cart_view'])->name('cart');
+});
 

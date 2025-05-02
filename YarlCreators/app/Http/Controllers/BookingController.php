@@ -94,7 +94,10 @@ public function user_booking_history()
     // Or safely access the user
     $user = auth()->user();
 
-    return view('user.booking_history', compact('user'));
+    $bookings = Booking::latest()->get(); // Fetch all bookings
+        return view('user.booking_history', compact('bookings'));
 
 }
+
+
 }
