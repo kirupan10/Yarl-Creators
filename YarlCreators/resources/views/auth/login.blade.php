@@ -20,7 +20,7 @@
     <div class="auth-container">
         <div class="form-box">
             <div class="top-icons">
-            <a href="#" class="icon notification"><i class="fas fa-home"></i></span></a>
+                <a href="/" class="icon notification"><i class="fas fa-home"></i></a>
             </div>
             <h2>Login</h2>
             <form method="POST" action="{{ route('login.post') }}">
