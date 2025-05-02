@@ -256,7 +256,7 @@
 
     <div class="checkout-bar">
         <strong>Total: LKR <span id="totalAmount">0</span></strong>
-        <button class="checkout-btn" onclick="window.location.href='pro_checkout.html'">Checkout</button>
+        <button class="checkout-btn" onclick="window.location.href='product-checkout'">Checkout</button>
     </div>
 
     <div id="productModal" class="modal">

@@ -26,4 +26,19 @@ class ProductController extends Controller
 
         return view('admin.products', compact('user'));
     }
+
+    public function product_checkout_view(){
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
+
+        // Or safely access the user
+        $user = auth()->user();
+
+        return view('user.product_checkout', compact('user'));
+    }
+
+
+
+
 }
