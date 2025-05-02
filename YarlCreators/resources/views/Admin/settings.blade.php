@@ -50,16 +50,16 @@
 
 
             <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" value="John Doe" />
+            <input type="text" id="fullName" value="{{ $user->name }}" />
 
             <label for="email">Email Address</label>
-            <input type="email" id="email" value="admin@yarlcreators.com" />
+            <input type="email" id="email" value="{{ $user->email }}" />
 
             <label for="phone">Phone Number</label>
-            <input type="text" id="phone" value="+94 77 123 4567" />
+            <input type="text" id="phone" vvalue="{{ $user->phone }}" />
 
             <label for="address">Address</label>
-            <input type="text" id="address" value="123 Main Street, Jaffna" />
+            <input type="text" id="address" value="{{ $user->address }}" />
 
             <button class="save-btn">💾 Save Profile</button>
         </section>

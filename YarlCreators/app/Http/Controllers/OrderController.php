@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Order;
 
 class OrderController extends Controller
 {
@@ -14,6 +15,7 @@ class OrderController extends Controller
         // Or safely access the user
         $user = auth()->user();
 
-        return view('admin.order_management', compact('user'));
+        $orders = Order::all();
+        return view('admin.order_management', compact('orders'));
     }
 }

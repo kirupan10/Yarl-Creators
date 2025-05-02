@@ -17,7 +17,7 @@
     <!-- Sidebar -->
     <nav class="sidebar">
         <h2>Yarl Creators</h2>
-        <a href="dashboard" ><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href="booking-management"><i class="fas fa-calendar-check"></i> Bookings</a>
         <a href="inventory-management" class="active"><i class="fas fa-boxes"></i> Inventory</a>
         <a href="blog-management"><i class="fas fa-blog"></i> Blog</a>
@@ -63,7 +63,18 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="inventoryTable"></tbody>
+                @foreach ($items as $item)
+                    <tr>
+                        <td>{{ $item->id }} <img src="{{ asset('storage/images/' . $item->image) }}" width="50" /> {{ $item->product_name }}</td>
+                        <td>{{ $item->product_category }}</td>
+                        <td>{{ $item->stock }}</td>
+                        <td>${{ $item->price }}</td>
+                        <td class="actions">
+                            <button class="edit" onclick="editItem(${index})">✎ Edit</button>
+                            <button class="delete" onclick="deleteItem(${index})">🗑 Delete</button>
+                          </td>
+                    </tr>
+                @endforeach
             </table>
             <div id="noResults" class="no-results" style="display: none;">No inventory items found.</div>
         </section>

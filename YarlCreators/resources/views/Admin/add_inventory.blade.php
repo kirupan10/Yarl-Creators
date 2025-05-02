@@ -34,22 +34,25 @@
         </header>
 
         <div class="add-container">
-            <form id="addItemForm">
+            <form action="{{ route('inventory.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
 
+                <!-- Image Upload -->
                 <div class="image-upload" onclick="document.getElementById('itemImage').click()">
-                    <img id="itemImagePreview" src="../Assets/images/placeholder.png" alt="Upload Product Image" />
-                    <input type="file" id="itemImage" accept="image/*" style="display: none;"
-                        onchange="previewImage(event)">
+                    <img id="itemImagePreview" src="{{ asset('Assets/images/placeholder.png') }}" alt="Upload Product Image" />
+                    <input type="file" id="itemImage" name="image" accept="image/*" style="display: none;" onchange="previewImage(event)">
                 </div>
 
+                <!-- Product Name -->
                 <div>
                     <label for="itemName">Item Name</label>
-                    <input type="text" id="itemName" placeholder="Enter product name..." required />
+                    <input type="text" id="itemName" name="product_name" placeholder="Enter product name..." required />
                 </div>
 
+                <!-- Product Category -->
                 <div>
                     <label for="itemCategory">Category</label>
-                    <select id="itemCategory" required>
+                    <select id="itemCategory" name="product_category" required>
                         <option value="">Select Category</option>
                         <option value="Camera">Camera</option>
                         <option value="Lighting">Lighting</option>
@@ -58,23 +61,32 @@
                     </select>
                 </div>
 
+                <!-- Product Description -->
+                <div>
+                    <label for="product_description">Description</label>
+                    <textarea id="product_description" name="product_description" placeholder="Enter product description..." required></textarea>
+                </div>
+
+                <!-- Stock and Price -->
                 <div style="display: flex; gap: 20px;">
                     <div style="flex: 1;">
                         <label for="itemStock">Stock</label>
-                        <input type="number" id="itemStock" placeholder="Enter stock quantity..." min="0" required />
+                        <input type="number" id="itemStock" name="stock" placeholder="Enter stock quantity..." min="0" required />
                     </div>
                     <div style="flex: 1;">
                         <label for="itemPrice">Price (LKR)</label>
-                        <input type="number" id="itemPrice" placeholder="Enter price..." min="0" required />
+                        <input type="number" id="itemPrice" name="price" placeholder="Enter price..." min="0" required />
                     </div>
                 </div>
 
+                <!-- Buttons -->
                 <div class="buttons">
                     <button type="submit" class="save-btn">💾 Save Product</button>
                     <button type="button" onclick="window.history.back()" class="cancel-btn">❌ Cancel</button>
                 </div>
-
             </form>
+
+
         </div>
 
     </main>

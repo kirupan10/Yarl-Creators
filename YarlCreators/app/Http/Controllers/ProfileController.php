@@ -43,7 +43,7 @@ class ProfileController extends Controller
 
     public function admin_profile_view()
     {
-        // Logic to display admin profile
-        return view('admin.profile');
+        $user = Auth::user(); // gets currently authenticated user
+        return view('admin.profile', compact('user'));
     }
 }

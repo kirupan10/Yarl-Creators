@@ -53,7 +53,17 @@
                         <th>Change Status</th>
                     </tr>
                 </thead>
-                <tbody id="orderTable"></tbody>
+                @foreach ($orders as $order)
+                    <tr>
+                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->customer }}</td>
+                        <td>{{ $order->product }}</td>
+                        <td>{{ $order->date }}</td>
+                        <td>${{ $order->total }}</td>
+                        <td>{{ ucfirst($order->status) }}</td>
+                        <td>{{ ucfirst($order->payment_method) }}</td>
+                    </tr>
+                @endforeach
             </table>
             <div id="noResults" class="no-results" style="display: none;">No orders found.</div>
         </section>

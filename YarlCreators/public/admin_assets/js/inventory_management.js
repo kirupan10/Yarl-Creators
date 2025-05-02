@@ -47,7 +47,7 @@ function renderTable() {
 }
 
 function goToAddPage() {
-    window.location.href = "add-inventory.html";
+    window.location.href = "add-inventory";
 }
 
 function editItem(index) {

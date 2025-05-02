@@ -124,9 +124,12 @@ Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/booking-management', [BookingController::class, 'booking_management_view'])->name('booking-management');
 });
 
-Route::middleware(['auth'])->group(function () { //feedback route
+Route::middleware(['auth'])->group(function () {
     Route::get('/inventory-management', [InventoryController::class, 'inventory_management_view'])->name('inventory-management');
+    Route::get('/add-inventory', [InventoryController::class, 'add_inventory'])->name('add-inventory');
+    Route::post('/add-inventory', [InventoryController::class, 'store'])->name('inventory.store');
 });
+
 
 Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/blog-management', [BlogController::class, 'blog_management_view'])->name('blog-management');
