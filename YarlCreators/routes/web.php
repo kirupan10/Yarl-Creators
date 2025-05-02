@@ -182,3 +182,5 @@ Route::middleware(['auth'])->group(function () { //feedback route
     Route::get('/product-checkout', [ProductController::class, 'product_checkout_view'])->name('product-checkout');
 });
 
+Route::post('/order', [OrderController::class, 'store'])->name('order.store');
+
