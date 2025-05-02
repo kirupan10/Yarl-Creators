@@ -212,60 +212,63 @@
 <body>
     <h1>Checkout</h1>
 
+<form action="{{ route('order.store') }}" method="POST">
+    @csrf
+
     <div class="checkout-container">
         <div class="form-section">
             <h2>Billing Details</h2>
 
             <div class="form-group">
                 <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" placeholder="Your Name" />
+                <input type="text" id="fullName" name="full_name" placeholder="Your Name" required />
             </div>
 
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" placeholder="example@email.com" />
+                <input type="email" id="email" name="email" placeholder="example@email.com" required />
             </div>
 
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="text" id="phone" placeholder="+94 77xxxxxxx" />
+                <input type="text" id="phone" name="phone" placeholder="+94 77xxxxxxx" required />
             </div>
 
             <div class="form-group">
                 <label for="street">Street Address</label>
-                <input type="text" id="street" placeholder="123 Main St" />
+                <input type="text" id="street" name="street_address" placeholder="123 Main St" required />
             </div>
 
             <div class="address-grid">
                 <div class="form-group">
                     <label for="city">City</label>
-                    <input type="text" id="city" placeholder="Jaffna" />
+                    <input type="text" id="city" name="city" placeholder="Jaffna" required />
                 </div>
                 <div class="form-group">
                     <label for="state">State/Province</label>
-                    <input type="text" id="state" placeholder="Northern" />
+                    <input type="text" id="state" name="state" placeholder="Northern" />
                 </div>
                 <div class="form-group">
                     <label for="country">Country</label>
-                    <input type="text" id="country" placeholder="Sri Lanka" />
+                    <input type="text" id="country" name="country" placeholder="Sri Lanka" required />
                 </div>
                 <div class="form-group">
                     <label for="zip">Zip/Postal Code</label>
-                    <input type="text" id="zip" placeholder="40000" />
+                    <input type="text" id="zip" name="zip" placeholder="40000" required />
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="coupon">Have a Coupon?</label>
                 <div class="coupon-group">
-                    <input type="text" id="coupon" placeholder="Enter coupon code" />
-                    <button class="verify-btn" onclick="verifyCoupon()">Verify</button>
+                    <input type="text" id="coupon" name="coupon" placeholder="Enter coupon code" />
+                    <button type="button" class="verify-btn" onclick="verifyCoupon()">Verify</button>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="payment">Payment Method</label>
-                <select id="payment">
+                <select id="payment" name="payment_method" required>
                     <option>Cash on Delivery</option>
                     <option>Credit/Debit Card</option>
                     <option>Bank Transfer</option>
@@ -276,37 +279,46 @@
         <div class="summary-section">
             <h2>Order Summary</h2>
 
-            <div class="order-item">
-                <div class="order-item-left">
-                    <img src="../assets/images/product/gd.png" alt="Lighting Kit" />
-                    <div class="item-info">
-                        <h4>Lighting Kit</h4>
-                        <small>Qty: 1</small>
-                    </div>
-                </div>
-                <div class="price">LKR 12,000</div>
-            </div>
+            @php
+                $items = [
+                    ['name' => 'Lighting Kit', 'qty' => 1, 'price' => 12000],
+                    ['name' => 'Magic Mug', 'qty' => 2, 'price' => 4400],
+                ];
 
-            <div class="order-item">
-                <div class="order-item-left">
-                    <img src="../assets/images/mug.jpg" alt="Magic Mug" />
-                    <div class="item-info">
-                        <h4>Magic Mug</h4>
-                        <small>Qty: 2</small>
+                $total = array_reduce($items, fn($carry, $item) => $carry + $item['price'], 0);
+            @endphp
+
+            @foreach ($items as $item)
+                <div class="order-item">
+                    <div class="order-item-left">
+                        <img src="../assets/images/product/gd.png" alt="{{ $item['name'] }}" />
+                        <div class="item-info">
+                            <h4>{{ $item['name'] }}</h4>
+                            <small>Qty: {{ $item['qty'] }}</small>
+                        </div>
                     </div>
+                    <div class="price">LKR {{ number_format($item['price']) }}</div>
                 </div>
-                <div class="price">LKR 4,400</div>
-            </div>
+            @endforeach
 
             <div class="order-summary">
                 <p><span>Subtotal</span><span>LKR 16,400</span></p>
                 <p><span>Discount</span><span id="discount">LKR 0</span></p>
-                <p class="total"><span>Total</span><span id="totalAmount">LKR 16,400</span></p>
+                <p class="total">
+                    <span>Total</span>
+                    <span id="totalAmount">LKR 16,400</span>
+                </p>
             </div>
 
-            <button class="place-order-btn">Place Order</button>
+            {{-- Hidden total and item list --}}
+            <input type="hidden" name="total" value="{{ $total }}">
+            <input type="hidden" name="item" value="{{ json_encode($items) }}">
+
+            <button type="submit" class="place-order-btn">Place Order</button>
         </div>
     </div>
+</form>
+
 
     <script>
         function verifyCoupon() {

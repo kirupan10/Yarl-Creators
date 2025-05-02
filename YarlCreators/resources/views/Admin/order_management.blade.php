@@ -46,6 +46,8 @@
                     <tr>
                         <th>Order #</th>
                         <th>Customer</th>
+                        <th>Address</th>
+                        <th>Phone</th>
                         <th>Product</th>
                         <th>Date</th>
                         <th>Total</th>
@@ -56,11 +58,13 @@
                 @foreach ($orders as $order)
                     <tr>
                         <td>{{ $order->id }}</td>
-                        <td>{{ $order->customer }}</td>
-                        <td>{{ $order->product }}</td>
-                        <td>{{ $order->date }}</td>
+                        <td>{{ $order->full_name }}</td>
+                        <td>{{ $order->street_address }}</td>
+                        <td>{{ $order->phone }}</td>
+                        <td>{{ $order->item }}</td>
+                        <td>{{ $order->created_at }}</td>
                         <td>${{ $order->total }}</td>
-                        <td>{{ ucfirst($order->status) }}</td>
+                        <td>Pending</td>
                         <td>{{ ucfirst($order->payment_method) }}</td>
                     </tr>
                 @endforeach
