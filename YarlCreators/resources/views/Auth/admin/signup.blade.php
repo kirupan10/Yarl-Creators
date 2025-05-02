@@ -12,19 +12,18 @@
     <title>Yarl Creators</title>
     <link rel="stylesheet" href="{{ asset('css/auth.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
 </head>
 
 <body>
     <div class="auth-container">
         <div class="form-box">
-            <div class="top-icons">
-            <a href="#" class="icon notification"><i class="fas fa-home"></i></span></a>
-            </div>
-            <h2>Login</h2>
-            <form method="POST" action="{{ route('login.post') }}">
+            <h2>Sign Up</h2>
+            <form method="POST" action="{{ route('register.post') }}">
                 @csrf
+                <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
                 <div class="input-box">
                     <i class="fas fa-envelope"></i>
                     <input type="email" name="email" placeholder="Email" required>
@@ -33,13 +32,12 @@
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" placeholder="Password" required>
                 </div>
-                <div class="remember-forgot">
-                    <label><input type="checkbox" name="remember"> Remember me</label>
-                    <a href="">Forgot Password?</a>
+                <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password_confirmation" placeholder="Confirm Password" required>
                 </div>
-                <button type="submit" class="btn">Login</button>
-
-                <p class="switch-form">Don't have an account? <a href="{{ route('register') }}">Sign Up</a></p>
+                <button type="submit" class="btn">Sign Up</button>
+                <p class="switch-form">Already have an account? <a href="{{ route('login') }}">Sign In</a></p>
             </form>
         </div>
 
@@ -56,6 +54,7 @@
             </form>
         </div>
     </div>
+</div>
 
     <script src="{{ asset('Assets/Js/auth.js') }}"></script>
 </body>
