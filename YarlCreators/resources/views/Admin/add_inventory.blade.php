@@ -100,6 +100,8 @@
             reader.readAsDataURL(event.target.files[0]);
         }
 
+        //hey
+
         document.getElementById('addItemForm').addEventListener('submit', function (e) {
             e.preventDefault();
             alert('New Product Added Successfully!');

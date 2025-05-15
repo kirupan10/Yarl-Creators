@@ -158,20 +158,19 @@
 
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
-        <a href="blog.html" class="nav-item active" data-page="blog">
+        <a href="{{route('blogpage')}}" class="nav-item" data-page="blog">
             <i class="fas fa-blog"></i>
             <span>Blog</span>
         </a>
-
-        <a href="" class="nav-item" data-page="shop">
+        <a href="{{route('products')}}" class="nav-item" data-page="shop">
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>
         </a>
-        <a href="/" class="nav-item" data-page="home">
+        <a href="/" class="nav-item active" data-page="home">
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="{{route('about')}}" class="nav-item" data-page="about">
+        <a href="{{route('about')}}" class="nav-item" data-page="services">
             <i class="fas fa-users"></i>
             <span>About</span>
         </a>

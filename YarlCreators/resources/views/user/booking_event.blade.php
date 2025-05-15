@@ -127,23 +127,23 @@
     </footer>
 
     <nav class="bottom-nav">
-        <a href="blog.html" class="nav-item" data-page="blog">
+        <a href="{{route('blogpage')}}" class="nav-item" data-page="blog">
             <i class="fas fa-blog"></i>
             <span>Blog</span>
         </a>
-        <a href="shop.html" class="nav-item" data-page="shop">
+        <a href="{{route('products')}}" class="nav-item" data-page="shop">
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>
         </a>
-        <a href="Home.html" class="nav-item active" data-page="home">
+        <a href="/" class="nav-item active" data-page="home">
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="aboutus.html" class="nav-item" data-page="services">
+        <a href="{{route('about')}}" class="nav-item" data-page="services">
             <i class="fas fa-users"></i>
             <span>About</span>
         </a>
-        <a href="contact.html" class="nav-item" data-page="contact">
+        <a href="{{route('contact')}}" class="nav-item" data-page="contact">
             <i class="fas fa-envelope"></i>
             <span>Contact</span>
         </a>

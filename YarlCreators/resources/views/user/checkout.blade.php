@@ -44,21 +44,21 @@
 
 
 
-        <script>
-            const bookingDetails = JSON.parse(localStorage.getItem("bookingDetails"));
+            <script>
+                const bookingDetails = JSON.parse(localStorage.getItem("bookingDetails"));
 
-            if (bookingDetails) {
-                document.getElementById("hiddenService").value = bookingDetails.service;
-                document.getElementById("hiddenDate").value = bookingDetails.date;
-                document.getElementById("hiddenPackage").value = bookingDetails.package;
-                document.getElementById("hiddenTotal").value = bookingDetails.total || ''; // If you have a total
-                document.getElementById("hiddenName").value = bookingDetails.name;
-                document.getElementById("hiddenEmail").value = bookingDetails.email;
-                document.getElementById("hiddenPhone").value = bookingDetails.phone;
-                document.getElementById("hiddenMessage").value = bookingDetails.message;
+                if (bookingDetails) {
+                    document.getElementById("hiddenService").value = bookingDetails.service;
+                    document.getElementById("hiddenDate").value = bookingDetails.date;
+                    document.getElementById("hiddenPackage").value = bookingDetails.package;
+                    document.getElementById("hiddenTotal").value = bookingDetails.total || ''; // If you have a total
+                    document.getElementById("hiddenName").value = bookingDetails.name;
+                    document.getElementById("hiddenEmail").value = bookingDetails.email;
+                    document.getElementById("hiddenPhone").value = bookingDetails.phone;
+                    document.getElementById("hiddenMessage").value = bookingDetails.message;
 
-                // Also show in #summaryBox
-                document.getElementById("summaryBox").innerHTML = `
+                    // Also show in #summaryBox
+                    document.getElementById("summaryBox").innerHTML = `
                     <p><strong>Service:</strong> ${bookingDetails.service}</p>
                     <p><strong>Date:</strong> ${bookingDetails.date}</p>
                     <p><strong>Package:</strong> ${bookingDetails.package}</p>
@@ -67,56 +67,59 @@
                     <p><strong>Phone:</strong> ${bookingDetails.phone}</p>
                     <p><strong>Message:</strong> ${bookingDetails.message}</p>
                 `;
-            }
-        </script>
+                }
+            </script>
 
 
 
-        <!-- Hidden inputs to send summaryBox values to Laravel -->
-        <input type="hidden" id="summaryService" name="summary_service">
-        <input type="hidden" id="summaryDate" name="summary_date">
-        <input type="hidden" id="summaryPackage" name="summary_package">
-        <input type="hidden" id="summaryTotal" name="summary_total">
+            <!-- Hidden inputs to send summaryBox values to Laravel -->
+            <input type="hidden" id="summaryService" name="summary_service">
+            <input type="hidden" id="summaryDate" name="summary_date">
+            <input type="hidden" id="summaryPackage" name="summary_package">
+            <input type="hidden" id="summaryTotal" name="summary_total">
 
-        <!-- Payment Selection -->
-        <section class="payment-section card">
-            <h2>Select Payment Method</h2>
-            <label><input type="radio" name="payment" value="event" checked onchange="togglePaymentInputs()"> Pay on
-                Event Day</label>
-            <label><input type="radio" name="payment" value="bank" onchange="togglePaymentInputs()" disabled> Bank
-                Transfer</label>
-            <label><input type="radio" name="payment" value="card" onchange="togglePaymentInputs()" disabled> Card
-                Payment</label>
+            <!-- Payment Selection -->
+            <section class="payment-section card">
+                <h2>Select Payment Method</h2>
+                <label><input type="radio" name="payment" value="event" checked onchange="togglePaymentInputs()"> Pay
+                    on
+                    Event Day</label>
+                <label><input type="radio" name="payment" value="bank" onchange="togglePaymentInputs()" disabled>
+                    Bank
+                    Transfer</label>
+                <label><input type="radio" name="payment" value="card" onchange="togglePaymentInputs()" disabled>
+                    Card
+                    Payment</label>
 
-            <div id="paymentInputs">
-                <div id="bankFields" class="payment-fields hidden">
-                    <input type="text" placeholder="Bank Name" />
-                    <input type="text" placeholder="Transaction ID" />
+                <div id="paymentInputs">
+                    <div id="bankFields" class="payment-fields hidden">
+                        <input type="text" placeholder="Bank Name" />
+                        <input type="text" placeholder="Transaction ID" />
+                    </div>
+                    <div id="cardFields" class="payment-fields hidden">
+                        <input type="text" placeholder="Card Number" />
+                        <input type="text" placeholder="Expiry Date (MM/YY)" />
+                        <input type="text" placeholder="CVV" />
+                    </div>
                 </div>
-                <div id="cardFields" class="payment-fields hidden">
-                    <input type="text" placeholder="Card Number" />
-                    <input type="text" placeholder="Expiry Date (MM/YY)" />
-                    <input type="text" placeholder="CVV" />
+            </section>
+
+            <!-- Coupon -->
+            <section class="coupon-section card">
+                <h2>Have a Coupon?</h2>
+                <div class="coupon-input">
+                    <input type="text" id="couponCode" placeholder="Enter coupon code" />
+                    <button onclick="applyCoupon()">Apply</button>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Coupon -->
-        <section class="coupon-section card">
-            <h2>Have a Coupon?</h2>
-            <div class="coupon-input">
-                <input type="text" id="couponCode" placeholder="Enter coupon code" />
-                <button onclick="applyCoupon()">Apply</button>
-            </div>
-        </section>
+            <!-- Final -->
+            <section class="final-section card" style="margin-bottom: 25px;">
+                <button type="submit" class="submit-btn">Confirm Booking</button>
+                <p class="secure-msg">🔒 Your payment is secure and encrypted</p>
+            </section>
 
-        <!-- Final -->
-        <section class="final-section card" style="margin-bottom: 25px;">
-            <button type="submit" class="submit-btn">Confirm Booking</button>
-            <p class="secure-msg">🔒 Your payment is secure and encrypted</p>
-        </section>
-
-    </form>
+        </form>
     </main>
 
     <footer class="footer">
@@ -171,23 +174,23 @@
     </footer>
 
     <nav class="bottom-nav">
-        <a href="blog.html" class="nav-item" data-page="blog">
+        <a href="{{ route('blogpage') }}" class="nav-item" data-page="blog">
             <i class="fas fa-blog"></i>
             <span>Blog</span>
         </a>
-        <a href="shop.html" class="nav-item" data-page="shop">
+        <a href="{{ route('products') }}" class="nav-item" data-page="shop">
             <i class="fas fa-shopping-bag"></i>
             <span>Shop</span>
         </a>
-        <a href="Home.html" class="nav-item active" data-page="home">
+        <a href="/" class="nav-item active" data-page="home">
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="aboutus.html" class="nav-item" data-page="services">
+        <a href="{{ route('about') }}" class="nav-item" data-page="services">
             <i class="fas fa-users"></i>
             <span>About</span>
         </a>
-        <a href="contact.html" class="nav-item" data-page="contact">
+        <a href="{{ route('contact') }}" class="nav-item" data-page="contact">
             <i class="fas fa-envelope"></i>
             <span>Contact</span>
         </a>
