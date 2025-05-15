@@ -31,12 +31,12 @@
         <h2 class="section-title">Our Event Services</h2>
         <div class="product-container">
             <div class="product-card">
-                <img src="../assets/images/Acc.jpg" alt="Photography">
+                <img src="{{ asset('images/Acc.jpg') }}" alt="Photography">
                 <h3>Photography</h3>
                 <p>Capture timeless memories with our professional photography.</p>
             </div>
             <div class="product-card">
-                <img src="../assets/images/pai.jpg" alt="Videography">
+                <img src="{{ asset('images/pai.jpg') }}" alt="Videography">
                 <h3>Videography</h3>
                 <p>Tell your story with cinematic visual experiences.</p>
             </div>

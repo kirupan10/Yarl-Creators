@@ -34,7 +34,9 @@
         </section>
 
         <div class="user-controls">
-            <button onclick="openForm()">➕ Add New User</button>
+            <a href="{{ route('user-create') }}">
+                <button type="button">➕ Add New User</button>
+            </a>
             <div class="search-box">
                 <i class="fas fa-search"></i>
                 <input type="text" id="searchUser" placeholder="Search by name or role" onkeyup="renderUsers()" />
@@ -54,16 +56,22 @@
                 </thead>
                 <tbody>
                     @foreach ($user as $user)
-                    <tr>
-                        <td><img class="profile-img" src="{{asset('admin_assets/img/Acc.jpg')}}" alt=""></td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->created_at->format('Y-m-d H:i:s') }}</td>
-                        <td>
-                            <button class="action-btn edit-btn" onclick="openForm({{ $user->id }})">✏️ Edit</button>
-                            <button class="action-btn delete-btn" onclick="deleteUser({{ $user->id }})">❌ Delete</button>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td><img class="profile-img" src="{{ asset('admin_assets/img/Acc.jpg') }}" alt="">
+                            </td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>
+                                {{ $user->role == 1 ? 'Admin' : 'User' }}
+
+                            </td>
+                            <td>
+                                <button class="action-btn edit-btn" onclick="openForm({{ $user->id }})">✏️
+                                    Edit</button>
+                                <button class="action-btn delete-btn" onclick="deleteUser({{ $user->id }})">❌
+                                    Delete</button>
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>

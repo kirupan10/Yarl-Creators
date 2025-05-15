@@ -111,4 +111,10 @@ Route::middleware(['auth'])->group(function () {
 
     // Feedback
     Route::get('/feedback', [DashboardController::class, 'feedback_view'])->name('feedback');
+
+
+});// For web routes
+Route::middleware(['auth'])->group(function () {
+    Route::get('/user-create', [UserController::class, 'user_create'])->name('user-create');
+    Route::post('/user-store', [UserController::class, 'store'])->name('user-store');
 });
