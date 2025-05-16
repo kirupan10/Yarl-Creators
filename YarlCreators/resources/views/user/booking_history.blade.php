@@ -323,15 +323,15 @@
 
         <!-- Quick Links -->
         <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="profile">Profile</a></li>
+                    <li><a href="booking-history">Booking History</a></li>
+                    <li><a href="cart">cart</a></li>
+                </ul>
+            </div>
 
         <!-- Contact Info -->
         <div class="footer-col">

@@ -232,10 +232,10 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="{{route('about')}}">About Us</a></li>
-                    <li><a href="{{route('gallery')}}">Gallery</a></li>
-                    <li><a href="{{route('service')}}">Services</a></li>
-                    <li><a href="{{route('contact')}}">Contact</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="profile">Profile</a></li>
+                    <li><a href="booking-history">Booking History</a></li>
+                    <li><a href="cart">cart</a></li>
                 </ul>
             </div>
 
