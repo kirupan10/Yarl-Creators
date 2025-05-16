@@ -194,6 +194,49 @@
                 display: none;
             }
         }
+     .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+     .modal-content {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .modal-content p {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+        .modal-content button {
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .modal-content button:hover {
+            background: #D90429;
+        }
     </style>
 </head>
 
@@ -255,6 +298,7 @@
 
             <label for="currentPassword">Current Password</label>
             <input type="password" id="currentPassword" placeholder="Enter current password" />
+            
 
             <label for="newPassword">New Password</label>
             <input type="password" id="newPassword" placeholder="Enter new password" />
@@ -269,6 +313,7 @@
         <section class="settings-section">
             <h2>🔔 Notification Settings</h2>
 
+
             <label for="notifications">Receive Email Notifications</label>
             <select id="notifications">
                 <option value="yes">Yes, send me updates</option>
@@ -280,14 +325,86 @@
 
     </main>
 
+     <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <p id="modalMessage"></p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
     <script>
         function changePhoto(event) {
             const reader = new FileReader();
+
             reader.onload = function () {
                 document.getElementById('profilePic').src = reader.result;
             }
             reader.readAsDataURL(event.target.files[0]);
         }
+        function showModal(message) {
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('messageModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('messageModal').style.display = 'none';
+        }
+        function validateProfile() {
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+
+            if (!fullName || !email || !phone || !address) {
+                showModal('Please fill in all required fields.');
+                return false;
+            }
+            
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showModal('❌ Please enter a valid email address.');
+                return false;
+            }
+            const phoneRegex = /^\d{10,}$/;
+            if (!phoneRegex.test(phone)) {
+                showModal('❌ Please enter a valid phone number(at least 10 digits).');
+                return false;
+            }
+            showModal('✅ Profile details saved successfully!');
+            return true;
+        }
+        function validatePassword() {
+            const currentPassword = document.getElementById('currentPassword').value.trim();
+            const newPassword = document.getElementById('newPassword').value.trim();
+            const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+            if (!currentPassword || !newPassword || !confirmPassword) {
+                showModal('Please fill in all required fields.');
+                return false;
+            }
+
+            if (newPassword !== confirmPassword) {
+                showModal('❌ New passwords do not match.');
+                return false;
+            }
+            if (newPassword.length < 6) {
+                showModal('❌ Password must be at least 6 characters long.');
+                return false;
+    }
+
+            showModal('✅ Password updated successfully!');
+            return true;
+        }
+       document.querySelector('.settings-section:first-of-type .save-btn').addEventListener('click', function (e) {
+         e.preventDefault(); // Prevent form submission
+         validateProfile();
+     });
+
+     document.querySelector('.settings-section:nth-of-type(2) .save-btn').addEventListener('click', function (e) {
+         e.preventDefault(); // Prevent form submission
+         validatePassword();
+     });
+            
     </script>
 
 </body>
