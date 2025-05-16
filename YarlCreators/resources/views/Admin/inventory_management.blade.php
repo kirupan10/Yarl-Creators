@@ -60,6 +60,7 @@
                         <th>Category</th>
                         <th>Stock</th>
                         <th>Price</th>
+                        <th>Created Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -69,6 +70,7 @@
                         <td>{{ $item->product_category }}</td>
                         <td>{{ $item->stock }}</td>
                         <td>${{ $item->price }}</td>
+                        <td>{{ $item->created_at }}</td>
                         <td class="actions">
                             <button class="edit" onclick="editItem(${index})">✎ Edit</button>
                             <button class="delete" onclick="deleteItem(${index})">🗑 Delete</button>
@@ -80,6 +82,8 @@
         </section>
     </main>
     <script src="{{ asset('admin_assets/js/inventory_management.js') }}"></script>
+
+
 
 </body>
 
