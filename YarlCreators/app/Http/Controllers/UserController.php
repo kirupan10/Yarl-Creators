@@ -28,6 +28,8 @@ class UserController extends Controller
 
     public function store(Request $request)
 {
+    try {
+
     $validated = $request->validate([
     'name' => 'required|string|max:255',
     'email' => 'required|email|unique:users',
@@ -54,5 +56,8 @@ User::create([
 ]);
 
     return redirect()->back()->with('success', 'User created successfully.');
+    } catch (\Exception $e) {
+        return redirect()->back()->withErrors(['db_error' => 'Database error: ' . $e->getMessage()]);
+    }
 }
 }

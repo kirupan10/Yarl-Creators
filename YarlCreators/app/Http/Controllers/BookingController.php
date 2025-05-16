@@ -46,6 +46,7 @@ class BookingController extends Controller{
 
     public function store(Request $request)
 {
+     try {
     $request->validate([
         'service' => 'required|string',
         'date' => 'required|date',
@@ -71,6 +72,9 @@ class BookingController extends Controller{
     ]);
 
     return redirect()->route('booking-history')->with('success', 'Booking submitted successfully!');
+    } catch (\Exception $e) {
+        return redirect()->back()->withErrors(['db_error' => 'Database error: ' . $e->getMessage()]);
+    }
 }
 
 public function checkout_view()

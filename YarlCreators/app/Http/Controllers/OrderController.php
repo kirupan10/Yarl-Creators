@@ -21,6 +21,7 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        try {
         $validated = $request->validate([
             'full_name' => 'required|string|max:255',
             'email' => 'required|email',
@@ -39,5 +40,8 @@ class OrderController extends Controller
         Order::create($validated);
 
         return redirect()->back()->with('success', 'Order placed successfully!');
+        } catch (\Exception $e) {
+        return redirect()->back()->withErrors(['db_error' => 'Database error: ' . $e->getMessage()]);
+    }
     }
 }
