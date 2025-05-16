@@ -9,16 +9,16 @@ class Blog extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'main_title',
-        'date',
-        'category',
-        'image',
-        'excerpt',
-        'sub_heading',
-        'sub_details',
-        'full_details',
-        'additional_images',
-    ];
+    'title',
+    'date',
+    'category',
+    'main_image',
+    'excerpt',
+    'sub_heading',
+    'sub_details',
+    'details',
+    'gallery_images',
+];
 
     protected $casts = [
         'additional_images' => 'array',

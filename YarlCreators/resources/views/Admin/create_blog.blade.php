@@ -17,9 +17,9 @@
     <nav class="sidebar">
         <h2>Yarl Creators</h2>
         <a href="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        <a href="booking-management" class="active"><i class="fas fa-calendar-check"></i> Bookings</a>
+        <a href="booking-management" ><i class="fas fa-calendar-check"></i> Bookings</a>
         <a href="inventory-management"><i class="fas fa-boxes"></i> Inventory</a>
-        <a href="blog-management"><i class="fas fa-blog"></i> Blog</a>
+        <a href="blog-management" ><i class="fas fa-blog"></i> Blog</a>
         <a href="order-management"><i class="fas fa-shopping-cart"></i> Orders</a>
         <a href="report-management"><i class="fas fa-chart-line"></i> Reports</a>
         <a href="user-management"><i class="fas fa-users"></i> Users</a>
@@ -34,63 +34,73 @@
             <h1>✍️ Create New Blog</h1>
         </header>
 
-        <form id="newBlogForm">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form id="newBlogForm" action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+
             <label for="title">Main Blog Title</label>
-            <input type="text" id="title" required placeholder="Enter blog title">
+            <input type="text" id="title" name="title" required placeholder="Enter blog title">
 
             <label for="date">Date</label>
-            <input type="date" id="date" required>
+            <input type="date" id="date" name="date" required>
 
             <label for="category">Category</label>
-            <select id="category" required>
-                <option value="">Select Category</option>
-                <option value="Wedding">Wedding</option>
-                <option value="Event">Event</option>
-                <option value="Photography">Photography</option>
-                <option value="Video Production">Video Production</option>
-                <option value="Branding">Branding</option>
+            <select id="category" name="category" required>
+            <option value="">Select Category</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Event">Event</option>
+            <option value="Photography">Photography</option>
+            <option value="Video Production">Video Production</option>
+            <option value="Branding">Branding</option>
             </select>
 
             <div class="image-upload">
-                <p>Main Image</p>
-                <label for="mainImage">📷 Choose Main Image</label>
-                <input type="file" id="mainImage" accept="image/*" required>
+            <p>Main Image</p>
+            <label for="mainImage">📷 Choose Main Image</label>
+            <input type="file" id="mainImage" name="main_image" accept="image/*" required>
             </div>
 
             <label for="excerpt">Short Description (Excerpt)</label>
-            <textarea id="excerpt" required placeholder="Write a short description..."></textarea>
+            <textarea id="excerpt" name="excerpt" required placeholder="Write a short description..."></textarea>
 
             <label for="subHeading">Sub Heading</label>
-            <input type="text" id="subHeading" placeholder="Enter a sub heading (optional)">
+            <input type="text" id="subHeading" name="sub_heading" placeholder="Enter a sub heading (optional)">
 
             <label for="subDetails">Sub Details</label>
-            <textarea id="subDetails" placeholder="Write subheading related details (optional)"></textarea>
+            <textarea id="subDetails" name="sub_details" placeholder="Write subheading related details (optional)"></textarea>
 
             <label for="details">Full Blog Details</label>
-            <textarea id="details" required placeholder="Write full blog content..."></textarea>
+            <textarea id="details" name="details" required placeholder="Write full blog content..."></textarea>
 
             <div class="image-upload">
-                <p>Additional Gallery Images</p>
-                <label for="galleryImages">📷 Choose Gallery Images</label>
-                <input type="file" id="galleryImages" accept="image/*" multiple>
+            <p>Additional Gallery Images</p>
+            <label for="galleryImages">📷 Choose Gallery Images</label>
+            <input type="file" id="galleryImages" name="gallery_images[]" accept="image/*" multiple>
             </div>
 
             <div class="buttons">
-                <button type="submit" class="save-btn">✅ Save Blog</button>
-                <button type="button" class="cancel-btn" onclick="window.location.href='blog-management.html'">❌
-                    Cancel</button>
+            <button type="submit" class="save-btn">✅ Save Blog</button>
+            <button type="button" class="cancel-btn" onclick="window.location.href='blog-management'">❌
+                Cancel</button>
             </div>
         </form>
 
-    </main>
-
-    <script>
-        document.getElementById('newBlogForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('Blog Saved Successfully!');
-            window.location.href = 'blog-management.html'; // After saving, go back to blog list
-        });
-    </script>
+        </main>
 
 </body>
 

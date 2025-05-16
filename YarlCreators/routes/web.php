@@ -118,3 +118,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user-create', [UserController::class, 'user_create'])->name('user-create');
     Route::post('/user-store', [UserController::class, 'store'])->name('user-store');
 });
+
+Route::post('/blogs', [BlogController::class, 'store'])->name('blogs.store');
+

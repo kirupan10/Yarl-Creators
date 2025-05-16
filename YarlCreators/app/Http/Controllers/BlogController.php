@@ -29,43 +29,53 @@ class BlogController extends Controller
         return view('user.blogpage');
     }
 
-    public function store(Request $request)
-{
-    $request->validate([
-        'main_title' => 'required|string',
-        'date' => 'required|date',
-        'category' => 'required|string',
-        'image' => 'required|image',
-        'excerpt' => 'required|string',
-        'sub_heading' => 'nullable|string',
-        'sub_details' => 'nullable|string',
-        'full_details' => 'required|string',
-        'additional_images.*' => 'nullable|image',
-    ]);
+public function create_blog() {
+    return view('admin.create_blog');
 
-    $imagePath = $request->file('image')->store('blogs', 'public');
-
-    $additionalPaths = [];
-    if ($request->hasFile('additional_images')) {
-        foreach ($request->file('additional_images') as $img) {
-            $additionalPaths[] = $img->store('blogs/additional', 'public');
-        }
-    }
-
-    Blog::create([
-        'main_title' => $request->main_title,
-        'date' => $request->date,
-        'category' => $request->category,
-        'image' => $imagePath,
-        'excerpt' => $request->excerpt,
-        'sub_heading' => $request->sub_heading,
-        'sub_details' => $request->sub_details,
-        'full_details' => $request->full_details,
-        'additional_images' => $additionalPaths,
-    ]);
-
-    return redirect()->back()->with('success', 'Blog created successfully!');
 }
 
+public function store(Request $request)
+{
+    try {
+        $request->validate([
+            'title' => 'required|string',
+            'date' => 'required|date',
+            'category' => 'required|string',
+            'main_image' => 'required|image',
+            'excerpt' => 'required|string',
+            'sub_heading' => 'nullable|string',
+            'sub_details' => 'nullable|string',
+            'details' => 'required|string',
+            'gallery_images.*' => 'image|nullable',
+        ]);
 
+        // Save Main Image
+        $mainImagePath = $request->file('main_image')->store('blogs/main', 'public');
+
+        // Save Gallery Images
+        $galleryPaths = [];
+        if ($request->hasFile('gallery_images')) {
+            foreach ($request->file('gallery_images') as $image) {
+                $galleryPaths[] = $image->store('blogs/gallery', 'public');
+            }
+        }
+
+        // Save to DB
+        Blog::create([
+            'title' => $request->title,
+            'date' => $request->date,
+            'category' => $request->category,
+            'main_image' => $mainImagePath,
+            'excerpt' => $request->excerpt,
+            'sub_heading' => $request->sub_heading,
+            'sub_details' => $request->sub_details,
+            'details' => $request->details,
+            'gallery_images' => json_encode($galleryPaths),
+        ]);
+
+        return redirect()->route('blog-management')->with('success', 'Blog created successfully!');
+    } catch (\Exception $e) {
+        return redirect()->back()->withErrors(['db_error' => 'Database error: ' . $e->getMessage()]);
+    }
+}
 }
